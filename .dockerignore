@@ -1,0 +1,61 @@
+# Docker ignore file - Exclude files from Docker build context
+# This reduces build time and image size
+
+# Dependencies (will be installed by npm ci)
+node_modules
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Build output (will be generated during docker build)
+.medusa
+dist
+build
+.cache
+
+# Environment files (sensitive data - use secrets in Coolify)
+.env
+.env.local
+.env.*.local
+
+# Git
+.git
+.gitignore
+
+# IDE
+.vscode
+.idea
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Testing
+coverage
+.nyc_output
+
+# Logs
+logs
+*.log
+
+# Uploads (should be on persistent volume)
+uploads
+
+# Documentation
+README.md
+*.md
+!package.json
+
+# CI/CD
+.github
+.gitlab-ci.yml
+
+# Development files
+.editorconfig
+.eslintrc*
+.prettierrc*
+
+# Temporary files
+tmp
+temp
+*.tmp
