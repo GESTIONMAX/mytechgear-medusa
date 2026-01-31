@@ -44,7 +44,6 @@ RUN npm ci --omit=dev && npm cache clean --force
 
 # Copy built application from builder stage
 COPY --from=builder /app/.medusa /app/.medusa
-COPY --from=builder /app/dist /app/dist
 
 # Copy configuration files
 COPY medusa-config.ts ./
