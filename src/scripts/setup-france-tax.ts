@@ -52,7 +52,7 @@ export default async function setupFranceTax({ container }: ExecArgs) {
     }
 
     // Créer le tax rate de 20%
-    const taxRate = await taxModuleService.createTaxRates({
+    const taxRates = await taxModuleService.createTaxRates({
       tax_region_id: taxRegion.id,
       name: "TVA France",
       code: "FR_VAT_STANDARD",
@@ -63,7 +63,9 @@ export default async function setupFranceTax({ container }: ExecArgs) {
         description: "Taux de TVA standard français",
         type: "VAT"
       }
-    })
+    } as any)
+
+    const taxRate = Array.isArray(taxRates) ? taxRates[0] : taxRates
 
     logger.info("\n✅ France VAT configured successfully!")
     logger.info(`   Tax Region ID: ${taxRegion.id}`)

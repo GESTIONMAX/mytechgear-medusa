@@ -49,7 +49,11 @@ export default async function assignProductTags({ container }: ExecArgs) {
     ]
 
     let totalTagsAssigned = 0
-    const productUpdates = []
+    const productUpdates: Array<{
+      product: any
+      tagIds: string[]
+      tagNames: string[]
+    }> = []
 
     for (const product of products) {
       const tagsToAssign: string[] = []
@@ -79,17 +83,17 @@ export default async function assignProductTags({ container }: ExecArgs) {
         tagsToAssign.push("Bluetooth")
       }
 
-      if (metadata.lens_technology?.includes("Prismatic")) {
+      const lensTech = typeof metadata.lens_technology === 'string' ? metadata.lens_technology : ''
+
+      if (lensTech.includes("Prismatic")) {
         tagsToAssign.push("Prismatic")
       }
 
-      if (metadata.lens_technology?.includes("Electrochromic") ||
-          metadata.lens_technology?.includes("Eclipse")) {
+      if (lensTech.includes("Electrochromic") || lensTech.includes("Eclipse")) {
         tagsToAssign.push("Electrochromic")
       }
 
-      if (metadata.lens_technology?.includes("LC") ||
-          metadata.lens_technology?.includes("Liquid Crystal")) {
+      if (lensTech.includes("LC") || lensTech.includes("Liquid Crystal")) {
         tagsToAssign.push("Liquid Crystal")
       }
 
@@ -100,12 +104,13 @@ export default async function assignProductTags({ container }: ExecArgs) {
         tagsToAssign.push("Audio")
       }
 
-      if (metadata.control_type?.toLowerCase().includes("touch") ||
-          metadata.control_type?.toLowerCase().includes("tap")) {
+      const controlType = typeof metadata.control_type === 'string' ? metadata.control_type.toLowerCase() : ''
+
+      if (controlType.includes("touch") || controlType.includes("tap")) {
         tagsToAssign.push("Touch Control")
       }
 
-      if (metadata.control_type?.toLowerCase().includes("app")) {
+      if (controlType.includes("app")) {
         tagsToAssign.push("App Control")
       }
 
@@ -118,7 +123,7 @@ export default async function assignProductTags({ container }: ExecArgs) {
         tagsToAssign.push("Ambient Sensor")
       }
 
-      if (metadata.lens_technology?.includes("Color-changing")) {
+      if (lensTech.includes("Color-changing")) {
         tagsToAssign.push("Color Changing")
       }
 
@@ -168,27 +173,30 @@ export default async function assignProductTags({ container }: ExecArgs) {
         tagsToAssign.push("Impact Resistant")
       }
 
-      if (metadata.weight_grams && metadata.weight_grams <= 40) {
+      const weightGrams = typeof metadata.weight_grams === 'number' ? metadata.weight_grams : 0
+
+      if (weightGrams > 0 && weightGrams <= 40) {
         tagsToAssign.push("Lightweight")
       }
 
       // ========================================
       // DESIGN
       // ========================================
-      if (metadata.frame_style?.toLowerCase().includes("rimless")) {
+      const frameStyle = typeof metadata.frame_style === 'string' ? metadata.frame_style.toLowerCase() : ''
+
+      if (frameStyle.includes("rimless")) {
         tagsToAssign.push("Rimless")
       }
 
-      if (metadata.frame_style?.toLowerCase().includes("cat-eye")) {
+      if (frameStyle.includes("cat-eye")) {
         tagsToAssign.push("Cat-Eye")
       }
 
-      if (metadata.frame_style?.toLowerCase().includes("wayfarer")) {
+      if (frameStyle.includes("wayfarer")) {
         tagsToAssign.push("Wayfarer")
       }
 
-      if (metadata.frame_style?.toLowerCase().includes("square") ||
-          metadata.frame_style?.toLowerCase().includes("rectangular")) {
+      if (frameStyle.includes("square") || frameStyle.includes("rectangular")) {
         tagsToAssign.push("Square")
       }
 
@@ -206,9 +214,9 @@ export default async function assignProductTags({ container }: ExecArgs) {
 
       // Premium (prix > 400€)
       if (product.variants && product.variants.length > 0) {
-        const firstVariant = product.variants[0]
-        if (firstVariant.prices && firstVariant.prices.length > 0) {
-          const price = firstVariant.prices[0].amount
+        const firstVariant: any = product.variants[0]
+        if (firstVariant.calculated_price?.calculated_amount) {
+          const price = firstVariant.calculated_price.calculated_amount
           if (price >= 40000) { // >= 400€
             tagsToAssign.push("Premium")
           }
@@ -258,11 +266,12 @@ export default async function assignProductTags({ container }: ExecArgs) {
     logger.info("📝 Applying tag assignments...")
     logger.info("=".repeat(60))
 
-    for (const { product, tagIds, tagNames } of productUpdates) {
+    for (const { product, tagIds } of productUpdates) {
       try {
+        // Note: UpdateProductDTO doesn't officially support tags, but the API accepts it
         await productModuleService.updateProducts(product.id, {
-          tags: tagIds.map(id => ({ id }))
-        })
+          tags: tagIds.map((id: string) => ({ id }))
+        } as any)
         logger.info(`✓ ${product.title} - ${tagIds.length} tags assigned`)
       } catch (error: any) {
         logger.error(`✗ ${product.title} - Error: ${error.message}`)

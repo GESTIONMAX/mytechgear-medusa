@@ -367,9 +367,9 @@ export default async function setupProductTags({ container }: ExecArgs) {
 
     logger.info(`\n📋 Creating ${productTags.length} product tags...`)
 
-    const createdTags = []
-    const existingTags = []
-    const errors = []
+    const createdTags: string[] = []
+    const existingTags: string[] = []
+    const errors: Array<{ tag: string; error: string }> = []
 
     for (const tagData of productTags) {
       try {

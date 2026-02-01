@@ -182,11 +182,12 @@ export default async function enrichPayloadProductsMetadata({ container }: ExecA
         const currentMetadata = product.metadata || {}
 
         // Merger les metadata existantes avec les enrichissements
+        const currentPrice = (currentMetadata as any).price
         const mergedMetadata = {
           ...currentMetadata,
           ...enrichedMetadata,
           // Garder les metadata importantes existantes
-          ...(currentMetadata.price && { price: currentMetadata.price }),
+          ...(currentPrice && { price: currentPrice }),
           enriched_at: new Date().toISOString(),
         }
 

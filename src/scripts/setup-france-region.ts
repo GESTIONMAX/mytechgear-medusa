@@ -33,17 +33,19 @@ export default async function setupFranceRegion({ container }: ExecArgs) {
     }
 
     // Créer la région France
-    const region = await regionModuleService.createRegions({
+    const regions = await regionModuleService.createRegions({
       name: "France",
       currency_code: "eur",
       countries: ["fr"],
       automatic_taxes: true,
-      tax_rate: 20, // TVA standard française 20%
       metadata: {
         tax_type: "VAT",
         tax_description: "TVA France (taux standard)",
+        tax_rate: 20, // TVA standard française 20%
       }
-    })
+    } as any)
+
+    const region = Array.isArray(regions) ? regions[0] : regions
 
     logger.info("\n✅ France region created successfully!")
     logger.info(`   Region ID: ${region.id}`)

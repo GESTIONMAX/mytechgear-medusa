@@ -94,9 +94,9 @@ export default async function setupProductTypes({ container }: ExecArgs) {
 
     logger.info(`\n📋 Creating ${productTypes.length} product types...`)
 
-    const createdTypes = []
-    const existingTypes = []
-    const errors = []
+    const createdTypes: string[] = []
+    const existingTypes: string[] = []
+    const errors: Array<{ type: string; error: string }> = []
 
     for (const typeData of productTypes) {
       try {
@@ -110,7 +110,7 @@ export default async function setupProductTypes({ container }: ExecArgs) {
           logger.info(`  ⏭️  ${typeData.value} - Already exists`)
         } else {
           // Créer le type
-          const createdType = await productModuleService.createProductTypes(typeData)
+          await productModuleService.createProductTypes(typeData)
           createdTypes.push(typeData.value)
           logger.info(`  ✓ ${typeData.value} - Created (${typeData.metadata.value_fr})`)
         }

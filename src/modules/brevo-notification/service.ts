@@ -48,9 +48,6 @@ export default class BrevoNotificationService {
     this.senderName_ = options.senderName || "MyTechGear"
 
     // Initialiser l'API Brevo
-    const apiKeyInstance = brevo.TransactionalEmailsApiApiKeys
-    apiKeyInstance.apiKey = this.apiKey_
-
     this.apiInstance_ = new brevo.TransactionalEmailsApi()
     this.apiInstance_.setApiKey(
       brevo.TransactionalEmailsApiApiKeys.apiKey,
@@ -95,16 +92,13 @@ export default class BrevoNotificationService {
       // Envoi via API Brevo
       const result = await this.apiInstance_.sendTransacEmail(sendSmtpEmail)
 
-      this.logger_.info(`✉️  Email sent via Brevo to ${data.to}`, {
-        messageId: result.body.messageId,
-        subject: data.subject,
-      })
+      this.logger_.info(
+        `✉️  Email sent via Brevo to ${data.to} - Subject: ${data.subject} - MessageID: ${result.body.messageId}`
+      )
     } catch (error: any) {
-      this.logger_.error("❌ Failed to send email via Brevo", {
-        error: error.message,
-        to: data.to,
-        subject: data.subject,
-      })
+      this.logger_.error(
+        `❌ Failed to send email via Brevo - To: ${data.to} - Subject: ${data.subject} - Error: ${error.message}`
+      )
       throw error
     }
   }
@@ -269,9 +263,9 @@ export default class BrevoNotificationService {
     data: any,
     attachmentGenerator?: any
   ): Promise<void> {
-    this.logger_.info(`📧 Notification event received: ${event}`, {
-      to: data.to || data.email,
-    })
+    this.logger_.info(
+      `📧 Notification event received: ${event} - To: ${data.to || data.email}`
+    )
 
     // Router vers la bonne méthode selon l'événement
     switch (event) {

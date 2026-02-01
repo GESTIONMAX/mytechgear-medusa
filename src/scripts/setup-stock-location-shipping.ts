@@ -32,7 +32,7 @@ export default async function setupStockLocationShipping({ container }: ExecArgs
     logger.info("\n📍 Step 1: Creating Stock Location...")
 
     // Vérifier si un stock location existe déjà
-    const existingLocations = await stockLocationModule.listStockLocations()
+    const existingLocations = await stockLocationModule.listStockLocations({})
 
     let stockLocation
     if (existingLocations.length > 0) {
@@ -97,7 +97,7 @@ export default async function setupStockLocationShipping({ container }: ExecArgs
     // ============================================
     logger.info("\n🗺️  Step 4: Creating Service Zone for France...")
 
-    const serviceZone = await fulfillmentModule.createServiceZones({
+    const serviceZones = await fulfillmentModule.createServiceZones({
       name: "Zone France Métropolitaine",
       fulfillment_set_id: fulfillmentSet.id,
       geo_zones: [
@@ -112,7 +112,9 @@ export default async function setupStockLocationShipping({ container }: ExecArgs
       metadata: {
         description: "Zone de livraison France métropolitaine",
       }
-    })
+    } as any)
+
+    const serviceZone = Array.isArray(serviceZones) ? serviceZones[0] : serviceZones
 
     logger.info(`  ✓ Service Zone created: ${serviceZone.name} (${serviceZone.id})`)
 
@@ -205,7 +207,8 @@ export default async function setupStockLocationShipping({ container }: ExecArgs
 
     for (const optionData of shippingOptions) {
       try {
-        const shippingOption = await fulfillmentModule.createShippingOptions(optionData)
+        const shippingOptions = await fulfillmentModule.createShippingOptions(optionData as any)
+        const shippingOption = Array.isArray(shippingOptions) ? shippingOptions[0] : shippingOptions
         const price = optionData.prices[0].amount / 100
         logger.info(`  ✓ ${optionData.name} - ${price}€`)
         logger.info(`    ID: ${shippingOption.id}`)
