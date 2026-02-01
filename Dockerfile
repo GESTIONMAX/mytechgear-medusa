@@ -46,7 +46,7 @@ RUN npm ci --omit=dev && npm cache clean --force
 COPY --from=builder /app/.medusa /app/.medusa
 
 # Copy configuration files
-COPY medusa-config.ts ./
+COPY medusa-config.js ./
 COPY tsconfig.json ./
 
 # Copy source files needed at runtime
