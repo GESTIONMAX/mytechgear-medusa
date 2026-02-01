@@ -130,6 +130,23 @@ npx @medusajs/medusa-cli db:migrate
 # ⚠️ Rétablissez immédiatement votre .env local après !
 ```
 
+### 🛠️ Migration de la Base de Données
+
+Pour migrer la base de données, suivez ces étapes :
+
+1. **Sauvegarde de la Base de Données** : Avant de commencer la migration, assurez-vous de sauvegarder votre base de données actuelle.
+
+2. **Configurer la Nouvelle Base de Données** : Mettez à jour votre fichier de configuration pour pointer vers la nouvelle base de données.
+
+3. **Exécuter les Migrations** : Utilisez les commandes de migration appropriées pour appliquer les changements à la nouvelle base de données. Par exemple :
+   ```bash
+   npx medusa migrations:run
+   ```
+
+4. **Vérifier les Données** : Après la migration, vérifiez que toutes les données ont été transférées correctement.
+
+5. **Mettre à Jour les Environnements** : Assurez-vous que toutes les variables d'environnement pointent vers la nouvelle base de données.
+
 ## 🚀 Étape 6 : Déployer
 
 1. Dans Coolify, cliquez sur **"Deploy"**

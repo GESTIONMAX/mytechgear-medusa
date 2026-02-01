@@ -12,5 +12,24 @@ module.exports = defineConfig({
       jwtSecret: process.env.JWT_SECRET || "supersecret",
       cookieSecret: process.env.COOKIE_SECRET || "supersecret",
     }
-  }
+  },
+  modules: [
+    {
+      resolve: "@medusajs/payment-stripe",
+      options: {
+        apiKey: process.env.STRIPE_SECRET_KEY,
+        webhookSecret: process.env.STRIPE_WEBHOOK_SECRET,
+        // Options additionnelles pour la France
+        captureMethod: "automatic", // Capture automatique du paiement
+      }
+    },
+    {
+      resolve: "./src/modules/brevo-notification",
+      options: {
+        apiKey: process.env.BREVO_API_KEY,
+        senderEmail: process.env.BREVO_SENDER_EMAIL || "contact@mytechgear.fr",
+        senderName: process.env.BREVO_SENDER_NAME || "MyTechGear",
+      }
+    }
+  ]
 })
