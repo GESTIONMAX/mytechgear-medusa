@@ -70,6 +70,10 @@ COPY tsconfig.json ./
 # Copy source files needed at runtime
 COPY src ./src
 
+# Copy diagnostic script
+COPY scripts/diagnose-admin.sh ./scripts/
+RUN chmod +x ./scripts/diagnose-admin.sh
+
 # Create uploads directory for file storage
 RUN mkdir -p /app/uploads && chown -R node:node /app
 
