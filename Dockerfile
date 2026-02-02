@@ -67,8 +67,8 @@ RUN echo "=== Verifying admin build in production stage ===" && \
 COPY medusa-config.js ./
 COPY tsconfig.json ./
 
-# Copy source files needed at runtime
-COPY src ./src
+# Note: src files are already compiled in .medusa/server/src
+# No need to copy the TypeScript source
 
 # Copy diagnostic script
 COPY scripts/diagnose-admin.sh ./scripts/
