@@ -61,10 +61,6 @@ USER node
 # Expose port 9000 (default Medusa port)
 EXPOSE 9000
 
-# Health check - TEMPORAIREMENT DÉSACTIVÉ POUR DEBUG
-# HEALTHCHECK --interval=30s --timeout=3s --start-period=40s \
-#   CMD node -e "require('http').get('http://localhost:9000/health', (r) => r.statusCode === 200 ? process.exit(0) : process.exit(1))"
-
 # Use dumb-init to handle signals properly
 ENTRYPOINT ["dumb-init", "--"]
 
