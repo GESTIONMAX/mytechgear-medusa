@@ -21,6 +21,11 @@ RUN npm ci
 # Copy source code
 COPY . .
 
+# Set environment variables needed for build
+# These are temporary and won't persist to runtime
+ENV NODE_ENV=production \
+    MEDUSA_ADMIN_ONBOARDING_TYPE=default
+
 # Build the application
 # This compiles TypeScript and builds the admin dashboard
 RUN npm run build && \
