@@ -61,9 +61,9 @@ COOKIE_SECRET=3jN7hM9kL2pQ5wR8xY1vT4cF6gB0nE9sD7iA3oU5yP8qK2lZ6mX1hJ4rW9tV0gN
 
 ```bash
 # URLs autorisées pour les requêtes
-STORE_CORS=https://mytechgear.fr,https://www.mytechgear.fr
-ADMIN_CORS=https://admin.mytechgear.fr
-AUTH_CORS=https://admin.mytechgear.fr
+STORE_CORS=https://mytechgear.eu,https://www.mytechgear.eu
+ADMIN_CORS=https://admin.mytechgear.eu
+AUTH_CORS=https://admin.mytechgear.eu
 ```
 
 **Notes** :
@@ -113,7 +113,7 @@ STRIPE_WEBHOOK_SECRET=YOUR_STRIPE_WEBHOOK_SECRET_HERE
 ```bash
 # Clés API Brevo
 BREVO_API_KEY=xkeysib-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-BREVO_SENDER_EMAIL=contact@mytechgear.fr
+BREVO_SENDER_EMAIL=contact@mytechgear.eu
 BREVO_SENDER_NAME=MyTechGear
 ```
 
@@ -128,7 +128,7 @@ BREVO_SENDER_NAME=MyTechGear
 **Statut actuel** :
 ```
 BREVO_API_KEY=YOUR_BREVO_API_KEY_HERE
-BREVO_SENDER_EMAIL=contact@mytechgear.fr
+BREVO_SENDER_EMAIL=contact@mytechgear.eu
 BREVO_SENDER_NAME=MyTechGear
 ```
 
@@ -191,9 +191,9 @@ JWT_SECRET=<générer-avec-openssl-rand-base64-64>
 COOKIE_SECRET=<générer-avec-openssl-rand-base64-64>
 
 # 3. CORS - URLs production
-STORE_CORS=https://mytechgear.fr,https://www.mytechgear.fr
-ADMIN_CORS=https://admin.mytechgear.fr
-AUTH_CORS=https://admin.mytechgear.fr
+STORE_CORS=https://mytechgear.eu,https://www.mytechgear.eu
+ADMIN_CORS=https://admin.mytechgear.eu
+AUTH_CORS=https://admin.mytechgear.eu
 ```
 
 ### Variables RECOMMANDÉES (pour production)
@@ -208,7 +208,7 @@ STRIPE_WEBHOOK_SECRET=whsec_xxxxx
 
 # 6. Brevo (obtenir sur app.brevo.com)
 BREVO_API_KEY=xkeysib-xxxxx
-BREVO_SENDER_EMAIL=contact@mytechgear.fr
+BREVO_SENDER_EMAIL=contact@mytechgear.eu
 BREVO_SENDER_NAME=MyTechGear
 
 # 7. Medusa Admin
@@ -297,13 +297,13 @@ DATABASE_URL=postgres://medusa:xhgcpIOO6ABnhTvAYqCPpUNVSHk8zCx1oUbwtcpwOEZ3xmeK6
 REDIS_URL=redis://mytechgear-medusa-redis:6379
 JWT_SECRET=<générer-et-coller>
 COOKIE_SECRET=<générer-et-coller>
-STORE_CORS=https://mytechgear.fr,https://www.mytechgear.fr
-ADMIN_CORS=https://admin.mytechgear.fr
-AUTH_CORS=https://admin.mytechgear.fr
+STORE_CORS=https://mytechgear.eu,https://www.mytechgear.eu
+ADMIN_CORS=https://admin.mytechgear.eu
+AUTH_CORS=https://admin.mytechgear.eu
 STRIPE_SECRET_KEY=<obtenir-de-stripe>
 STRIPE_WEBHOOK_SECRET=<obtenir-de-stripe>
 BREVO_API_KEY=<obtenir-de-brevo>
-BREVO_SENDER_EMAIL=contact@mytechgear.fr
+BREVO_SENDER_EMAIL=contact@mytechgear.eu
 BREVO_SENDER_NAME=MyTechGear
 NODE_ENV=production
 MEDUSA_ADMIN_ONBOARDING_TYPE=default
@@ -321,14 +321,14 @@ Port: 9000
 ### 4. Configurer les domaines
 
 ```
-mytechgear-api.fr → Application Medusa (port 9000)
+mytechgear-api.eu → Application Medusa (port 9000)
 admin.mytechgear.fr → Medusa Admin (/app)
 ```
 
 ### 5. Configurer Stripe Webhook
 
 Dans Stripe Dashboard :
-- URL : `https://mytechgear-api.fr/hooks/stripe`
+- URL : `https://mytechgear-api.eu/hooks/stripe`
 - Événements : `payment_intent.succeeded`, `payment_intent.payment_failed`
 
 ---
