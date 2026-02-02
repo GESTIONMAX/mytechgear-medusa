@@ -74,6 +74,11 @@ COPY src ./src
 COPY scripts/diagnose-admin.sh ./scripts/
 RUN chmod +x ./scripts/diagnose-admin.sh
 
+# Create symlink for admin files (Medusa v2 bug workaround)
+# Medusa looks for admin in /app/public but build is in /app/.medusa/server/public
+RUN ln -s /app/.medusa/server/public /app/public && \
+    echo "✓ Symlink created: /app/public -> /app/.medusa/server/public"
+
 # Create uploads directory for file storage
 RUN mkdir -p /app/uploads && chown -R node:node /app
 
