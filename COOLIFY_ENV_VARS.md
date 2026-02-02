@@ -12,22 +12,22 @@
 
 ```bash
 # Connexion PostgreSQL (fournie par Coolify)
-DATABASE_URL=postgres://medusa:PASSWORD@mytechgear-medusa-db:5432/medusa
+DATABASE_URL=postgres://medusa:PASSWORD@qwk40goo4w4448o8cw4gww08:5432/medusa
 ```
 
 **Notes** :
-- Utiliser le **nom de service interne** Coolify : `mytechgear-medusa-db`
+- Utiliser le **nom de service interne** Coolify : `qwk40goo4w4448o8cw4gww08`
 - Ne PAS utiliser l'IP publique (78.47.79.58) en production
 - Le mot de passe est généré automatiquement par Coolify
 
-**Valeur actuelle (migration)** :
+**Valeur actuelle (migration - NE PLUS UTILISER)** :
 ```
 postgres://medusa:xhgcpIOO6ABnhTvAYqCPpUNVSHk8zCx1oUbwtcpwOEZ3xmeK6gDxRLrLKKw90jXU@78.47.79.58:5432/medusa
 ```
 
-**Valeur production Coolify** :
+**Valeur production Coolify (CORRECTE - ACTUELLEMENT CONFIGURÉE)** :
 ```
-postgres://medusa:xhgcpIOO6ABnhTvAYqCPpUNVSHk8zCx1oUbwtcpwOEZ3xmeK6gDxRLrLKKw90jXU@mytechgear-medusa-db:5432/medusa
+postgres://medusa:xhgcpIOO6ABnhTvAYqCPpUNVSHk8zCx1oUbwtcpwOEZ3xmeK6gDxRLrLKKw90jXU@qwk40goo4w4448o8cw4gww08:5432/medusa
 ```
 
 ---
@@ -184,7 +184,7 @@ DB_NAME=medusa
 
 ```bash
 # 1. Base de données (fournie par Coolify)
-DATABASE_URL=postgres://medusa:xhgcpIOO6ABnhTvAYqCPpUNVSHk8zCx1oUbwtcpwOEZ3xmeK6gDxRLrLKKw90jXU@mytechgear-medusa-db:5432/medusa
+DATABASE_URL=postgres://medusa:xhgcpIOO6ABnhTvAYqCPpUNVSHk8zCx1oUbwtcpwOEZ3xmeK6gDxRLrLKKw90jXU@qwk40goo4w4448o8cw4gww08:5432/medusa
 
 # 2. Secrets de sécurité (à générer avec openssl)
 JWT_SECRET=<générer-avec-openssl-rand-base64-64>
@@ -293,7 +293,7 @@ Dans Coolify → Application → Settings → Environment Variables :
 
 ```bash
 # Copier-coller ce bloc
-DATABASE_URL=postgres://medusa:xhgcpIOO6ABnhTvAYqCPpUNVSHk8zCx1oUbwtcpwOEZ3xmeK6gDxRLrLKKw90jXU@mytechgear-medusa-db:5432/medusa
+DATABASE_URL=postgres://medusa:xhgcpIOO6ABnhTvAYqCPpUNVSHk8zCx1oUbwtcpwOEZ3xmeK6gDxRLrLKKw90jXU@qwk40goo4w4448o8cw4gww08:5432/medusa
 REDIS_URL=redis://mytechgear-medusa-redis:6379
 JWT_SECRET=<générer-et-coller>
 COOKIE_SECRET=<générer-et-coller>
