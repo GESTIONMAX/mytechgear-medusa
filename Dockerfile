@@ -23,7 +23,11 @@ COPY . .
 
 # Build the application
 # This compiles TypeScript and builds the admin dashboard
-RUN npm run build
+RUN npm run build && \
+    echo "=== Verifying build output ===" && \
+    ls -la .medusa/ && \
+    ls -la .medusa/server/public/ || echo "No public directory" && \
+    find .medusa -name "index.html" || echo "No index.html found"
 
 # ============================================
 # Stage 2: Production - Minimal runtime image
@@ -44,6 +48,15 @@ RUN npm ci --omit=dev && npm cache clean --force
 
 # Copy built application from builder stage
 COPY --from=builder /app/.medusa /app/.medusa
+
+# Verify admin build was copied
+RUN echo "=== Verifying admin build in production stage ===" && \
+    ls -la .medusa/ && \
+    ls -la .medusa/server/ && \
+    if [ ! -f .medusa/server/public/admin/index.html ]; then \
+        echo "ERROR: Admin index.html not found!" && exit 1; \
+    fi && \
+    echo "✓ Admin build verified"
 
 # Copy configuration files
 COPY medusa-config.js ./
