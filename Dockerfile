@@ -42,8 +42,8 @@ FROM node:20-alpine
 # Set working directory
 WORKDIR /app
 
-# Install runtime dependencies only (for native modules if any)
-RUN apk add --no-cache dumb-init
+# Install runtime dependencies (dumb-init for process handling, curl for healthcheck)
+RUN apk add --no-cache dumb-init curl
 
 # Copy package files
 COPY package*.json ./
