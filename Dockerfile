@@ -1,3 +1,4 @@
+# syntax=docker/dockerfile:1
 # Dockerfile for Medusa v2 Backend - Production Deployment
 # Multi-stage build for optimized image size
 
@@ -16,7 +17,9 @@ RUN apk add --no-cache python3 make g++
 COPY package*.json ./
 
 # Install ALL dependencies (including devDependencies needed for build)
-RUN npm ci
+# Use BuildKit cache to speed up rebuilds
+RUN --mount=type=cache,target=/root/.npm \
+    npm ci
 
 # Copy source code
 COPY . .
@@ -48,8 +51,11 @@ RUN apk add --no-cache dumb-init curl wget
 # Copy package files
 COPY package*.json ./
 
-# Install ONLY production dependencies
-RUN npm ci --omit=dev && npm cache clean --force
+# Copy node_modules from builder instead of npm ci (22min → 30s)
+COPY --from=builder /app/node_modules ./node_modules
+
+# Remove devDependencies (much faster than full npm ci)
+RUN npm prune --omit=dev && npm cache clean --force
 
 # Copy built application from builder stage
 COPY --from=builder /app/.medusa /app/.medusa
