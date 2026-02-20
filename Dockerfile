@@ -60,14 +60,15 @@ RUN npm prune --omit=dev && npm cache clean --force
 # Copy built application from builder stage
 COPY --from=builder /app/.medusa /app/.medusa
 
-# Verify admin build was copied
-RUN echo "=== Verifying admin build in production stage ===" && \
+# Vérification build — admin optionnel (API-only si DISABLE_MEDUSA_ADMIN=true)
+RUN echo "=== Verifying build in production stage ===" && \
     ls -la .medusa/ && \
     ls -la .medusa/server/ && \
-    if [ ! -f .medusa/server/public/admin/index.html ]; then \
-        echo "ERROR: Admin index.html not found!" && exit 1; \
-    fi && \
-    echo "✓ Admin build verified"
+    if [ -f .medusa/server/public/admin/index.html ]; then \
+        echo "✓ Admin build present (UI enabled)"; \
+    else \
+        echo "ℹ Admin build absent (API-only mode — DISABLE_MEDUSA_ADMIN=true)"; \
+    fi
 
 # Copy configuration files
 COPY medusa-config.js ./
@@ -76,14 +77,17 @@ COPY tsconfig.json ./
 # Note: src files are already compiled in .medusa/server/src
 # No need to copy the TypeScript source
 
-# Copy diagnostic script
+# Copy diagnostic script (si présent)
 COPY scripts/diagnose-admin.sh ./scripts/
 RUN chmod +x ./scripts/diagnose-admin.sh
 
-# Create symlink for admin files (Medusa v2 bug workaround)
-# Medusa looks for admin in /app/public but build is in /app/.medusa/server/public
-RUN ln -s /app/.medusa/server/public /app/public && \
-    echo "✓ Symlink created: /app/public -> /app/.medusa/server/public"
+# Symlink admin (uniquement si les fichiers existent — mode UI enabled)
+RUN if [ -d /app/.medusa/server/public ]; then \
+        ln -s /app/.medusa/server/public /app/public && \
+        echo "✓ Symlink created: /app/public -> /app/.medusa/server/public"; \
+    else \
+        echo "ℹ No public dir (API-only mode)"; \
+    fi
 
 # Create uploads directory for file storage
 RUN mkdir -p /app/uploads && chown -R node:node /app

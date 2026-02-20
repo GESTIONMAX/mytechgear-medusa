@@ -1,8 +1,15 @@
+/**
+ * medusa-config.js — version JS (synchronisé avec medusa-config.ts)
+ * Copié dans l'image Docker (COPY medusa-config.js ./). Doit rester en sync.
+ */
 const { loadEnv, defineConfig } = require('@medusajs/framework/utils')
 
 loadEnv(process.env.NODE_ENV || 'development', process.cwd())
 
 module.exports = defineConfig({
+  admin: {
+    disable: process.env.DISABLE_MEDUSA_ADMIN === 'true',
+  },
   projectConfig: {
     databaseUrl: process.env.DATABASE_URL,
     http: {
@@ -13,7 +20,23 @@ module.exports = defineConfig({
       cookieSecret: process.env.COOKIE_SECRET || "supersecret",
     }
   },
-  admin: {
-    disable: process.env.DISABLE_MEDUSA_ADMIN === "true",
-  }
+  modules: [
+    // ─── Paiement Stripe ────────────────────────────────────────────────────
+    {
+      resolve: "@medusajs/payment-stripe",
+      options: {
+        apiKey: process.env.STRIPE_SECRET_KEY,
+        webhookSecret: process.env.STRIPE_WEBHOOK_SECRET,
+        captureMethod: "automatic",
+      }
+    },
+    {
+      resolve: "./src/modules/brevo-notification",
+      options: {
+        apiKey: process.env.BREVO_API_KEY,
+        senderEmail: process.env.BREVO_SENDER_EMAIL || "contact@mytechgear.fr",
+        senderName: process.env.BREVO_SENDER_NAME || "MyTechGear",
+      }
+    }
+  ]
 })
