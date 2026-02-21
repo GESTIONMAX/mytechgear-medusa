@@ -25,6 +25,62 @@ Lunettes Connectées (root)
 
 ---
 
+## 🔗 Liens Rapides
+
+### Dashboard Admin
+
+| Page | URL | Description |
+|------|-----|-------------|
+| **Catégories** | http://localhost:3200/admin/categories | Gestion hiérarchie catégories |
+| **Collections** | http://localhost:3200/admin/collections | Gestion collections marketing |
+| **Produits** | http://localhost:3200/admin/products | Liste tous les produits |
+
+### Pages Catégories (Frontend)
+
+| Catégorie | URL | Produits |
+|-----------|-----|----------|
+| **Smart Tech** | http://localhost:3000/categories/smart-tech | 10 produits électroniques |
+| **Classic Eyewear** | http://localhost:3000/categories/classic-eyewear | 6 produits standards |
+
+### Pages Collections Sport (Frontend) ⭐ NOUVEAU
+
+| Collection | URL | Sports Ciblés |
+|------------|-----|---------------|
+| **Running** | http://localhost:3000/collections/running | Running, Jogging, Marathon, Trail running |
+| **Cyclisme** | http://localhost:3000/collections/cycling | Road cycling, VTT, Gravel, Cyclotourisme |
+| **Trail & Outdoor** | http://localhost:3000/collections/trail-outdoor | Trail, Hiking, Trekking, Alpinisme, Randonnée |
+| **Sports Nautiques** | http://localhost:3000/collections/water-sports | Voile, Kitesurf, SUP, Kayak, Triathlon |
+| **Ski & Neige** | http://localhost:3000/collections/ski-snow | Ski alpin, Snowboard, Ski de fond, Freeride |
+| **Urbain & Quotidien** | http://localhost:3000/collections/urban-lifestyle | Casual, Ville, Marche, Quotidien |
+| **Lunettes Audio** | http://localhost:3000/collections/audio-sunglasses | Tous sports avec audio Bluetooth |
+
+### Pages Collections Thématiques (Frontend)
+
+| Collection | URL | Produits |
+|------------|-----|----------|
+| **Collection Prismatic** | http://localhost:3000/collections/collection-prismatic | Aura, Aura Audio |
+| **Collection Lifestyle** | http://localhost:3000/collections/collection-lifestyle | Zurix, Veil, Dusk Classic, etc. |
+| **Collection Sport** | http://localhost:3000/collections/collection-sport | Shield, Music Shield, Aroza, Falcon |
+
+### Pages Collections Marketing (Frontend)
+
+| Collection | URL | Critères |
+|------------|-----|----------|
+| **Best-sellers** | http://localhost:3000/collections/best-sellers | `bestseller_rank ≤ 10` |
+| **Nouveautés 2026** | http://localhost:3000/collections/nouveautes-2026 | `created_at >= 2026-01-01` |
+| **Soldes** | http://localhost:3000/collections/soldes-promotions | Produits avec discount actif |
+
+### API Endpoints
+
+| Endpoint | URL | Description |
+|----------|-----|-------------|
+| **API Landing** | http://localhost:9000/ | Liste tous les endpoints disponibles |
+| **Health Check** | http://localhost:9000/health | Vérification liveness |
+| **Store Products** | http://localhost:9000/store/products | Liste produits publique |
+| **Admin Categories** | http://localhost:9000/admin/product-categories | API catégories (auth requise) |
+
+---
+
 ## 🗂️ Catégories Détaillées
 
 ### 1. Lunettes Connectées (pcat_root)
@@ -180,30 +236,103 @@ Accueil > Classic Eyewear > Falcon
 
 Les collections sont **indépendantes** des catégories et servent au merchandising/marketing.
 
-### Collections Actuelles (6)
+### Collections Actuelles (13)
 
 Vérifier avec :
 ```bash
 psql postgresql://medusa:medusa@localhost:5433/medusa -c "SELECT id, title, handle FROM product_collection ORDER BY title;"
 ```
 
-### Collections Recommandées
+### Collections Thématiques (3)
 
-1. **Best-sellers** (`best-sellers`)
-   - Produits avec `bestseller_rank ≤ 10`
-   - Auto-peuplée via script
+1. **Collection Prismatic** (`collection-prismatic`)
+   - Technologie Prismatic™ Color-changing
+   - Produits: Aura, Aura Audio
+   - URL: `/collections/collection-prismatic`
 
-2. **Nouveautés 2026** (`nouveautes-2026`)
-   - Produits avec `created_at >= 2026-01-01`
-   - Auto-peuplée via script
+2. **Collection Lifestyle** (`collection-lifestyle`)
+   - Lunettes lifestyle et quotidien
+   - Produits: Zurix, Veil, Dusk Classic, Infinity, MR1 x Infinity, Dragon
+   - URL: `/collections/collection-lifestyle`
 
-3. **Prismatic Collection** (`collection-prismatic`)
-   - Produits avec technologie Prismatic™
-   - Aura, Aura Audio
+3. **Collection Sport & Performance** (`collection-sport`)
+   - Lunettes optimisées sport haute performance
+   - Produits: Shield, Music Shield, Aroza, Falcon
+   - URL: `/collections/collection-sport`
 
-4. **Sport Performance** (`collection-sport`)
-   - Produits optimisés sport
-   - Shield, Music Shield, Aroza, Falcon
+### Collections Marketing (3)
+
+4. **Best-sellers** (`best-sellers`)
+   - Critère: `bestseller_rank ≤ 10`
+   - Auto-peuplée via script `populate-bestsellers-collection.ts`
+   - URL: `/collections/best-sellers`
+
+5. **Nouveautés 2026** (`nouveautes-2026`)
+   - Critère: `created_at >= 2026-01-01`
+   - Auto-peuplée via script `populate-nouveautes-collection.ts`
+   - URL: `/collections/nouveautes-2026`
+
+6. **Soldes & Promotions** (`soldes-promotions`)
+   - Critère: Produits avec discount actif
+   - Gestion manuelle via dashboard admin
+   - URL: `/collections/soldes-promotions`
+
+### Collections Sport (7) ⭐ NOUVEAU
+
+Créées via script `create-sport-collections.ts` pour cibler des sportifs spécifiques.
+
+7. **Running & Course à Pied** (`running`)
+   - Sports: Running, Jogging, Marathon, Trail running
+   - Features: Légères, Anti-buée, Stabilité maximale, Verres auto-ajustables
+   - Produits: Shield, Music Shield, Falcon
+   - URL: `/collections/running`
+
+8. **Cyclisme & Vélo** (`cycling`)
+   - Sports: Road cycling, VTT, Gravel, Cyclotourisme
+   - Features: Ajustement automatique luminosité, Protection UV, Aérodynamique
+   - Produits: Shield, Music Shield, Aroza
+   - URL: `/collections/cycling`
+
+9. **Trail & Outdoor** (`trail-outdoor`)
+   - Sports: Trail, Hiking, Trekking, Alpinisme, Randonnée
+   - Features: Résistance impact, Protection intégrale, Tous terrains
+   - Produits: Shield, Aroza, Falcon, Prime
+   - URL: `/collections/trail-outdoor`
+
+10. **Sports Nautiques** (`water-sports`)
+    - Sports: Voile, Kitesurf, SUP, Kayak, Triathlon
+    - Features: Étanche IPX4, Anti-corrosion, Résistant sueur
+    - Produits: Shield, Music Shield
+    - URL: `/collections/water-sports`
+
+11. **Ski & Sports de Neige** (`ski-snow`)
+    - Sports: Ski alpin, Snowboard, Ski de fond, Freeride
+    - Features: Anti-buée permanent, Haute altitude, Protection neige
+    - Produits: Aroza
+    - URL: `/collections/ski-snow`
+
+12. **Urbain & Quotidien** (`urban-lifestyle`)
+    - Usage: Casual, Ville, Marche, Quotidien
+    - Features: Design élégant, Confort longue durée, Technologie discrète
+    - Produits: Aura, Aura Audio, Zurix, Veil, Dusk Classic, Infinity, MR1 x Infinity, Dragon
+    - URL: `/collections/urban-lifestyle`
+
+13. **Lunettes Audio** (`audio-sunglasses`)
+    - Features: Bluetooth 5.0, Audio spatial, Microphone intégré, Autonomie longue
+    - Produits: Aura Audio, Music Shield
+    - URL: `/collections/audio-sunglasses`
+
+### Architecture Multi-Collections
+
+**IMPORTANT**: Un produit peut être dans **plusieurs collections** simultanément grâce aux tags sport.
+
+Exemple: **Music Shield** est dans:
+- Collection thématique: `Sport & Performance`
+- Collection sport: `Running`, `Cycling`, `Water Sports`
+- Collection marketing: `Best-sellers` (si bestseller_rank ≤ 10)
+- Collection audio: `Lunettes Audio`
+
+Cette architecture permet un **merchandising multi-dimensionnel** flexible.
 
 ---
 
@@ -347,10 +476,22 @@ ORDER BY rank;
 
 | Fichier | Description |
 |---------|-------------|
-| [MIGRATION_TECH_TAXONOMY.md](./MIGRATION_TECH_TAXONOMY.md) | Guide complet de migration |
-| [migrate-to-tech-taxonomy.ts](../../src/scripts/migrate-to-tech-taxonomy.ts) | Script de migration exécuté |
-| [validate-taxonomy-after-migration.ts](../../src/scripts/validate-taxonomy-after-migration.ts) | Script de validation |
-| [assign-product-tags.ts](../../src/scripts/assign-product-tags.ts) | Auto-assignation tags |
+| **Documentation** | |
+| [MIGRATION_TECH_TAXONOMY.md](./MIGRATION_TECH_TAXONOMY.md) | Guide complet de migration v2.0.0 |
+| [CHANGELOG.md](./CHANGELOG.md) | Historique complet des migrations |
+| [INDEX.md](./INDEX.md) | Index navigation de la documentation |
+| **Scripts Backend** | |
+| [migrate-to-tech-taxonomy.ts](../../src/scripts/migrate-to-tech-taxonomy.ts) | Migration v2.0.0 par technologie (exécuté) |
+| [create-sport-collections.ts](../../src/scripts/create-sport-collections.ts) | Création 7 collections sport (exécuté) |
+| [assign-sport-tags.ts](../../src/scripts/assign-sport-tags.ts) | Assignation tags multi-sport (exécuté) |
+| [validate-taxonomy-after-migration.ts](../../src/scripts/validate-taxonomy-after-migration.ts) | Validation structure taxonomie |
+| [assign-product-tags.ts](../../src/scripts/assign-product-tags.ts) | Auto-assignation tags technologie/features |
+| **Configuration** | |
+| [taxonomy.ts](../../src/config/taxonomy.ts) | IDs centralisés (categories + collections) |
+| **Frontend** | |
+| [collections/[handle]/page.tsx](../../../mytechgear-frontend/src/app/collections/[handle]/page.tsx) | Landing pages collections sport |
+| [admin/categories/page.tsx](../../../mytechgear-frontend/src/app/admin/categories/page.tsx) | Dashboard admin catégories |
+| [admin/collections/page.tsx](../../../mytechgear-frontend/src/app/admin/collections/page.tsx) | Dashboard admin collections |
 
 ### Commandes Utiles
 
