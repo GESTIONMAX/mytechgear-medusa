@@ -42,6 +42,43 @@ Visit the [Quickstart Guide](https://docs.medusajs.com/learn/installation) to se
 
 Visit the [Docs](https://docs.medusajs.com/learn/installation#get-started) to learn more about our system requirements.
 
+## MyTechGear Custom Features
+
+This backend runs in **API-only mode** (no native Medusa admin UI). All management is done via the custom Next.js dashboard.
+
+### API Landing Page
+
+**Endpoint**: `GET /info`
+
+When you click on the API domain in the dashboard, you'll see a helpful landing page listing all available endpoints:
+- `/health` - Liveness check
+- `/ready` - Readiness check
+- `/store/*` - Store API (products, collections, categories)
+- `/admin/*` - Admin API (requires auth)
+- `/_diagnostics` - Debug diagnostics (if enabled)
+
+**Documentation**: [src/api/info/README.md](src/api/info/README.md)
+
+### Health & Diagnostics
+
+- `GET /health` - Fast liveness check (no DB query)
+- `GET /ready` - Readiness check (verifies DB connection)
+- `GET /_diagnostics` - Full diagnostics (requires `DEBUG_KEY` header)
+
+### Configuration
+
+Copy `.env.example` to `.env` and configure:
+
+```bash
+# API Configuration
+API_BASE_URL=http://localhost:9000
+DISABLE_MEDUSA_ADMIN=true  # API-only mode
+
+# Diagnostics (dev only)
+DIAGNOSTICS_ENABLED=true
+DEBUG_KEY=your-secret-key-here
+```
+
 ## What is Medusa
 
 Medusa is a set of commerce modules and tools that allow you to build rich, reliable, and performant commerce applications without reinventing core commerce logic. The modules can be customized and used to build advanced ecommerce stores, marketplaces, or any product that needs foundational commerce primitives. All modules are open-source and freely available on npm.
