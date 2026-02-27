@@ -32,6 +32,8 @@ interface EmailData {
  * Utilise l'API Brevo (ex-Sendinblue) pour l'envoi
  */
 export default class BrevoNotificationService {
+  static identifier = "brevo"
+
   protected logger_: Logger
   protected apiKey_: string
   protected senderEmail_: string

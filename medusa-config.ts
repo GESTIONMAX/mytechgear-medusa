@@ -17,23 +17,39 @@ module.exports = defineConfig({
     }
   },
   modules: [
-    // ─── Paiement Stripe ─────────────────────────────────────────────────────
+    // ─── Paiement : provider Stripe (dans le module payment) ─────────────────
     {
-      resolve: "@medusajs/payment-stripe",
+      resolve: "@medusajs/medusa/payment",
       options: {
-        apiKey: process.env.STRIPE_SECRET_KEY,
-        webhookSecret: process.env.STRIPE_WEBHOOK_SECRET,
-        // Options additionnelles pour la France
-        captureMethod: "automatic", // Capture automatique du paiement
-      }
+        providers: [
+          {
+            resolve: "@medusajs/payment-stripe",
+            id: "stripe",
+            options: {
+              apiKey: process.env.STRIPE_SECRET_KEY,
+              webhookSecret: process.env.STRIPE_WEBHOOK_SECRET,
+              captureMethod: "automatic",
+            },
+          },
+        ],
+      },
     },
+    // ─── Notification : provider Brevo (dans le module notification) ──────────
     {
-      resolve: "./src/modules/brevo-notification",
+      resolve: "@medusajs/medusa/notification",
       options: {
-        apiKey: process.env.BREVO_API_KEY,
-        senderEmail: process.env.BREVO_SENDER_EMAIL || "contact@mytechgear.fr",
-        senderName: process.env.BREVO_SENDER_NAME || "MyTechGear",
-      }
-    }
+        providers: [
+          {
+            resolve: "./src/modules/brevo-notification",
+            id: "brevo",
+            options: {
+              apiKey: process.env.BREVO_API_KEY,
+              senderEmail: process.env.BREVO_SENDER_EMAIL || "contact@mytechgear.fr",
+              senderName: process.env.BREVO_SENDER_NAME || "MyTechGear",
+            },
+          },
+        ],
+      },
+    },
   ]
 })
