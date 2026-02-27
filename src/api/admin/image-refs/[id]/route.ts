@@ -91,7 +91,7 @@ export async function PUT(
     };
 
     // Update refs array
-    const refs = product.metadata.media.refs;
+    const refs = (product.metadata as any).media.refs;
     const updatedRefs = refs.map((ref: any) =>
       ref.id === imageRefId ? updatedImageRef : ref
     );
@@ -157,7 +157,7 @@ export async function DELETE(
     await deleteImage(imageRef);
 
     // Remove from refs array
-    const updatedRefs = product.metadata.media.refs.filter(
+    const updatedRefs = (product.metadata as any).media.refs.filter(
       (ref: any) => ref.id !== imageRefId
     );
 

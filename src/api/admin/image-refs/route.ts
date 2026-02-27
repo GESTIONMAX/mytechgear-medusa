@@ -82,7 +82,7 @@ export async function POST(
     }
 
     // Get existing refs
-    const existingRefs = product.metadata?.media?.refs || [];
+    const existingRefs = (product.metadata as any)?.media?.refs || [];
 
     // Determine sort order
     const sortOrder = body.sortOrder !== undefined
@@ -167,7 +167,7 @@ export async function GET(
       } as any);
     }
 
-    const imageRefs = product.metadata?.media?.refs || [];
+    const imageRefs = (product.metadata as any)?.media?.refs || [];
 
     return res.status(200).json({
       imageRefs: imageRefs.sort((a: any, b: any) => a.sortOrder - b.sortOrder),

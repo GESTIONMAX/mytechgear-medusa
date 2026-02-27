@@ -74,7 +74,7 @@ export function validateImageFile(options: {
   }
 
   // Check MIME type
-  if (!IMAGE_REF_CONSTRAINTS.ALLOWED_MIME_TYPES.includes(mimeType)) {
+  if (!(IMAGE_REF_CONSTRAINTS.ALLOWED_MIME_TYPES as readonly string[]).includes(mimeType)) {
     throw new Error(
       `Invalid MIME type: ${mimeType}. ` +
       `Allowed: ${IMAGE_REF_CONSTRAINTS.ALLOWED_MIME_TYPES.join(', ')}`
@@ -83,7 +83,7 @@ export function validateImageFile(options: {
 
   // Check extension
   const ext = getFileExtension(filename);
-  if (!IMAGE_REF_CONSTRAINTS.ALLOWED_EXTENSIONS.includes(ext)) {
+  if (!(IMAGE_REF_CONSTRAINTS.ALLOWED_EXTENSIONS as readonly string[]).includes(ext)) {
     throw new Error(
       `Invalid file extension: .${ext}. ` +
       `Allowed: ${IMAGE_REF_CONSTRAINTS.ALLOWED_EXTENSIONS.join(', ')}`
@@ -243,7 +243,7 @@ export function findImageRefById(
   product: any,
   imageRefId: string
 ): ImageRef | null {
-  const refs = product.metadata?.media?.refs || [];
+  const refs = (product.metadata as any)?.media?.refs || [];
   return refs.find((ref: ImageRef) => ref.id === imageRefId) || null;
 }
 
@@ -263,7 +263,7 @@ export async function findProductByImageRefId(
   const products = await productModuleService.listProducts({});
 
   for (const product of products) {
-    const refs = product.metadata?.media?.refs || [];
+    const refs = (product.metadata as any)?.media?.refs || [];
     const imageRef = refs.find((ref: ImageRef) => ref.id === imageRefId);
     if (imageRef) {
       return { product, imageRef };
