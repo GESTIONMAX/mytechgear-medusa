@@ -4,6 +4,10 @@
  * Ce module empêche l'exécution de scripts contre une base de données locale.
  * La seule source de vérité autorisée est la DB distante accessible via tunnel SSH (GMDEV).
  *
+ * Exceptions:
+ *   - Tunnels SSH (localhost avec port non-standard comme 5433) sont PERMIS
+ *   - DB locale sur port 5432 est INTERDITE
+ *
  * Usage:
  *   import { assertRemoteDatabase } from '../utils/assert-remote-db';
  *   assertRemoteDatabase(); // Au début du script
@@ -11,7 +15,8 @@
 
 /**
  * Vérifie que DATABASE_URL pointe vers une DB distante (non locale)
- * @throws Error si la DB est locale
+ * ou vers un tunnel SSH valide
+ * @throws Error si la DB est une vraie DB locale
  */
 export function assertRemoteDatabase(): void {
   const databaseUrl = process.env.DATABASE_URL;
@@ -23,41 +28,45 @@ export function assertRemoteDatabase(): void {
     );
   }
 
-  // Patterns interdits (DB locale)
-  const forbiddenPatterns = [
-    'localhost',
-    '127.0.0.1',
-    '::1',
-    '@localhost:',
-    '@127.0.0.1:',
-    '@::1:',
-  ];
+  // Parse the URL to extract host and port
+  try {
+    const urlObj = new URL(databaseUrl.replace('postgres://', 'http://'));
+    const host = urlObj.hostname.toLowerCase();
+    const port = urlObj.port || '5432'; // Default PostgreSQL port
 
-  const lowercaseUrl = databaseUrl.toLowerCase();
+    // Check for local hosts
+    const isLocalHost = ['localhost', '127.0.0.1', '::1'].includes(host);
 
-  for (const pattern of forbiddenPatterns) {
-    if (lowercaseUrl.includes(pattern)) {
-      throw new Error(
-        `❌ Local database is FORBIDDEN in this project!\n\n` +
-        `DATABASE_URL contains: "${pattern}"\n\n` +
-        `This project uses a SINGLE SOURCE OF TRUTH:\n` +
-        `  → Remote database via GMDEV tunnel (SSH)\n\n` +
-        `To connect:\n` +
-        `  1. Open GMDEV tunnel: ssh -L 5432:localhost:5432 your-remote-host\n` +
-        `  2. Use DATABASE_URL pointing to the tunnel\n\n` +
-        `NEVER run scripts against a local DB.`
-      );
+    if (isLocalHost) {
+      // FORBIDDEN: Local DB on standard port (real local database)
+      if (port === '5432') {
+        throw new Error(
+          `❌ Local database on port 5432 is FORBIDDEN!\n\n` +
+          `DATABASE_URL: ${host}:${port}\n\n` +
+          `This project uses a SINGLE SOURCE OF TRUTH:\n` +
+          `  → Remote database via SSH tunnel\n\n` +
+          `To connect via SSH tunnel:\n` +
+          `  1. Open tunnel: ssh -L 5433:localhost:5432 your-remote-host\n` +
+          `  2. Use DATABASE_URL: postgres://user:pass@localhost:5433/dbname\n\n` +
+          `Note: Use a non-standard port (5433, 5434, etc.) to indicate SSH tunnel.`
+        );
+      }
+
+      // ALLOWED: SSH tunnel (localhost with non-standard port)
+      console.log(`🔐 SSH Tunnel detected: ${host}:${port}`);
+      console.log(`⚠️  Assuming this forwards to remote database via SSH.`);
+      console.log(`   If this is a real local DB, STOP NOW!\n`);
+      return;
     }
-  }
 
-  // Vérification supplémentaire : port 5432/5433 avec host local
-  const localPortPattern = /@(localhost|127\.0\.0\.1|::1):543[23]/i;
-  if (localPortPattern.test(databaseUrl)) {
+    // Remote host - all good
+    console.log(`✅ Remote database: ${host}:${port}`);
+
+  } catch (error: any) {
     throw new Error(
-      `❌ Local database detected (port 5432/5433 on localhost)!\n\n` +
-      `Use the remote database via GMDEV tunnel instead.`
+      `❌ Invalid DATABASE_URL format!\n` +
+      `Error: ${error.message}\n\n` +
+      `Expected format: postgres://user:pass@host:port/database`
     );
   }
-
-  console.log('✅ Remote database verified (non-local)');
 }
