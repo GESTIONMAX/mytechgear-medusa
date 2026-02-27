@@ -6,6 +6,60 @@ const { loadEnv, defineConfig } = require('@medusajs/framework/utils')
 
 loadEnv(process.env.NODE_ENV || 'development', process.cwd())
 
+// ─── Helper: Check if API key is configured ──────────────────────────────────
+function isConfigured(envVar) {
+  return !!envVar && envVar !== 'REPLACE_ME' && envVar.trim() !== '';
+}
+
+// ─── Build modules array dynamically ─────────────────────────────────────────
+const modules = [];
+
+// Stripe Payment (only if configured)
+if (isConfigured(process.env.STRIPE_SECRET_KEY)) {
+  modules.push({
+    resolve: "@medusajs/medusa/payment",
+    options: {
+      providers: [
+        {
+          resolve: "@medusajs/payment-stripe",
+          id: "stripe",
+          options: {
+            apiKey: process.env.STRIPE_SECRET_KEY,
+            webhookSecret: process.env.STRIPE_WEBHOOK_SECRET,
+            captureMethod: "automatic",
+          },
+        },
+      ],
+    },
+  });
+  console.log('✅ Stripe payment module enabled');
+} else {
+  console.warn('⚠️  Stripe payment module disabled (STRIPE_SECRET_KEY not configured)');
+}
+
+// Brevo Notification (only if configured)
+if (isConfigured(process.env.BREVO_API_KEY)) {
+  modules.push({
+    resolve: "@medusajs/medusa/notification",
+    options: {
+      providers: [
+        {
+          resolve: "./src/modules/brevo-notification",
+          id: "brevo",
+          options: {
+            apiKey: process.env.BREVO_API_KEY,
+            senderEmail: process.env.BREVO_SENDER_EMAIL || "contact@mytechgear.fr",
+            senderName: process.env.BREVO_SENDER_NAME || "MyTechGear",
+          },
+        },
+      ],
+    },
+  });
+  console.log('✅ Brevo notification module enabled');
+} else {
+  console.warn('⚠️  Brevo notification module disabled (BREVO_API_KEY not configured)');
+}
+
 module.exports = defineConfig({
   admin: {
     disable: process.env.DISABLE_MEDUSA_ADMIN === 'true',
@@ -20,40 +74,5 @@ module.exports = defineConfig({
       cookieSecret: process.env.COOKIE_SECRET || "supersecret",
     }
   },
-  modules: [
-    // ─── Paiement : provider Stripe (dans le module payment) ─────────────────
-    {
-      resolve: "@medusajs/medusa/payment",
-      options: {
-        providers: [
-          {
-            resolve: "@medusajs/payment-stripe",
-            id: "stripe",
-            options: {
-              apiKey: process.env.STRIPE_SECRET_KEY,
-              webhookSecret: process.env.STRIPE_WEBHOOK_SECRET,
-              captureMethod: "automatic",
-            },
-          },
-        ],
-      },
-    },
-    // ─── Notification : provider Brevo (dans le module notification) ──────────
-    {
-      resolve: "@medusajs/medusa/notification",
-      options: {
-        providers: [
-          {
-            resolve: "./src/modules/brevo-notification",
-            id: "brevo",
-            options: {
-              apiKey: process.env.BREVO_API_KEY,
-              senderEmail: process.env.BREVO_SENDER_EMAIL || "contact@mytechgear.fr",
-              senderName: process.env.BREVO_SENDER_NAME || "MyTechGear",
-            },
-          },
-        ],
-      },
-    },
-  ]
+  modules
 })
