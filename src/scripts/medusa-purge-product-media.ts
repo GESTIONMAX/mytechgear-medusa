@@ -3,6 +3,7 @@ import {
   ContainerRegistrationKeys,
   Modules,
 } from "@medusajs/framework/utils"
+import { assertRemoteDatabase } from '../utils/assert-remote-db'
 
 /**
  * Script to purge all product and variant media references
@@ -101,6 +102,9 @@ async function purgeVariantMedia(
 // ─── Main Script ──────────────────────────────────────────────────────────────
 
 export default async function purgeProductMedia({ container }: ExecArgs) {
+  // Guard: Refuse local DB usage
+  assertRemoteDatabase()
+
   const logger = container.resolve(ContainerRegistrationKeys.LOGGER)
   const productModuleService = container.resolve(Modules.PRODUCT)
 

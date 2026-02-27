@@ -29,6 +29,7 @@ build
 !.yarn/sdks
 !.yarn/versions
 
-.medusaexports/
+.medusa/
+exports/
 backups/
 .env.backup-*

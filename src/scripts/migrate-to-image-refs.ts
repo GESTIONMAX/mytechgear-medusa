@@ -22,6 +22,7 @@ import * as path from "path";
 import axios from "axios";
 import { uploadImage, syncProductImages } from "../lib/image-ref";
 import { ImageRef } from "../types/image-ref";
+import { assertRemoteDatabase } from '../utils/assert-remote-db';
 
 // Configuration
 const DRY_RUN = process.env.DRY_RUN !== "false"; // Default: true (safe)
@@ -285,6 +286,9 @@ function printSummary() {
  * Main migration function
  */
 export default async function migrate({ container }: any) {
+  // Guard: Refuse local DB usage
+  assertRemoteDatabase();
+
   console.log("=".repeat(60));
   console.log("🚀 ImageRef Migration Script");
   console.log("=".repeat(60));

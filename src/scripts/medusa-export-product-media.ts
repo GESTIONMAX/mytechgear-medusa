@@ -5,6 +5,7 @@ import {
 } from "@medusajs/framework/utils"
 import fs from 'fs'
 import path from 'path'
+import { assertRemoteDatabase } from '../utils/assert-remote-db'
 
 /**
  * Script to export product media snapshot before purging
@@ -149,6 +150,9 @@ function generateFilename(): string {
 // ─── Main Script ──────────────────────────────────────────────────────────────
 
 export default async function exportProductMedia({ container }: ExecArgs) {
+  // Guard: Refuse local DB usage
+  assertRemoteDatabase()
+
   const logger = container.resolve(ContainerRegistrationKeys.LOGGER)
   const productModuleService = container.resolve(Modules.PRODUCT)
 
