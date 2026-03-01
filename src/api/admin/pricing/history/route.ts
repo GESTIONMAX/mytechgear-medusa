@@ -10,6 +10,7 @@ import { MedusaRequest, MedusaResponse } from "@medusajs/framework/http";
 import { Modules } from "@medusajs/framework/utils";
 import { authenticateAdmin } from "../../../middlewares";
 import { formatPrice } from "../../../../lib/pricing";
+import { getPriceHistory, getBulkPriceHistory } from "../../../../lib/price-history";
 import type { SupportedCurrency, PriceAuditTrail, PriceHistory } from "../../../../types/pricing";
 
 // Apply authentication middleware
@@ -61,17 +62,31 @@ export async function GET(
 
     // If variant_id provided, return audit trail for that variant
     if (variant_id) {
-      // Fetch price history from database
-      // Note: In production, store this in a separate price_history table
-      const history: PriceHistory[] = [];
+      const limitNum = parseInt(limit as string, 10) || 50;
 
-      // Mock data for demonstration
-      // In production, query from database with:
-      // SELECT * FROM price_history WHERE variant_id = ? ORDER BY changed_at DESC
+      // Fetch price history from variant metadata
+      const history = await getPriceHistory(productService, variant_id as string, {
+        currency_code: currency_code as string | undefined,
+        limit: limitNum,
+      });
+
+      // Fetch variant title
+      let variant_title = 'Unknown Variant';
+      try {
+        const variants = await productService.listVariants(
+          { id: variant_id },
+          { select: ['id', 'title'] }
+        );
+        if (variants && variants.length > 0) {
+          variant_title = variants[0].title || 'Untitled Variant';
+        }
+      } catch (err) {
+        console.error('[Price History] Failed to fetch variant title:', err);
+      }
 
       const auditTrail: PriceAuditTrail = {
         variant_id: variant_id as string,
-        variant_title: 'Variant',  // Placeholder - fetch from product service in production
+        variant_title,
         history,
         total_changes: history.length,
       };
@@ -85,14 +100,12 @@ export async function GET(
     const daysNum = parseInt(days as string, 10) || 30;
     const limitNum = parseInt(limit as string, 10) || 50;
 
-    // Fetch recent price changes
-    // SELECT * FROM price_history
-    // WHERE changed_at > NOW() - INTERVAL ? DAY
-    // AND (currency_code = ? OR ? IS NULL)
-    // ORDER BY changed_at DESC
-    // LIMIT ?
-
-    const history: PriceHistory[] = [];
+    // Fetch recent price changes from all variants
+    const history = await getBulkPriceHistory(productService, {
+      currency_code: currency_code as string | undefined,
+      days: daysNum,
+      limit: limitNum,
+    });
 
     const formattedHistory = history.map(h => ({
       ...h,

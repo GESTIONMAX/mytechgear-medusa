@@ -18,9 +18,12 @@ import { PRICING_CONSTRAINTS } from '../types/pricing'
 
 /**
  * Validate price amount and currency
- * @throws Error if validation fails
+ * @returns Object with validation result and any errors
  */
-export function validatePrice(amount: number, currency: string): void {
+export function validatePrice(
+  amount: number,
+  currency: string
+): { valid: boolean; errors: PriceValidationError[] } {
   const errors: PriceValidationError[] = []
 
   // Validate currency
@@ -49,8 +52,9 @@ export function validatePrice(amount: number, currency: string): void {
     })
   }
 
-  if (errors.length > 0) {
-    throw new Error(JSON.stringify({ errors }))
+  return {
+    valid: errors.length === 0,
+    errors,
   }
 }
 
@@ -135,7 +139,7 @@ export async function getVariantPrices(
       }
     )
 
-    if (!result?.calculated_price?.price_list_id) {
+    if (!result?.calculated_price?.price_set_id) {
       return []
     }
 
@@ -160,7 +164,10 @@ export async function setVariantPrice(
   currency: string,
   amount: number
 ): Promise<Price> {
-  validatePrice(amount, currency)
+  const validation = validatePrice(amount, currency)
+  if (!validation.valid) {
+    throw new Error(JSON.stringify({ errors: validation.errors }))
+  }
 
   const priceSetId = await ensurePriceSet(pricingService, variantId)
 
@@ -203,7 +210,10 @@ export async function bulkSetVariantPrices(
   const existingPrices = await getVariantPrices(pricingService, variantId)
 
   for (const priceInput of prices) {
-    validatePrice(priceInput.amount, priceInput.currency_code)
+    const validation = validatePrice(priceInput.amount, priceInput.currency_code)
+    if (!validation.valid) {
+      throw new Error(JSON.stringify({ errors: validation.errors }))
+    }
 
     const existing = existingPrices.find(
       p => p.currency_code === priceInput.currency_code.toLowerCase()

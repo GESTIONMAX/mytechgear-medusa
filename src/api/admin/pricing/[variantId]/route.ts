@@ -15,6 +15,7 @@ import {
   deleteVariantPrices,
   formatPrice,
 } from "../../../../lib/pricing";
+import { addPriceHistory } from "../../../../lib/price-history";
 import type {
   Price,
   PriceCreateInput,
@@ -151,11 +152,33 @@ export async function POST(
       }
     }
 
+    // Fetch old prices before updating (for history tracking)
+    const oldPrices = await getVariantPrices(pricingService, variantId);
+    const oldPricesMap = new Map(
+      oldPrices.map(p => [p.currency_code, p.amount])
+    );
+
     // Bulk set prices
     const stats = await bulkSetVariantPrices(pricingService, variantId, prices);
 
     // Fetch updated prices
     const updatedPrices = await getVariantPrices(pricingService, variantId);
+
+    // Record price history for each changed price
+    for (const price of prices) {
+      const oldAmount = oldPricesMap.get(price.currency_code) || null;
+
+      // Only record if price actually changed
+      if (oldAmount !== price.amount) {
+        await addPriceHistory(productService, variantId, {
+          currency_code: price.currency_code,
+          old_amount: oldAmount,
+          new_amount: price.amount,
+          changed_by: (req as any).user?.id || 'admin',
+          reason: 'Price updated via admin dashboard',
+        });
+      }
+    }
 
     // Add formatted amounts
     const formattedPrices = updatedPrices.map(price => ({

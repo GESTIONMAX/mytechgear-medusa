@@ -8,7 +8,7 @@
 import { MedusaRequest, MedusaResponse } from "@medusajs/framework/http";
 import { Modules } from "@medusajs/framework/utils";
 import { authenticateAdmin } from "../../../middlewares";
-import { bulkSetVariantPrices, formatPrice } from "../../../../lib/pricing";
+import { bulkSetVariantPrices, formatPrice, listVariantsWithPrices } from "../../../../lib/pricing";
 import type {
   PriceImportRow,
   PriceExportRow,
@@ -145,12 +145,39 @@ export async function POST(
           let variantId = row.variant_id;
 
           if (!variantId && row.sku) {
-            // In production, query variant by SKU
-            // For now, skip rows without variant_id
+            // Query variant by SKU
+            try {
+              const variants = await productService.listVariants(
+                { sku: row.sku },
+                { take: 1 }
+              );
+
+              if (variants && variants.length > 0) {
+                variantId = variants[0].id;
+              } else {
+                result.errors.push({
+                  row: rows.indexOf(row) + 2,
+                  sku: row.sku,
+                  error: `Variant not found for SKU: ${row.sku}`,
+                });
+                result.failed++;
+                continue;
+              }
+            } catch (lookupError: any) {
+              result.errors.push({
+                row: rows.indexOf(row) + 2,
+                sku: row.sku,
+                error: `SKU lookup failed: ${lookupError.message}`,
+              });
+              result.failed++;
+              continue;
+            }
+          }
+
+          if (!variantId) {
             result.errors.push({
               row: rows.indexOf(row) + 2,
-              sku: row.sku,
-              error: `SKU lookup not implemented - use variant_id`,
+              error: 'Missing both variant_id and sku',
             });
             result.failed++;
             continue;
@@ -220,25 +247,52 @@ export async function GET(
     const productService = req.scope.resolve(Modules.PRODUCT);
     const { product_id, currency_code, region_id } = req.query;
 
-    // Fetch variants - simplified for now
-    // In production, use proper variant listing with filters
-    const variants: any[] = [];  // Placeholder
+    // Fetch variants with prices using our pricing lib
+    const variantsWithPrices = await listVariantsWithPrices(
+      productService,
+      pricingService,
+      {
+        product_id: product_id as string | undefined,
+        currency_code: currency_code as string | undefined,
+        offset: 0,
+        limit: 5000,  // Export up to 5000 variants
+      }
+    );
 
-    // Build CSV
+    // Build CSV rows
     const rows: PriceExportRow[] = [];
 
-    for (const variant of variants) {
-      // Fetch prices for variant
-      // Note: In production, use getVariantPrices from pricing lib
-      rows.push({
-        variant_id: variant.id,
-        sku: variant.sku || '',
-        variant_title: variant.title,
-        product_title: variant.product?.title || '',
-        currency_code: currency_code as string || 'eur',
-        amount: 0,  // Placeholder - fetch from pricing service
-        region_id: region_id as string,
-      });
+    for (const variant of variantsWithPrices) {
+      // If currency filter is specified, only export that currency
+      const pricesToExport = currency_code
+        ? variant.prices.filter(p => p.currency_code === (currency_code as string).toLowerCase())
+        : variant.prices;
+
+      if (pricesToExport.length === 0) {
+        // Include variant even if it has no prices (for easy import later)
+        rows.push({
+          variant_id: variant.id,
+          sku: variant.sku || '',
+          variant_title: variant.title,
+          product_title: variant.product_title || '',
+          currency_code: currency_code as string || 'eur',
+          amount: 0,
+          region_id: region_id as string,
+        });
+      } else {
+        // Create one row per currency
+        for (const price of pricesToExport) {
+          rows.push({
+            variant_id: variant.id,
+            sku: variant.sku || '',
+            variant_title: variant.title,
+            product_title: variant.product_title || '',
+            currency_code: price.currency_code,
+            amount: price.amount,
+            region_id: region_id as string,
+          });
+        }
+      }
     }
 
     // Generate CSV
