@@ -122,3 +122,65 @@ export interface PriceDeleteResponse {
   variant_id: string
   count: number
 }
+
+/**
+ * Phase 2: Regional Pricing & Audit Trail
+ */
+
+export interface RegionalPrice extends Price {
+  region_id: string
+  region_name?: string
+  is_override: boolean  // true if overrides default price
+}
+
+export interface PriceHistory {
+  id: string
+  variant_id: string
+  currency_code: string
+  old_amount: number | null
+  new_amount: number
+  region_id?: string
+  changed_by?: string  // Admin user ID
+  changed_at: string
+  reason?: string
+}
+
+export interface PriceAuditTrail {
+  variant_id: string
+  variant_title?: string
+  history: PriceHistory[]
+  total_changes: number
+}
+
+/**
+ * CSV Import/Export
+ */
+
+export interface PriceImportRow {
+  variant_id?: string
+  sku?: string  // Alternative to variant_id
+  currency_code: string
+  amount: number
+  region_id?: string
+  min_quantity?: number
+  max_quantity?: number
+}
+
+export interface PriceExportRow extends PriceImportRow {
+  variant_id: string
+  variant_title: string
+  product_title: string
+  current_amount?: number
+}
+
+export interface ImportResult {
+  total_rows: number
+  successful: number
+  failed: number
+  errors: Array<{
+    row: number
+    variant_id?: string
+    sku?: string
+    error: string
+  }>
+}
