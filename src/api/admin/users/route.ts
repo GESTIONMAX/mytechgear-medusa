@@ -9,6 +9,7 @@ import { MedusaRequest, MedusaResponse } from "@medusajs/framework/http";
 import { authenticateAdmin } from "../../middlewares";
 import { createUser, listUsers } from "../../../lib/user-storage";
 import { validateUserInput } from "../../../lib/auth";
+import { auditUserCreate } from "../../../lib/audit-helpers";
 import type { SafeUser, CreateUserInput } from "../../../types/auth";
 import { UserRole, UserStatus } from "../../../types/auth";
 
@@ -88,6 +89,9 @@ export async function POST(
 
     // Create user
     const user = await createUser(input);
+
+    // Audit log
+    await auditUserCreate(req, user.id, user.email, user.role);
 
     return res.status(201).json({
       user,

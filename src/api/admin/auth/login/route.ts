@@ -11,6 +11,7 @@ import {
   updateUserLastLogin,
 } from "../../../../lib/user-storage";
 import { sanitizeUser, extractIpAddress, extractUserAgent } from "../../../../lib/auth";
+import { auditLogin } from "../../../../lib/audit-helpers";
 import type { LoginInput, AuthResponse } from "../../../../types/auth";
 
 /**
@@ -45,6 +46,9 @@ export async function POST(
 
     // Update last login
     await updateUserLastLogin(user.id);
+
+    // Audit log
+    await auditLogin(req, user.id, user.email, true);
 
     console.log(`[Auth] User logged in: ${user.email}`);
 

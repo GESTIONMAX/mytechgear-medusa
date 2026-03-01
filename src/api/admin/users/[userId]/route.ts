@@ -9,6 +9,7 @@
 import { MedusaRequest, MedusaResponse } from "@medusajs/framework/http";
 import { authenticateAdmin } from "../../../middlewares";
 import { getUserById, updateUser, deleteUser } from "../../../../lib/user-storage";
+import { auditUserUpdate, auditUserDelete } from "../../../../lib/audit-helpers";
 import type { SafeUser, UpdateUserInput } from "../../../../types/auth";
 
 export const middlewares = [authenticateAdmin];
@@ -55,6 +56,9 @@ export async function PUT(
 
     const user = await updateUser(userId, input);
 
+    // Audit log
+    await auditUserUpdate(req, userId, input);
+
     return res.status(200).json({
       user,
       message: 'User updated successfully',
@@ -90,7 +94,14 @@ export async function DELETE(
   try {
     const { userId } = req.params;
 
+    // Get user info before deleting (for audit)
+    const user = await getUserById(userId);
+    const userEmail = user?.email || 'unknown';
+
     await deleteUser(userId);
+
+    // Audit log
+    await auditUserDelete(req, userId, userEmail);
 
     return res.status(200).json({
       message: 'User deleted successfully',

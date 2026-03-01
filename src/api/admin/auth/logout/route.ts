@@ -5,7 +5,8 @@
  */
 
 import { MedusaRequest, MedusaResponse } from "@medusajs/framework/http";
-import { revokeSession } from "../../../../lib/user-storage";
+import { revokeSession, getSessionByToken } from "../../../../lib/user-storage";
+import { auditLogout } from "../../../../lib/audit-helpers";
 
 /**
  * POST /admin/auth/logout
@@ -25,8 +26,16 @@ export async function POST(
 
     const token = authHeader.substring(7);
 
+    // Get session to audit log before revoking
+    const session = await getSessionByToken(token);
+
     // Revoke session
     await revokeSession(token);
+
+    // Audit log
+    if (session) {
+      await auditLogout(req, session.user_id);
+    }
 
     console.log('[Auth] User logged out');
 
