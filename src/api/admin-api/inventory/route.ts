@@ -1,7 +1,7 @@
 /**
- * API Keys API - Use Medusa services directly
+ * Inventory API - List inventory items
  *
- * GET /admin-api/api-keys - List API keys using Medusa service
+ * GET /admin-api/inventory - List all inventory items
  */
 
 import { MedusaRequest, MedusaResponse } from "@medusajs/framework/http";
@@ -11,22 +11,20 @@ import { authenticateAdmin } from "../../middlewares";
 export const middlewares = [authenticateAdmin];
 
 /**
- * GET /admin-api/api-keys
- * List API keys using Medusa service
+ * GET /admin-api/inventory
+ * List inventory items
  */
 export async function GET(
   req: MedusaRequest,
   res: MedusaResponse
 ) {
   try {
-    const apiKeyService = req.scope.resolve(Modules.API_KEY);
+    const inventoryService = req.scope.resolve(Modules.INVENTORY);
 
-    // Parse query params
     const limit = req.query?.limit ? parseInt(req.query.limit as string) : 50;
     const offset = req.query?.offset ? parseInt(req.query.offset as string) : 0;
 
-    // Fetch API keys
-    const apiKeys = await apiKeyService.listApiKeys(
+    const items = await inventoryService.listInventoryItems(
       {},
       {
         skip: offset,
@@ -34,20 +32,20 @@ export async function GET(
       }
     );
 
-    const count = apiKeys.length;
+    const count = items.length;
 
     return res.status(200).json({
-      api_keys: apiKeys,
+      inventory_items: items,
       count,
       offset,
       limit,
     });
 
   } catch (error: any) {
-    console.error('[API Keys API] Error:', error);
+    console.error('[Inventory API] Error:', error);
     return res.status(500).json({
-      error: 'Failed to fetch API keys',
+      error: 'Failed to fetch inventory items',
       details: error.message
-    } as any);
+    });
   }
 }

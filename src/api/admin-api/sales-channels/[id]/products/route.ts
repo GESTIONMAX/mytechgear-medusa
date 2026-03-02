@@ -70,7 +70,7 @@ export async function POST(
 ) {
   try {
     const { id } = req.params;
-    const { product_ids } = req.body;
+    const { product_ids } = req.body as any;
 
     if (!product_ids || !Array.isArray(product_ids)) {
       return res.status(400).json({

@@ -62,7 +62,7 @@ export async function POST(
 ) {
   try {
     const productService = req.scope.resolve(Modules.PRODUCT);
-    const { title, handle, metadata } = req.body;
+    const { title, handle, metadata } = req.body as any;
 
     // Validate required fields
     if (!title) {

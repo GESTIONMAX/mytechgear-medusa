@@ -51,7 +51,7 @@ export async function POST(
 ) {
   try {
     const fulfillmentService = req.scope.resolve(Modules.FULFILLMENT);
-    const { name, region_id, price_type, amount, metadata } = req.body;
+    const { name, region_id, price_type, amount, metadata } = req.body as any;
 
     // Validate required fields
     if (!name || !region_id || !price_type) {
@@ -67,7 +67,7 @@ export async function POST(
       price_type,
       amount: amount || 0,
       metadata: metadata || {},
-    });
+    } as any);
 
     return res.status(201).json({
       shipping_option: shippingOption,

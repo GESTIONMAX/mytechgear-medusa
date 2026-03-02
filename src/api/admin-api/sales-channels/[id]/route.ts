@@ -58,7 +58,7 @@ export async function POST(
   try {
     const salesChannelService = req.scope.resolve(Modules.SALES_CHANNEL);
     const { id } = req.params;
-    const updateData = req.body;
+    const updateData = req.body as any;
 
     // Update sales channel
     const salesChannel = await salesChannelService.updateSalesChannels(id, updateData);

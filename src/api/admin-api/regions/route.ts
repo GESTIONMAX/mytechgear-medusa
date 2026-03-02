@@ -53,7 +53,7 @@ export async function POST(
 ) {
   try {
     const regionService = req.scope.resolve(Modules.REGION);
-    const { name, currency_code, tax_rate, countries, metadata } = req.body;
+    const { name, currency_code, tax_rate, countries, metadata } = req.body as any;
 
     // Validate required fields
     if (!name || !currency_code || !countries || countries.length === 0) {
@@ -66,14 +66,14 @@ export async function POST(
     const region = await regionService.createRegions({
       name,
       currency_code: currency_code.toLowerCase(),
-      countries: countries.map(code => ({
+      countries: countries.map((code: string) => ({
         iso_2: code.toLowerCase(),
         iso_3: code.toLowerCase(),
         name: code,
       })),
       tax_rate: tax_rate || 0,
       metadata: metadata || {},
-    });
+    } as any);
 
     return res.status(201).json({
       region,

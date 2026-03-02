@@ -145,7 +145,7 @@ export async function POST(
   try {
     const pricingService = req.scope.resolve(Modules.PRICING);
     const productService = req.scope.resolve(Modules.PRODUCT);
-    const { updates } = req.body;
+    const { updates } = req.body as any;
 
     // Validate request
     if (!updates || !Array.isArray(updates) || updates.length === 0) {
