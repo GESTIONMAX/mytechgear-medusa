@@ -1,11 +1,13 @@
 import { ExecArgs } from "@medusajs/framework/types"
 import {
   ContainerRegistrationKeys,
+  Modules,
   ProductStatus,
 } from "@medusajs/framework/utils"
 import {
   createProductsWorkflow,
 } from "@medusajs/medusa/core-flows"
+import { preserveOpsFields, getOpsProtectedFieldsInMetadata } from "../lib/metadata-ownership"
 
 /**
  * Script d'importation des produits Shield et Music Shield de Chamelo
@@ -385,18 +387,85 @@ Contrôle manuel via slider pour une vision optimale pendant l'effort, avec audi
     }
   ]
 
+  // ========================================
+  // SAFE MERGE: Preserve OPS fields
+  // ========================================
+  const productService = container.resolve(Modules.PRODUCT)
+
+  logger.info(`🔍 Checking for existing products...`)
+
+  const productsToImport = []
+
+  for (const productDef of products) {
+    // Check if product already exists
+    const existing = await productService.listProducts(
+      { handle: productDef.handle },
+      { select: ["id", "handle", "title", "metadata"], take: 1 }
+    )
+
+    if (existing.length > 0) {
+      // Product exists - use SAFE MERGE
+      const existingProduct = existing[0]
+      const existingMetadata = existingProduct.metadata || {}
+
+      logger.info(`   ✏️  Updating existing: ${productDef.handle}`)
+
+      // Check for OPS enrichment
+      const opsFields = getOpsProtectedFieldsInMetadata(existingMetadata)
+
+      if (opsFields.length > 0) {
+        logger.info(`      Preserving ${opsFields.length} OPS fields: ${opsFields.join(", ")}`)
+
+        // Safe merge: PIM data + preserved OPS data
+        productDef.metadata = preserveOpsFields(
+          existingMetadata,
+          productDef.metadata,
+          "chamelo-shield-import"
+        ) as any
+      } else {
+        // No OPS enrichment, just add PIM tracking
+        productDef.metadata = {
+          ...productDef.metadata,
+          pim: {
+            last_import: new Date().toISOString(),
+            import_source: "chamelo-shield-import"
+          }
+        } as any
+      }
+
+      // Note: We still pass the product to the workflow for update
+      // The workflow will handle product update logic
+      productsToImport.push(productDef)
+    } else {
+      // New product - add PIM tracking
+      logger.info(`   ➕ Creating new: ${productDef.handle}`)
+
+      productDef.metadata = {
+        ...productDef.metadata,
+        pim: {
+          import_timestamp: new Date().toISOString(),
+          import_source: "chamelo-shield-import"
+        }
+      } as any
+
+      productsToImport.push(productDef)
+    }
+  }
+
   // Importation via workflow Medusa
-  logger.info(`🚀 Importing ${products.length} products...`)
+  logger.info(`\n🚀 Importing ${productsToImport.length} products with safe merge...`)
 
   await createProductsWorkflow(container).run({
     input: {
-      products,
+      products: productsToImport,
     },
   })
 
   logger.info("\n✅ Chamelo Shield import completed!")
-  logger.info(`   Products created: ${products.length}`)
+  logger.info(`   Products processed: ${productsToImport.length}`)
   logger.info(`   - Shield (sans audio): ${products[0].variants.length} variantes`)
   logger.info(`   - Music Shield (avec audio): ${products[1].variants.length} variantes`)
   logger.info(`   Total variants: ${products[0].variants.length + products[1].variants.length}`)
+  logger.info("\n⚠️  Important: Verify OPS fields preserved by running:")
+  logger.info("   npm run medusa exec scripts/verify-post-import.ts -- --backup-file=<path>")
 }
