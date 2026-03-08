@@ -193,7 +193,7 @@ This error occurs when using the OPS endpoint. It means:
 - `inTheBox[]`, `warranty` (object), `faq[]`
 - `seo_description`, `seo_keywords` (after migration)
 
-See [FIELD_OWNERSHIP.md](../../mytechgear-backend/FIELD_OWNERSHIP.md) for complete list.
+See [FIELD_OWNERSHIP.md](./FIELD_OWNERSHIP.md) for complete list.
 
 ## Migration: `seo_keywords` Ownership
 

@@ -54,7 +54,8 @@ export default async function importFromPayload({ container }: ExecArgs) {
 
   // Lire le fichier d'export
   const exportPath = path.join(
-    "/home/gestionmax-aur-lien/CascadeProjects/mytechgear-workspace/mytechgear-backend/exports",
+    process.cwd(),
+    "exports",
     "products-variants-export-2026-02-01.json"
   )
 
