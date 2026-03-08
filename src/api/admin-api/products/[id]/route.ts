@@ -15,6 +15,10 @@ export const middlewares = [authenticateAdmin];
 /**
  * GET /admin-api/products/[id]
  * Get product details by ID
+ *
+ * Query params:
+ * - fields: Comma-separated list of relations to include (e.g., "*options,*options.values,*variants")
+ *   Format: *relationName includes that relation
  */
 export async function GET(
   req: MedusaRequest,
@@ -24,8 +28,31 @@ export async function GET(
     const productService = req.scope.resolve(Modules.PRODUCT);
     const { id } = req.params;
 
+    // Parse fields parameter to determine relations
+    const fieldsParam = req.query?.fields as string | undefined;
+    let relations: string[] = ['variants', 'options', 'options.values', 'images', 'categories', 'collection'];
+
+    if (fieldsParam) {
+      // Parse fields like "*options,*options.values,*variants,*variants.options"
+      const fields = fieldsParam.split(',');
+      const customRelations: string[] = [];
+
+      for (const field of fields) {
+        if (field.startsWith('*')) {
+          // *options.values -> "options.values"
+          const relationPath = field.substring(1);
+          customRelations.push(relationPath);
+        }
+      }
+
+      if (customRelations.length > 0) {
+        // Use custom relations if provided
+        relations = customRelations;
+      }
+    }
+
     const product = await productService.retrieveProduct(id, {
-      relations: ['variants', 'options', 'images', 'categories', 'collection'],
+      relations,
     });
 
     if (!product) {
