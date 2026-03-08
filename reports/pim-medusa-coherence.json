@@ -1,0 +1,294 @@
+{
+  "auditDate": "2026-03-08T10:53:09.620Z",
+  "summary": {
+    "totalPimProducts": 16,
+    "totalMedusaProducts": 16,
+    "conformProducts": 9,
+    "divergentProducts": 7,
+    "missingInMedusa": 0,
+    "orphanInMedusa": 0,
+    "legacyPayloadProducts": 5,
+    "totalIssues": 31,
+    "issuesBloquantes": 24,
+    "issuesGênantes": 7,
+    "issuesCosmetiques": 0,
+    "pricingOk": 0,
+    "pricingIssues": 24
+  },
+  "verdict": "SIGNIFICANT_DIVERGENCE",
+  "issues": [
+    {
+      "severity": "GÊNANT",
+      "type": "DIVERGENCE",
+      "product": "shield",
+      "divergences": [
+        "Variants: 1 vs PIM 6"
+      ]
+    },
+    {
+      "severity": "GÊNANT",
+      "type": "DIVERGENCE",
+      "product": "music-shield",
+      "divergences": [
+        "Variants: 5 vs PIM 6"
+      ]
+    },
+    {
+      "severity": "GÊNANT",
+      "type": "DIVERGENCE",
+      "product": "zurix",
+      "divergences": [
+        "Variants: 1 vs PIM 3"
+      ]
+    },
+    {
+      "severity": "GÊNANT",
+      "type": "DIVERGENCE",
+      "product": "veil",
+      "divergences": [
+        "Variants: 1 vs PIM 3"
+      ]
+    },
+    {
+      "severity": "GÊNANT",
+      "type": "DIVERGENCE",
+      "product": "dusk-classic",
+      "divergences": [
+        "Variants: 1 vs PIM 3"
+      ]
+    },
+    {
+      "severity": "GÊNANT",
+      "type": "DIVERGENCE",
+      "product": "infinity",
+      "divergences": [
+        "Variants: 1 vs PIM 3"
+      ]
+    },
+    {
+      "severity": "GÊNANT",
+      "type": "DIVERGENCE",
+      "product": "aura",
+      "divergences": [
+        "Variants: 1 vs PIM 4"
+      ]
+    },
+    {
+      "severity": "BLOQUANT",
+      "type": "NO_PRICE_SET",
+      "product": "prime",
+      "variant": "LFS-PRI-NBM-FIR",
+      "details": "Aucun price_set_id trouvé pour cette variante"
+    },
+    {
+      "severity": "BLOQUANT",
+      "type": "NO_PRICE_SET",
+      "product": "dragon",
+      "variant": "LFS-DRA-BLKG-CAL",
+      "details": "Aucun price_set_id trouvé pour cette variante"
+    },
+    {
+      "severity": "BLOQUANT",
+      "type": "NO_PRICE_SET",
+      "product": "falcon",
+      "variant": "SPR-FAL-OBS-BLU",
+      "details": "Aucun price_set_id trouvé pour cette variante"
+    },
+    {
+      "severity": "BLOQUANT",
+      "type": "NO_PRICE_SET",
+      "product": "euphoria",
+      "variant": "PRI-EUP-BLC-BLU",
+      "details": "Aucun price_set_id trouvé pour cette variante"
+    },
+    {
+      "severity": "BLOQUANT",
+      "type": "NO_PRICE_SET",
+      "product": "euphoria",
+      "variant": "PRI-EUP-GLD-ROS",
+      "details": "Aucun price_set_id trouvé pour cette variante"
+    },
+    {
+      "severity": "BLOQUANT",
+      "type": "NO_PRICE_SET",
+      "product": "duck-classic",
+      "variant": "DUCK-CLASSIC-DEFAULT",
+      "details": "Aucun price_set_id trouvé pour cette variante"
+    },
+    {
+      "severity": "BLOQUANT",
+      "type": "NO_PRICE_SET",
+      "product": "music-shield",
+      "variant": "MS-WHT-RED",
+      "details": "Aucun price_set_id trouvé pour cette variante"
+    },
+    {
+      "severity": "BLOQUANT",
+      "type": "NO_PRICE_SET",
+      "product": "music-shield",
+      "variant": "MSHIELD-W-R-AUD",
+      "details": "Aucun price_set_id trouvé pour cette variante"
+    },
+    {
+      "severity": "BLOQUANT",
+      "type": "NO_PRICE_SET",
+      "product": "music-shield",
+      "variant": "MSH-MB-SMK",
+      "details": "Aucun price_set_id trouvé pour cette variante"
+    },
+    {
+      "severity": "BLOQUANT",
+      "type": "NO_PRICE_SET",
+      "product": "music-shield",
+      "variant": "MS-WHT-BLU",
+      "details": "Aucun price_set_id trouvé pour cette variante"
+    },
+    {
+      "severity": "BLOQUANT",
+      "type": "NO_PRICE_SET",
+      "product": "music-shield",
+      "variant": "MS-BLK-FIR",
+      "details": "Aucun price_set_id trouvé pour cette variante"
+    },
+    {
+      "severity": "BLOQUANT",
+      "type": "NO_PRICE_SET",
+      "product": "shield",
+      "variant": "SH-MB-FIR",
+      "details": "Aucun price_set_id trouvé pour cette variante"
+    },
+    {
+      "severity": "BLOQUANT",
+      "type": "NO_PRICE_SET",
+      "product": "mr1-infinity",
+      "variant": "MR1-INF-FIR",
+      "details": "Aucun price_set_id trouvé pour cette variante"
+    },
+    {
+      "severity": "BLOQUANT",
+      "type": "NO_PRICE_SET",
+      "product": "zurix",
+      "variant": "ZRX-FIR",
+      "details": "Aucun price_set_id trouvé pour cette variante"
+    },
+    {
+      "severity": "BLOQUANT",
+      "type": "NO_PRICE_SET",
+      "product": "veil",
+      "variant": "VEL-FIR",
+      "details": "Aucun price_set_id trouvé pour cette variante"
+    },
+    {
+      "severity": "BLOQUANT",
+      "type": "NO_PRICE_SET",
+      "product": "dusk-classic",
+      "variant": "DSK-FIR",
+      "details": "Aucun price_set_id trouvé pour cette variante"
+    },
+    {
+      "severity": "BLOQUANT",
+      "type": "NO_PRICE_SET",
+      "product": "infinity",
+      "variant": "INF-FIR",
+      "details": "Aucun price_set_id trouvé pour cette variante"
+    },
+    {
+      "severity": "BLOQUANT",
+      "type": "NO_PRICE_SET",
+      "product": "aura",
+      "variant": "AUR-BLK-ENE",
+      "details": "Aucun price_set_id trouvé pour cette variante"
+    },
+    {
+      "severity": "BLOQUANT",
+      "type": "NO_PRICE_SET",
+      "product": "aura-audio",
+      "variant": "AUR-AUD-BLK-CAL",
+      "details": "Aucun price_set_id trouvé pour cette variante"
+    },
+    {
+      "severity": "BLOQUANT",
+      "type": "NO_PRICE_SET",
+      "product": "aura-audio",
+      "variant": "AUR-AUD-BLK-ENE",
+      "details": "Aucun price_set_id trouvé pour cette variante"
+    },
+    {
+      "severity": "BLOQUANT",
+      "type": "NO_PRICE_SET",
+      "product": "aura-audio",
+      "variant": "AUR-AUD-WHT-CAL",
+      "details": "Aucun price_set_id trouvé pour cette variante"
+    },
+    {
+      "severity": "BLOQUANT",
+      "type": "NO_PRICE_SET",
+      "product": "aura-audio",
+      "variant": "AUR-AUD-WHT-ENE",
+      "details": "Aucun price_set_id trouvé pour cette variante"
+    },
+    {
+      "severity": "BLOQUANT",
+      "type": "NO_PRICE_SET",
+      "product": "aroza",
+      "variant": "ARZ-DEF",
+      "details": "Aucun price_set_id trouvé pour cette variante"
+    },
+    {
+      "severity": "BLOQUANT",
+      "type": "NO_PRICE_SET",
+      "product": "dragon-chamelo",
+      "variant": "DRG-SMK-GBGD",
+      "details": "Aucun price_set_id trouvé pour cette variante"
+    }
+  ],
+  "conformProducts": [
+    "mr1-infinity",
+    "aura-audio",
+    "aroza",
+    "dragon-chamelo",
+    "prime",
+    "dragon",
+    "falcon",
+    "euphoria",
+    "duck-classic"
+  ],
+  "divergentProducts": [
+    "shield",
+    "music-shield",
+    "zurix",
+    "veil",
+    "dusk-classic",
+    "infinity",
+    "aura"
+  ],
+  "missingProducts": [],
+  "orphanProducts": [],
+  "legacyProducts": [
+    {
+      "handle": "prime",
+      "title": "Prime",
+      "variants": 1
+    },
+    {
+      "handle": "dragon",
+      "title": "Dragon",
+      "variants": 1
+    },
+    {
+      "handle": "falcon",
+      "title": "Falcon",
+      "variants": 1
+    },
+    {
+      "handle": "euphoria",
+      "title": "Euphoria",
+      "variants": 2
+    },
+    {
+      "handle": "duck-classic",
+      "title": "Duck Classic",
+      "variants": 1
+    }
+  ]
+}

@@ -1,0 +1,78 @@
+{
+  "timestamp": "2026-03-08T11:30:05.536Z",
+  "summary": {
+    "candidates": 20,
+    "skipped": 10,
+    "toCreate": 10,
+    "created": 7,
+    "failed": 3,
+    "successRate": "70.0%"
+  },
+  "creationLog": [
+    {
+      "product": "shield",
+      "sku": "SH-MB-SMK",
+      "status": "SUCCESS"
+    },
+    {
+      "product": "shield",
+      "sku": "SH-WH-FIR",
+      "status": "SUCCESS"
+    },
+    {
+      "product": "shield",
+      "sku": "SH-WH-SMK",
+      "status": "SUCCESS"
+    },
+    {
+      "product": "shield",
+      "sku": "SH-NE-FIR",
+      "status": "SUCCESS"
+    },
+    {
+      "product": "zurix",
+      "sku": "ZRX-CLR",
+      "status": "SUCCESS"
+    },
+    {
+      "product": "veil",
+      "sku": "VEL-CLR",
+      "status": "SUCCESS"
+    },
+    {
+      "product": "infinity",
+      "sku": "INF-CLR",
+      "status": "SUCCESS"
+    },
+    {
+      "product": "aura",
+      "sku": "AUR-BLK-CAL",
+      "status": "FAILED",
+      "error": "Product has 2 option values but there were 3 provided option values for the variant: Aura - Black, Calm."
+    },
+    {
+      "product": "aura",
+      "sku": "AUR-WHT-ENE",
+      "status": "FAILED",
+      "error": "Product has 2 option values but there were 3 provided option values for the variant: Aura - White, Energy."
+    },
+    {
+      "product": "aura",
+      "sku": "AUR-WHT-CAL",
+      "status": "FAILED",
+      "error": "Product has 2 option values but there were 3 provided option values for the variant: Aura - White, Calm."
+    }
+  ],
+  "skippedVariants": [
+    "SH-NE-SMK",
+    "ZRX-SMK",
+    "VEL-SMK",
+    "INF-SMK",
+    "MR1-INF-FIR",
+    "AUR-AUD-BLK-ENE",
+    "AUR-AUD-BLK-CAL",
+    "AUR-AUD-WHT-ENE",
+    "AUR-AUD-WHT-CAL",
+    "DRG-SMK-GBGD"
+  ]
+}

@@ -1,0 +1,304 @@
+{
+  "timestamp": "2026-03-08T11:35:17.277Z",
+  "verdict": "READY",
+  "summary": {
+    "totalProducts": 16,
+    "totalVariants": 32,
+    "variantsWithPricing": 32,
+    "productsComplete": 8,
+    "productsIncomplete": 5,
+    "duplicateSkus": 0,
+    "emptyOptions": 0
+  },
+  "criticalIssues": [],
+  "warnings": [
+    "5 produits incomplets (variantes manquantes)"
+  ],
+  "pricingDetails": [
+    {
+      "sku": "ARZ-DEF",
+      "variant_id": "variant_01KGC06J7JQCNP1CJ0EQ3TKPDH",
+      "pricing_status": "OK",
+      "eur_amount": 36924
+    },
+    {
+      "sku": "AUR-AUD-BLK-CAL",
+      "variant_id": "variant_01KGBWB1FHEMZDWCAS7JFAEEEH",
+      "pricing_status": "OK",
+      "eur_amount": 47504
+    },
+    {
+      "sku": "AUR-AUD-BLK-ENE",
+      "variant_id": "variant_01KGBWB1FJ40V0TJ00ADDE50ZV",
+      "pricing_status": "OK",
+      "eur_amount": 47504
+    },
+    {
+      "sku": "AUR-AUD-WHT-CAL",
+      "variant_id": "variant_01KGBWB1FJN8D31N6Q6PZDY5MH",
+      "pricing_status": "OK",
+      "eur_amount": 47504
+    },
+    {
+      "sku": "AUR-AUD-WHT-ENE",
+      "variant_id": "variant_01KGBWB1FJSJ9BY08ZG513NCQR",
+      "pricing_status": "OK",
+      "eur_amount": 47504
+    },
+    {
+      "sku": "AUR-BLK-ENE",
+      "variant_id": "variant_01KGBWB1FH66NNQM5JS27S532Y",
+      "pricing_status": "OK",
+      "eur_amount": 40733
+    },
+    {
+      "sku": "DRG-SMK-GBGD",
+      "variant_id": "variant_01KGC06J7KQN56ZB0M2JJRY20M",
+      "pricing_status": "OK",
+      "eur_amount": 27508
+    },
+    {
+      "sku": "DSK-FIR",
+      "variant_id": "variant_01KGBTYBWV1T8QGTQQHNNC2ZG2",
+      "pricing_status": "OK",
+      "eur_amount": 27508
+    },
+    {
+      "sku": "DUCK-CLASSIC-DEFAULT",
+      "variant_id": "variant_01KGBSKFM6H9E5Y97GJGVTEXWV",
+      "pricing_status": "OK",
+      "eur_amount": 19990
+    },
+    {
+      "sku": "INF-CLR",
+      "variant_id": "variant_01KK6KCAZ5RX83RS6CN61YA1RB",
+      "pricing_status": "OK",
+      "eur_amount": 31634
+    },
+    {
+      "sku": "INF-FIR",
+      "variant_id": "variant_01KGBTYBWV7A5M1PNAXGSZKH1V",
+      "pricing_status": "OK",
+      "eur_amount": 31634
+    },
+    {
+      "sku": "INF-SMK",
+      "variant_id": "variant_01KK6K9KGJJRHYV79BTJGNT6DE",
+      "pricing_status": "OK",
+      "eur_amount": 31634
+    },
+    {
+      "sku": "LFS-DRA-BLKG-CAL",
+      "variant_id": "variant_01KGBSKFM6ZHPDTGJWRRH6QXQJ",
+      "pricing_status": "OK",
+      "eur_amount": 29990
+    },
+    {
+      "sku": "LFS-PRI-NBM-FIR",
+      "variant_id": "variant_01KGBSKFM71QR13VMQ89FT2TK9",
+      "pricing_status": "OK",
+      "eur_amount": 29990
+    },
+    {
+      "sku": "MR1-INF-FIR",
+      "variant_id": "variant_01KGBTYBWW00A60HXAE9P4G6G9",
+      "pricing_status": "OK",
+      "eur_amount": 31634
+    },
+    {
+      "sku": "MS-BLK-FIR",
+      "variant_id": "variant_01KJJAXSDZM5N52D5V7DMPFK4Q",
+      "pricing_status": "OK",
+      "eur_amount": 36924
+    },
+    {
+      "sku": "MS-WHT-BLU",
+      "variant_id": "variant_01KJJAWH43C1XRKKHFX20F9RAT",
+      "pricing_status": "OK",
+      "eur_amount": 36924
+    },
+    {
+      "sku": "MS-WHT-RED",
+      "variant_id": "variant_01KJJAT6P5AVMFWCG57KC0C4X5",
+      "pricing_status": "OK",
+      "eur_amount": 36924
+    },
+    {
+      "sku": "MSH-MB-SMK",
+      "variant_id": "variant_01KGBT5X00SP9EWBP2HCD81AZB",
+      "pricing_status": "OK",
+      "eur_amount": 36924
+    },
+    {
+      "sku": "MSHIELD-W-R-AUD",
+      "variant_id": "variant_01KJJA88ZZAPRSSCD7HWV7SZRX",
+      "pricing_status": "OK",
+      "eur_amount": 36924
+    },
+    {
+      "sku": "PRI-EUP-BLC-BLU",
+      "variant_id": "variant_01KGBSKFM5Z2608RTM1EDGES4B",
+      "pricing_status": "OK",
+      "eur_amount": 19990
+    },
+    {
+      "sku": "PRI-EUP-GLD-ROS",
+      "variant_id": "variant_01KGBSKFM5PBXW5MXRGV6E3TMD",
+      "pricing_status": "OK",
+      "eur_amount": 19990
+    },
+    {
+      "sku": "SH-MB-FIR",
+      "variant_id": "variant_01KGBT5WZYV1YCQHZFF45Y6TS7",
+      "pricing_status": "OK",
+      "eur_amount": 21054
+    },
+    {
+      "sku": "SH-NE-FIR",
+      "variant_id": "variant_01KK6KCAR4ECP8XF7C1AZF7KY1",
+      "pricing_status": "OK",
+      "eur_amount": 21054
+    },
+    {
+      "sku": "SH-NE-SMK",
+      "variant_id": "variant_01KK6K9K89F520PG4WP4GTDDVG",
+      "pricing_status": "OK",
+      "eur_amount": 21054
+    },
+    {
+      "sku": "SPR-FAL-OBS-BLU",
+      "variant_id": "variant_01KGBSKFM71YQWA51965ER9QHC",
+      "pricing_status": "OK",
+      "eur_amount": 29990
+    },
+    {
+      "sku": "VEL-CLR",
+      "variant_id": "variant_01KK6KCAX8WHJ5HBQG9SV89RHE",
+      "pricing_status": "OK",
+      "eur_amount": 21054
+    },
+    {
+      "sku": "VEL-FIR",
+      "variant_id": "variant_01KGBTYBWTPSAHTKZ98G00C8M7",
+      "pricing_status": "OK",
+      "eur_amount": 21054
+    },
+    {
+      "sku": "VEL-SMK",
+      "variant_id": "variant_01KK6K9KDQA2W2Z0KJQ1XZR435",
+      "pricing_status": "OK",
+      "eur_amount": 21054
+    },
+    {
+      "sku": "ZRX-CLR",
+      "variant_id": "variant_01KK6KCATSCD457DPDT09BSD29",
+      "pricing_status": "OK",
+      "eur_amount": 21054
+    },
+    {
+      "sku": "ZRX-FIR",
+      "variant_id": "variant_01KGBTYBWS6YMA0CQ6A7FCSKGH",
+      "pricing_status": "OK",
+      "eur_amount": 21054
+    },
+    {
+      "sku": "ZRX-SMK",
+      "variant_id": "variant_01KK6K9KAWYVSJ3YV8QNXAMX4H",
+      "pricing_status": "OK",
+      "eur_amount": 21054
+    }
+  ],
+  "productComparison": [
+    {
+      "name": "Shield",
+      "handle": "shield",
+      "expectedVariants": 6,
+      "actualVariants": 3,
+      "status": "INCOMPLETE"
+    },
+    {
+      "name": "Music Shield",
+      "handle": "music-shield",
+      "expectedVariants": 5,
+      "actualVariants": 5,
+      "status": "COMPLETE"
+    },
+    {
+      "name": "Zurix",
+      "handle": "zurix",
+      "expectedVariants": 3,
+      "actualVariants": 3,
+      "status": "COMPLETE"
+    },
+    {
+      "name": "Veil",
+      "handle": "veil",
+      "expectedVariants": 3,
+      "actualVariants": 3,
+      "status": "COMPLETE"
+    },
+    {
+      "name": "Dusk",
+      "handle": "dusk",
+      "expectedVariants": 3,
+      "actualVariants": 0,
+      "status": "INCOMPLETE"
+    },
+    {
+      "name": "Infinity",
+      "handle": "infinity",
+      "expectedVariants": 4,
+      "actualVariants": 3,
+      "status": "INCOMPLETE"
+    },
+    {
+      "name": "Aura",
+      "handle": "aura",
+      "expectedVariants": 8,
+      "actualVariants": 1,
+      "status": "INCOMPLETE"
+    },
+    {
+      "name": "Aroza",
+      "handle": "aroza",
+      "expectedVariants": 1,
+      "actualVariants": 1,
+      "status": "COMPLETE"
+    },
+    {
+      "name": "Dragon",
+      "handle": "dragon",
+      "expectedVariants": 2,
+      "actualVariants": 1,
+      "status": "INCOMPLETE"
+    },
+    {
+      "name": "Prime",
+      "handle": "prime",
+      "expectedVariants": 1,
+      "actualVariants": 1,
+      "status": "COMPLETE"
+    },
+    {
+      "name": "Falcon",
+      "handle": "falcon",
+      "expectedVariants": 1,
+      "actualVariants": 1,
+      "status": "COMPLETE"
+    },
+    {
+      "name": "Euphoria",
+      "handle": "euphoria",
+      "expectedVariants": 2,
+      "actualVariants": 2,
+      "status": "COMPLETE"
+    },
+    {
+      "name": "Duck Classic",
+      "handle": "duck-classic",
+      "expectedVariants": 1,
+      "actualVariants": 1,
+      "status": "COMPLETE"
+    }
+  ]
+}

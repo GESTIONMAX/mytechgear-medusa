@@ -1,0 +1,183 @@
+{
+  "timestamp": "2026-03-08T11:17:01.700Z",
+  "verdict": "SUCCESS",
+  "validationMethod": "DIRECT_DATABASE_QUERY",
+  "stats": {
+    "totalPIM": 24,
+    "foundInDB": 24,
+    "variantsOK": 24,
+    "variantsWithCorrectPrice": 24,
+    "failedVariants": 0,
+    "successRate": "100.0%"
+  },
+  "rules": {
+    "eurCurrency": true,
+    "databaseStructure": true,
+    "linksExist": true
+  },
+  "okVariants": [
+    {
+      "sku": "ARZ-DEF",
+      "priceEUR": "€369.24",
+      "price_set_id": "pset_01KGC06J8SFBQ1TMANKJASP56K"
+    },
+    {
+      "sku": "AUR-AUD-BLK-CAL",
+      "priceEUR": "€475.04",
+      "price_set_id": "pset_01KGBWB1H32BM8B60Z3DXJXFM1"
+    },
+    {
+      "sku": "AUR-AUD-BLK-ENE",
+      "priceEUR": "€475.04",
+      "price_set_id": "pset_01KGBWB1H32QXYMAE7Z38N9J71"
+    },
+    {
+      "sku": "AUR-AUD-WHT-CAL",
+      "priceEUR": "€475.04",
+      "price_set_id": "pset_01KGBWB1H3RX8AJFA311T453YK"
+    },
+    {
+      "sku": "AUR-AUD-WHT-ENE",
+      "priceEUR": "€475.04",
+      "price_set_id": "pset_01KGBWB1H40WQBAPFCMEEK95W0"
+    },
+    {
+      "sku": "AUR-BLK-ENE",
+      "priceEUR": "€407.33",
+      "price_set_id": "pset_01KGBWB1H2QEKZ5C6RTFBY90NW"
+    },
+    {
+      "sku": "DRG-SMK-GBGD",
+      "priceEUR": "€275.08",
+      "price_set_id": "pset_01KGC06J8SH7Q5AT3RJ57N1MY3"
+    },
+    {
+      "sku": "DSK-FIR",
+      "priceEUR": "€275.08",
+      "price_set_id": "pset_01KGBTYBYN9RWFYZVGKVP98DHS"
+    },
+    {
+      "sku": "DUCK-CLASSIC-DEFAULT",
+      "priceEUR": "€199.90",
+      "price_set_id": "pset_01KGBSKFNK40Z73SJ7Z7FMY0WY"
+    },
+    {
+      "sku": "INF-FIR",
+      "priceEUR": "€316.34",
+      "price_set_id": "pset_01KGBTYBYP8E3ZTAC72YQCN2NB"
+    },
+    {
+      "sku": "LFS-DRA-BLKG-CAL",
+      "priceEUR": "€299.90",
+      "price_set_id": "pset_01KGBSKFNKZBCZHHD4BGG97YJG"
+    },
+    {
+      "sku": "LFS-PRI-NBM-FIR",
+      "priceEUR": "€299.90",
+      "price_set_id": "pset_01KGBSKFNMQMMW09S4JXNFNYT7"
+    },
+    {
+      "sku": "MR1-INF-FIR",
+      "priceEUR": "€316.34",
+      "price_set_id": "pset_01KGBTYBYPHJSXJX4G9879475F"
+    },
+    {
+      "sku": "MS-BLK-FIR",
+      "priceEUR": "€369.24",
+      "price_set_id": "pset_01KJJAXSEPMM55FH8XW4F0Y9FY"
+    },
+    {
+      "sku": "MS-WHT-BLU",
+      "priceEUR": "€369.24",
+      "price_set_id": "pset_01KJJAWH4WK5ESKK74V0QGSTSE"
+    },
+    {
+      "sku": "MS-WHT-RED",
+      "priceEUR": "€369.24",
+      "price_set_id": "pset_01KJJAT6Q1G7SM17VVD5MVVK6J"
+    },
+    {
+      "sku": "MSH-MB-SMK",
+      "priceEUR": "€369.24",
+      "price_set_id": "pset_01KGBT5X1Q4RSDQPGVX20D38JJ"
+    },
+    {
+      "sku": "MSHIELD-W-R-AUD",
+      "priceEUR": "€369.24",
+      "price_set_id": "pset_01KJJA890Y77T6E4A22R3KZD23"
+    },
+    {
+      "sku": "PRI-EUP-BLC-BLU",
+      "priceEUR": "€199.90",
+      "price_set_id": "pset_01KGBSKFNJ095D0TADVP0PJEZ5"
+    },
+    {
+      "sku": "PRI-EUP-GLD-ROS",
+      "priceEUR": "€199.90",
+      "price_set_id": "pset_01KGBSKFNJ3REJE2P6KDRZB2TR"
+    },
+    {
+      "sku": "SH-MB-FIR",
+      "priceEUR": "€210.54",
+      "price_set_id": "pset_01KGBT5X1N6BTV4E5RQG96FCZA"
+    },
+    {
+      "sku": "SPR-FAL-OBS-BLU",
+      "priceEUR": "€299.90",
+      "price_set_id": "pset_01KGBSKFNM0RTHDNHQZDWY7Q11"
+    },
+    {
+      "sku": "VEL-FIR",
+      "priceEUR": "€210.54",
+      "price_set_id": "pset_01KGBTYBYMFJ5WSB8SZRK4A833"
+    },
+    {
+      "sku": "ZRX-FIR",
+      "priceEUR": "€210.54",
+      "price_set_id": "pset_01KGBTYBYKF0TBF7T94MXP12HK"
+    }
+  ],
+  "failedVariants": [],
+  "proofPayloads": [
+    {
+      "sku": "ARZ-DEF",
+      "variant_id": "variant_01KGC06J7JQCNP1CJ0EQ3TKPDH",
+      "price_set_id": "pset_01KGC06J8SFBQ1TMANKJASP56K",
+      "eur_amount": 36924,
+      "currency_code": "eur",
+      "status": "OK"
+    },
+    {
+      "sku": "AUR-AUD-BLK-CAL",
+      "variant_id": "variant_01KGBWB1FHEMZDWCAS7JFAEEEH",
+      "price_set_id": "pset_01KGBWB1H32BM8B60Z3DXJXFM1",
+      "eur_amount": 47504,
+      "currency_code": "eur",
+      "status": "OK"
+    },
+    {
+      "sku": "AUR-AUD-BLK-ENE",
+      "variant_id": "variant_01KGBWB1FJ40V0TJ00ADDE50ZV",
+      "price_set_id": "pset_01KGBWB1H32QXYMAE7Z38N9J71",
+      "eur_amount": 47504,
+      "currency_code": "eur",
+      "status": "OK"
+    },
+    {
+      "sku": "AUR-AUD-WHT-CAL",
+      "variant_id": "variant_01KGBWB1FJN8D31N6Q6PZDY5MH",
+      "price_set_id": "pset_01KGBWB1H3RX8AJFA311T453YK",
+      "eur_amount": 47504,
+      "currency_code": "eur",
+      "status": "OK"
+    },
+    {
+      "sku": "AUR-AUD-WHT-ENE",
+      "variant_id": "variant_01KGBWB1FJSJ9BY08ZG513NCQR",
+      "price_set_id": "pset_01KGBWB1H40WQBAPFCMEEK95W0",
+      "eur_amount": 47504,
+      "currency_code": "eur",
+      "status": "OK"
+    }
+  ]
+}
