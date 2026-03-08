@@ -1,7 +1,7 @@
 /**
  * Authentication - Current User API
  *
- * GET /admin/auth/me - Get current user info
+ * GET /auth/me - Get current user info
  */
 
 import { MedusaRequest, MedusaResponse } from "@medusajs/framework/http";
@@ -13,7 +13,7 @@ import {
 import type { SafeUser } from "../../../types/auth";
 
 /**
- * GET /admin/auth/me
+ * GET /auth/me
  */
 export async function GET(
   req: MedusaRequest,

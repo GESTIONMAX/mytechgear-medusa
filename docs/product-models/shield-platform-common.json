@@ -1,0 +1,179 @@
+{
+  "_description": "Shared features and specs for Shield Platform products (Music Shield & Shield)",
+  "_family": "shield-platform",
+  "_version": "2.0.0",
+
+  "features": [
+    {
+      "id": "eclipse-tint",
+      "title": "Eclipse™ Tint-Adjustable",
+      "description": "Patented electrochromic lenses adjust from 63% to 17% VLT in 0.1 seconds via slider controls",
+      "icon": "sun-dim",
+      "category": "optical",
+      "priority": 1,
+      "conditional": null
+    },
+    {
+      "id": "impact-resistant",
+      "title": "Impact Resistant",
+      "description": "Durable polycarbonate construction designed for intense sports and workouts",
+      "icon": "shield-check",
+      "category": "durability",
+      "priority": 3,
+      "conditional": null
+    },
+    {
+      "id": "sweatproof",
+      "title": "IPX4 Sweatproof",
+      "description": "Water and sweat resistant coating for all-weather performance",
+      "icon": "droplet",
+      "category": "durability",
+      "priority": 4,
+      "conditional": null
+    },
+    {
+      "id": "ultra-light",
+      "title": "Ultra Lightweight",
+      "description": "Lightweight design for all-day comfort during extended wear",
+      "icon": "feather",
+      "category": "comfort",
+      "priority": 5,
+      "conditional": null
+    },
+    {
+      "id": "uv-protection",
+      "title": "100% UV Protection",
+      "description": "Complete UVA and UVB protection for eye safety in bright conditions",
+      "icon": "sun",
+      "category": "optical",
+      "priority": 6,
+      "conditional": null
+    }
+  ],
+
+  "specs": {
+    "optics": {
+      "label": "Optique",
+      "priority": 1,
+      "items": [
+        {
+          "name": "VLT (transmission lumière)",
+          "value": "63%-17%",
+          "unit": "%",
+          "type": "range",
+          "conditional": null
+        },
+        {
+          "name": "Vitesse de teinte",
+          "value": 0.1,
+          "unit": "s",
+          "type": "duration",
+          "conditional": null
+        },
+        {
+          "name": "Protection UV",
+          "value": 100,
+          "unit": "%",
+          "type": "percentage",
+          "conditional": null
+        },
+        {
+          "name": "Type de verre",
+          "value": "Non-polarisé",
+          "unit": null,
+          "type": "text",
+          "conditional": null
+        }
+      ]
+    },
+    "dimensions": {
+      "label": "Dimensions",
+      "priority": 2,
+      "items": [
+        {
+          "name": "Longueur branche",
+          "value": 166,
+          "unit": "mm",
+          "type": "length",
+          "conditional": null
+        },
+        {
+          "name": "Largeur tempe",
+          "value": 160,
+          "unit": "mm",
+          "type": "length",
+          "conditional": null
+        },
+        {
+          "name": "Hauteur monture",
+          "value": 61,
+          "unit": "mm",
+          "type": "length",
+          "conditional": null
+        }
+      ]
+    },
+    "durability": {
+      "label": "Résistance",
+      "priority": 3,
+      "items": [
+        {
+          "name": "Indice de protection",
+          "value": "IPX4",
+          "unit": null,
+          "type": "rating",
+          "conditional": null
+        },
+        {
+          "name": "Résistance impacts",
+          "value": true,
+          "unit": null,
+          "type": "boolean",
+          "conditional": null
+        },
+        {
+          "name": "Anti-transpiration",
+          "value": true,
+          "unit": null,
+          "type": "boolean",
+          "conditional": null
+        },
+        {
+          "name": "Matériau monture",
+          "value": "TR-90 Nylon",
+          "unit": null,
+          "type": "text",
+          "conditional": null
+        },
+        {
+          "name": "Matériau verres",
+          "value": "Polycarbonate",
+          "unit": null,
+          "type": "text",
+          "conditional": null
+        }
+      ]
+    }
+  },
+
+  "sizing": {
+    "gender": "Unisex",
+    "headSize": "Medium-Large",
+    "faceShapes": ["Universal"],
+    "fitNotes": "High-wrap shield design for maximum coverage"
+  },
+
+  "warranty": {
+    "moneyBack": 30,
+    "manufacturer": 12,
+    "unit": "days"
+  },
+
+  "technology": {
+    "eclipse": {
+      "name": "Eclipse™ Electrochromic Technology",
+      "description": "Patented liquid crystal technology for instant tint adjustment",
+      "patent": "US Patent Pending"
+    }
+  }
+}

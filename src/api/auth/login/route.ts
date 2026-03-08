@@ -1,7 +1,7 @@
 /**
  * Authentication - Login API
  *
- * POST /admin/auth/login - Authenticate user
+ * POST /auth/login - Authenticate user
  */
 
 import { MedusaRequest, MedusaResponse } from "@medusajs/framework/http";
@@ -15,7 +15,7 @@ import { auditLogin } from "../../../lib/audit-helpers";
 import type { LoginInput, AuthResponse } from "../../../types/auth";
 
 /**
- * POST /admin/auth/login
+ * POST /auth/login
  */
 export async function POST(
   req: MedusaRequest<LoginInput>,

@@ -8,6 +8,7 @@
 import { MedusaRequest, MedusaResponse } from "@medusajs/framework/http";
 import { Modules } from "@medusajs/framework/utils";
 import { authenticateAdmin } from "../../../middlewares";
+import { getVariantPrices, bulkSetVariantPrices } from "../../../../lib/pricing";
 
 export const middlewares = [authenticateAdmin];
 
@@ -20,21 +21,13 @@ export async function GET(
   res: MedusaResponse
 ) {
   try {
-    const productService = req.scope.resolve(Modules.PRODUCT);
+    const pricingService = req.scope.resolve(Modules.PRICING);
     const { variantId } = req.params;
 
-    const variant = await productService.retrieveProductVariant(variantId, {
-      relations: ['prices'],
-    });
-
-    if (!variant) {
-      return res.status(404).json({
-        error: 'Variant not found',
-      });
-    }
+    const prices = await getVariantPrices(pricingService, variantId);
 
     return res.status(200).json({
-      prices: (variant as any).prices || [],
+      prices,
     });
 
   } catch (error: any) {
@@ -55,16 +48,16 @@ export async function PUT(
   res: MedusaResponse
 ) {
   try {
-    const productService = req.scope.resolve(Modules.PRODUCT);
+    const pricingService = req.scope.resolve(Modules.PRICING);
     const { variantId } = req.params;
     const { prices } = req.body as any;
 
-    const variant = await productService.updateProductVariants(variantId, {
-      prices,
-    } as any);
+    const result = await bulkSetVariantPrices(pricingService, variantId, prices);
 
     return res.status(200).json({
-      variant,
+      success: true,
+      created: result.created,
+      updated: result.updated,
     });
 
   } catch (error: any) {

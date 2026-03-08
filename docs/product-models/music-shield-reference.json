@@ -1,0 +1,513 @@
+{
+  "product": {
+    "title": "Music Shield",
+    "subtitle": "Sports Smart Glasses with Electrochromic Tint & Audio",
+    "handle": "music-shield",
+    "description": "A cutting-edge design that brings maximum performance. Music Shield features a lightweight build, built-in speakers, and patented Eclipse™ Tint-adjustable Lenses for no lapse in vision and ultimate focus during workout.",
+    "status": "published",
+    "is_giftcard": false,
+    "discountable": true,
+
+    "options": [
+      {
+        "title": "Monture",
+        "values": [
+          {
+            "value": "Matte Black",
+            "metadata": {
+              "hex": "#1a1a1a",
+              "code": "MB",
+              "colorFamily": "black"
+            }
+          },
+          {
+            "value": "White",
+            "metadata": {
+              "hex": "#ffffff",
+              "code": "W",
+              "colorFamily": "white"
+            }
+          }
+        ]
+      },
+      {
+        "title": "Verres",
+        "values": [
+          {
+            "value": "Fire",
+            "metadata": {
+              "hex": "#ff6b35",
+              "vlt": "63%-17%",
+              "code": "FIR",
+              "description": "High contrast for bright conditions",
+              "colorFamily": "red"
+            }
+          },
+          {
+            "value": "Smoke",
+            "metadata": {
+              "hex": "#4a4a4a",
+              "vlt": "63%-17%",
+              "code": "SMK",
+              "description": "Neutral tone for all conditions",
+              "colorFamily": "gray"
+            }
+          }
+        ]
+      }
+    ],
+
+    "metadata": {
+      "brand": "Chamelo",
+      "sourceUrl": "https://chamelo.com/products/music-shield-fire-lenses-sports-smart-glasses-electrochromic-tint-adjustable-changing-audio-sunglasses",
+      "collection": "smart-glasses",
+      "category": "sports-sunglasses",
+
+      "family": "shield-platform",
+      "hasAudio": true,
+      "related": {
+        "withoutAudio": "shield",
+        "variant": "audio"
+      },
+
+      "platform": {
+        "eclipse": true,
+        "category": "sport-smart-glasses",
+        "sharedFeatures": [
+          "eclipse-tint",
+          "impact-resistant",
+          "sweatproof",
+          "ultra-light",
+          "uv-protection"
+        ]
+      },
+
+      "features": [
+        {
+          "id": "eclipse-tint",
+          "title": "Eclipse™ Tint-Adjustable",
+          "description": "Patented electrochromic lenses adjust from 63% to 17% VLT in 0.1 seconds via slider controls",
+          "icon": "sun-dim",
+          "category": "optical",
+          "priority": 1,
+          "conditional": null
+        },
+        {
+          "id": "hidden-audio",
+          "title": "Hidden Audio Speakers",
+          "description": "Open-ear audio speakers for music and calls via Bluetooth connectivity",
+          "icon": "volume-2",
+          "category": "audio",
+          "priority": 2,
+          "conditional": null,
+          "note": "Music Shield exclusive feature"
+        },
+        {
+          "id": "impact-resistant",
+          "title": "Impact Resistant",
+          "description": "Durable polycarbonate construction designed for intense sports and workouts",
+          "icon": "shield-check",
+          "category": "durability",
+          "priority": 3,
+          "conditional": null
+        },
+        {
+          "id": "sweatproof",
+          "title": "IPX4 Sweatproof",
+          "description": "Water and sweat resistant coating for all-weather performance",
+          "icon": "droplet",
+          "category": "durability",
+          "priority": 4,
+          "conditional": null
+        },
+        {
+          "id": "ultra-light",
+          "title": "Ultra Lightweight",
+          "description": "Only 49g total weight for all-day comfort during extended wear",
+          "icon": "feather",
+          "category": "comfort",
+          "priority": 5,
+          "conditional": null
+        },
+        {
+          "id": "uv-protection",
+          "title": "100% UV Protection",
+          "description": "Complete UVA and UVB protection for eye safety in bright conditions",
+          "icon": "sun",
+          "category": "optical",
+          "priority": 6,
+          "conditional": null
+        }
+      ],
+
+      "specs": {
+        "battery": {
+          "label": "Batterie",
+          "priority": 1,
+          "items": [
+            {
+              "name": "Tint-adjustment",
+              "value": 100,
+              "unit": "h",
+              "type": "duration",
+              "conditional": null
+            },
+            {
+              "name": "Built-in audio",
+              "value": 6.5,
+              "unit": "h",
+              "type": "duration",
+              "conditional": null,
+              "note": "Music Shield exclusive"
+            },
+            {
+              "name": "Charge rapide (80%)",
+              "value": 30,
+              "unit": "min",
+              "type": "duration",
+              "conditional": null
+            },
+            {
+              "name": "Capacité",
+              "value": 180,
+              "unit": "mAh",
+              "type": "capacity",
+              "conditional": null
+            }
+          ]
+        },
+        "optics": {
+          "label": "Optique",
+          "priority": 2,
+          "items": [
+            {
+              "name": "VLT (transmission lumière)",
+              "value": "63%-17%",
+              "unit": "%",
+              "type": "range",
+              "conditional": null
+            },
+            {
+              "name": "Vitesse de teinte",
+              "value": 0.1,
+              "unit": "s",
+              "type": "duration",
+              "conditional": null
+            },
+            {
+              "name": "Protection UV",
+              "value": 100,
+              "unit": "%",
+              "type": "percentage",
+              "conditional": null
+            },
+            {
+              "name": "Type de verre",
+              "value": "Non-polarisé",
+              "unit": null,
+              "type": "text",
+              "conditional": null
+            }
+          ]
+        },
+        "dimensions": {
+          "label": "Dimensions",
+          "priority": 3,
+          "items": [
+            {
+              "name": "Longueur branche",
+              "value": 166,
+              "unit": "mm",
+              "type": "length",
+              "conditional": null
+            },
+            {
+              "name": "Largeur tempe",
+              "value": 160,
+              "unit": "mm",
+              "type": "length",
+              "conditional": null
+            },
+            {
+              "name": "Hauteur monture",
+              "value": 61,
+              "unit": "mm",
+              "type": "length",
+              "conditional": null
+            },
+            {
+              "name": "Poids",
+              "value": 49,
+              "unit": "g",
+              "type": "weight",
+              "note": "With audio module"
+            }
+          ]
+        },
+        "durability": {
+          "label": "Résistance",
+          "priority": 4,
+          "items": [
+            {
+              "name": "Indice de protection",
+              "value": "IPX4",
+              "unit": null,
+              "type": "rating",
+              "conditional": null
+            },
+            {
+              "name": "Résistance impacts",
+              "value": true,
+              "unit": null,
+              "type": "boolean",
+              "conditional": null
+            },
+            {
+              "name": "Anti-transpiration",
+              "value": true,
+              "unit": null,
+              "type": "boolean",
+              "conditional": null
+            },
+            {
+              "name": "Matériau monture",
+              "value": "TR-90 Nylon",
+              "unit": null,
+              "type": "text",
+              "conditional": null
+            },
+            {
+              "name": "Matériau verres",
+              "value": "Polycarbonate",
+              "unit": null,
+              "type": "text",
+              "conditional": null
+            }
+          ]
+        },
+        "audio": {
+          "label": "Audio",
+          "priority": 5,
+          "items": [
+            {
+              "name": "Type",
+              "value": "Open-ear speakers",
+              "unit": null,
+              "type": "text"
+            },
+            {
+              "name": "Connectivity",
+              "value": "Bluetooth 5.0",
+              "unit": null,
+              "type": "text"
+            },
+            {
+              "name": "Microphone",
+              "value": true,
+              "unit": null,
+              "type": "boolean"
+            }
+          ]
+        }
+      },
+
+      "sizing": {
+        "gender": "Unisex",
+        "headSize": "Medium-Large",
+        "faceShapes": ["Universal"],
+        "fitNotes": "High-wrap shield design for maximum coverage"
+      },
+
+      "includes": [
+        "Soft protective pouch",
+        "Travel hard case",
+        "USB-A to Pogo Pin charging cable",
+        "User manual",
+        "Warranty registration card"
+      ],
+
+      "warranty": {
+        "moneyBack": 30,
+        "manufacturer": 12,
+        "unit": "days"
+      },
+
+      "technology": {
+        "eclipse": {
+          "name": "Eclipse™ Electrochromic Technology",
+          "description": "Patented liquid crystal technology for instant tint adjustment",
+          "patent": "US Patent Pending"
+        }
+      }
+    },
+
+    "tags": [
+      "sports",
+      "smart-glasses",
+      "tint-adjustable",
+      "bluetooth",
+      "audio",
+      "cycling",
+      "running",
+      "outdoor"
+    ],
+
+    "images": [
+      {
+        "url": "music-shield-hero.jpg",
+        "alt": "Music Shield smart glasses front view",
+        "order": 1,
+        "metadata": { "type": "hero" }
+      },
+      {
+        "url": "music-shield-tint-demo.gif",
+        "alt": "Eclipse tint adjustment demonstration",
+        "order": 2,
+        "metadata": { "type": "feature-demo" }
+      },
+      {
+        "url": "music-shield-lifestyle-cycling.jpg",
+        "alt": "Cyclist wearing Music Shield",
+        "order": 3,
+        "metadata": { "type": "lifestyle" }
+      }
+    ]
+  },
+
+  "variants": [
+    {
+      "title": "Music Shield - Matte Black, Fire",
+      "sku": "SPMSSHFMB",
+      "barcode": null,
+      "ean": null,
+      "upc": null,
+      "allow_backorder": false,
+      "manage_inventory": true,
+      "inventory_quantity": 25,
+      "weight": 49,
+
+      "options": {
+        "Monture": "Matte Black",
+        "Verres": "Fire"
+      },
+
+      "prices": [
+        {
+          "amount": 26000,
+          "currency_code": "usd"
+        },
+        {
+          "amount": 24000,
+          "currency_code": "eur"
+        }
+      ],
+
+      "metadata": {
+        "actualWeight": 49,
+        "batteryLife": "6.5h",
+        "variantCode": "MB-FIR",
+        "images": [
+          "music-shield-mb-fire-1.jpg",
+          "music-shield-mb-fire-2.jpg"
+        ]
+      }
+    },
+    {
+      "title": "Music Shield - Matte Black, Smoke",
+      "sku": "SPMSSHMB",
+      "allow_backorder": false,
+      "manage_inventory": true,
+      "inventory_quantity": 20,
+      "weight": 49,
+
+      "options": {
+        "Monture": "Matte Black",
+        "Verres": "Smoke"
+      },
+
+      "prices": [
+        {
+          "amount": 26000,
+          "currency_code": "usd"
+        }
+      ],
+
+      "metadata": {
+        "actualWeight": 49,
+        "batteryLife": "6.5h",
+        "variantCode": "MB-SMK"
+      }
+    },
+    {
+      "title": "Music Shield - White, Fire",
+      "sku": "SPMSSHFW",
+      "allow_backorder": false,
+      "manage_inventory": true,
+      "inventory_quantity": 18,
+      "weight": 49,
+
+      "options": {
+        "Monture": "White",
+        "Verres": "Fire"
+      },
+
+      "prices": [
+        {
+          "amount": 26000,
+          "currency_code": "usd"
+        }
+      ],
+
+      "metadata": {
+        "actualWeight": 49,
+        "batteryLife": "6.5h",
+        "variantCode": "W-FIR"
+      }
+    },
+    {
+      "title": "Music Shield - White, Smoke",
+      "sku": "SPMSSHW",
+      "allow_backorder": false,
+      "manage_inventory": true,
+      "inventory_quantity": 22,
+      "weight": 49,
+
+      "options": {
+        "Monture": "White",
+        "Verres": "Smoke"
+      },
+
+      "prices": [
+        {
+          "amount": 26000,
+          "currency_code": "usd"
+        }
+      ],
+
+      "metadata": {
+        "actualWeight": 49,
+        "batteryLife": "6.5h",
+        "variantCode": "W-SMK"
+      }
+    }
+  ],
+
+  "_notes": {
+    "version": "2.0.0",
+    "createdAt": "2026-02-28",
+    "purpose": "Music Shield product (WITH audio) - separate from Shield product",
+    "changes": [
+      "Removed 'Audio' option - now separate product from Shield",
+      "Added metadata.family = 'shield-platform'",
+      "Added metadata.hasAudio = true",
+      "Added metadata.related.withoutAudio = 'shield'",
+      "Reduced from 8 to 4 variants (2 frames × 2 lenses)",
+      "Added audio-specific features and specs"
+    ],
+    "conventions": {
+      "options": "Title-based mapping (e.g., 'Monture', 'Verres')",
+      "prices.amount": "In cents (e.g., 26000 = $260.00)",
+      "weight": "49g with audio module included"
+    }
+  }
+}

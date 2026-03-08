@@ -1,7 +1,7 @@
 /**
  * Authentication - Logout API
  *
- * POST /admin/auth/logout - End user session
+ * POST /auth/logout - End user session
  */
 
 import { MedusaRequest, MedusaResponse } from "@medusajs/framework/http";
@@ -9,7 +9,7 @@ import { revokeSession, getSessionByToken } from "../../../lib/user-storage";
 import { auditLogout } from "../../../lib/audit-helpers";
 
 /**
- * POST /admin/auth/logout
+ * POST /auth/logout
  */
 export async function POST(
   req: MedusaRequest,

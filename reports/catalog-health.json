@@ -1,0 +1,763 @@
+{
+  "timestamp": "2026-03-08T06:14:14.992Z",
+  "summary": {
+    "products_count": 16,
+    "variants_count": 24,
+    "variants_with_prices": 0,
+    "variants_missing_prices": 24,
+    "variants_missing_sku": 0,
+    "variants_missing_canonical_id": 24,
+    "duplicate_skus": 0,
+    "duplicate_titles": 1
+  },
+  "currencies": {
+    "configured": [
+      "eur",
+      "usd",
+      "gbp",
+      "chf"
+    ],
+    "coverage": {
+      "eur": 0,
+      "usd": 0,
+      "gbp": 0,
+      "chf": 0
+    }
+  },
+  "issues": [
+    {
+      "severity": "warning",
+      "category": "variant",
+      "message": "Variant \"Prime - Monture Noir Mat, Verres Fire\" in \"Prime\" has no canonicalId",
+      "details": {
+        "variant_id": "variant_01KGBSKFM71QR13VMQ89FT2TK9",
+        "sku": "LFS-PRI-NBM-FIR"
+      }
+    },
+    {
+      "severity": "info",
+      "category": "variant",
+      "message": "Variant \"Prime - Monture Noir Mat, Verres Fire\" has no options (may be simple product)",
+      "details": {
+        "variant_id": "variant_01KGBSKFM71QR13VMQ89FT2TK9",
+        "sku": "LFS-PRI-NBM-FIR"
+      }
+    },
+    {
+      "severity": "warning",
+      "category": "variant",
+      "message": "Variant \"Dragon - Monture Black Gold, Verres Calm\" in \"Dragon\" has no canonicalId",
+      "details": {
+        "variant_id": "variant_01KGBSKFM6ZHPDTGJWRRH6QXQJ",
+        "sku": "LFS-DRA-BLKG-CAL"
+      }
+    },
+    {
+      "severity": "info",
+      "category": "variant",
+      "message": "Variant \"Dragon - Monture Black Gold, Verres Calm\" has no options (may be simple product)",
+      "details": {
+        "variant_id": "variant_01KGBSKFM6ZHPDTGJWRRH6QXQJ",
+        "sku": "LFS-DRA-BLKG-CAL"
+      }
+    },
+    {
+      "severity": "warning",
+      "category": "variant",
+      "message": "Variant \"Falcon - Monture Obsidian, Verres Alpha Blue\" in \"Falcon\" has no canonicalId",
+      "details": {
+        "variant_id": "variant_01KGBSKFM71YQWA51965ER9QHC",
+        "sku": "SPR-FAL-OBS-BLU"
+      }
+    },
+    {
+      "severity": "info",
+      "category": "variant",
+      "message": "Variant \"Falcon - Monture Obsidian, Verres Alpha Blue\" has no options (may be simple product)",
+      "details": {
+        "variant_id": "variant_01KGBSKFM71YQWA51965ER9QHC",
+        "sku": "SPR-FAL-OBS-BLU"
+      }
+    },
+    {
+      "severity": "warning",
+      "category": "variant",
+      "message": "Variant \"Euphoria - Monture Blanche, Verres Bleus\" in \"Euphoria\" has no canonicalId",
+      "details": {
+        "variant_id": "variant_01KGBSKFM5Z2608RTM1EDGES4B",
+        "sku": "PRI-EUP-BLC-BLU"
+      }
+    },
+    {
+      "severity": "info",
+      "category": "variant",
+      "message": "Variant \"Euphoria - Monture Blanche, Verres Bleus\" has no options (may be simple product)",
+      "details": {
+        "variant_id": "variant_01KGBSKFM5Z2608RTM1EDGES4B",
+        "sku": "PRI-EUP-BLC-BLU"
+      }
+    },
+    {
+      "severity": "warning",
+      "category": "variant",
+      "message": "Variant \"Euphoria - Monture Gold, Verres Rose\" in \"Euphoria\" has no canonicalId",
+      "details": {
+        "variant_id": "variant_01KGBSKFM5PBXW5MXRGV6E3TMD",
+        "sku": "PRI-EUP-GLD-ROS"
+      }
+    },
+    {
+      "severity": "info",
+      "category": "variant",
+      "message": "Variant \"Euphoria - Monture Gold, Verres Rose\" has no options (may be simple product)",
+      "details": {
+        "variant_id": "variant_01KGBSKFM5PBXW5MXRGV6E3TMD",
+        "sku": "PRI-EUP-GLD-ROS"
+      }
+    },
+    {
+      "severity": "warning",
+      "category": "variant",
+      "message": "Variant \"Default\" in \"Duck Classic\" has no canonicalId",
+      "details": {
+        "variant_id": "variant_01KGBSKFM6H9E5Y97GJGVTEXWV",
+        "sku": "DUCK-CLASSIC-DEFAULT"
+      }
+    },
+    {
+      "severity": "info",
+      "category": "variant",
+      "message": "Variant \"Default\" has no options (may be simple product)",
+      "details": {
+        "variant_id": "variant_01KGBSKFM6H9E5Y97GJGVTEXWV",
+        "sku": "DUCK-CLASSIC-DEFAULT"
+      }
+    },
+    {
+      "severity": "warning",
+      "category": "variant",
+      "message": "Variant \"Music Shield Monture Blanche, Verres Rouges avec audio\" in \"Music Shield\" has no canonicalId",
+      "details": {
+        "variant_id": "variant_01KJJAT6P5AVMFWCG57KC0C4X5",
+        "sku": "MS-WHT-RED"
+      }
+    },
+    {
+      "severity": "info",
+      "category": "variant",
+      "message": "Variant \"Music Shield Monture Blanche, Verres Rouges avec audio\" has no options (may be simple product)",
+      "details": {
+        "variant_id": "variant_01KJJAT6P5AVMFWCG57KC0C4X5",
+        "sku": "MS-WHT-RED"
+      }
+    },
+    {
+      "severity": "warning",
+      "category": "variant",
+      "message": "Variant \"Music Shield - White / Red\" in \"Music Shield\" has no canonicalId",
+      "details": {
+        "variant_id": "variant_01KJJA88ZZAPRSSCD7HWV7SZRX",
+        "sku": "MSHIELD-W-R-AUD"
+      }
+    },
+    {
+      "severity": "info",
+      "category": "variant",
+      "message": "Variant \"Music Shield - White / Red\" has no options (may be simple product)",
+      "details": {
+        "variant_id": "variant_01KJJA88ZZAPRSSCD7HWV7SZRX",
+        "sku": "MSHIELD-W-R-AUD"
+      }
+    },
+    {
+      "severity": "warning",
+      "category": "variant",
+      "message": "Variant \"Music Shield - Matte Black, Smoke\" in \"Music Shield\" has no canonicalId",
+      "details": {
+        "variant_id": "variant_01KGBT5X00SP9EWBP2HCD81AZB",
+        "sku": "MSH-MB-SMK"
+      }
+    },
+    {
+      "severity": "info",
+      "category": "variant",
+      "message": "Variant \"Music Shield - Matte Black, Smoke\" has no options (may be simple product)",
+      "details": {
+        "variant_id": "variant_01KGBT5X00SP9EWBP2HCD81AZB",
+        "sku": "MSH-MB-SMK"
+      }
+    },
+    {
+      "severity": "warning",
+      "category": "variant",
+      "message": "Variant \"Music Shield - Monture Blanche, Verres Bleus avec audio\" in \"Music Shield\" has no canonicalId",
+      "details": {
+        "variant_id": "variant_01KJJAWH43C1XRKKHFX20F9RAT",
+        "sku": "MS-WHT-BLU"
+      }
+    },
+    {
+      "severity": "info",
+      "category": "variant",
+      "message": "Variant \"Music Shield - Monture Blanche, Verres Bleus avec audio\" has no options (may be simple product)",
+      "details": {
+        "variant_id": "variant_01KJJAWH43C1XRKKHFX20F9RAT",
+        "sku": "MS-WHT-BLU"
+      }
+    },
+    {
+      "severity": "warning",
+      "category": "variant",
+      "message": "Variant \"Music Shield - Fire, White\" in \"Music Shield\" has no canonicalId",
+      "details": {
+        "variant_id": "variant_01KJJAXSDZM5N52D5V7DMPFK4Q",
+        "sku": "MS-BLK-FIR"
+      }
+    },
+    {
+      "severity": "info",
+      "category": "variant",
+      "message": "Variant \"Music Shield - Fire, White\" has no options (may be simple product)",
+      "details": {
+        "variant_id": "variant_01KJJAXSDZM5N52D5V7DMPFK4Q",
+        "sku": "MS-BLK-FIR"
+      }
+    },
+    {
+      "severity": "warning",
+      "category": "variant",
+      "message": "Variant \"Shield - Matte Black, Fire\" in \"Shield\" has no canonicalId",
+      "details": {
+        "variant_id": "variant_01KGBT5WZYV1YCQHZFF45Y6TS7",
+        "sku": "SH-MB-FIR"
+      }
+    },
+    {
+      "severity": "info",
+      "category": "variant",
+      "message": "Variant \"Shield - Matte Black, Fire\" has no options (may be simple product)",
+      "details": {
+        "variant_id": "variant_01KGBT5WZYV1YCQHZFF45Y6TS7",
+        "sku": "SH-MB-FIR"
+      }
+    },
+    {
+      "severity": "warning",
+      "category": "variant",
+      "message": "Variant \"MR1 x Infinity - Fire\" in \"MR1 x Chamelo Infinity\" has no canonicalId",
+      "details": {
+        "variant_id": "variant_01KGBTYBWW00A60HXAE9P4G6G9",
+        "sku": "MR1-INF-FIR"
+      }
+    },
+    {
+      "severity": "info",
+      "category": "variant",
+      "message": "Variant \"MR1 x Infinity - Fire\" has no options (may be simple product)",
+      "details": {
+        "variant_id": "variant_01KGBTYBWW00A60HXAE9P4G6G9",
+        "sku": "MR1-INF-FIR"
+      }
+    },
+    {
+      "severity": "warning",
+      "category": "variant",
+      "message": "Variant \"Zurix - Fire\" in \"Zurix\" has no canonicalId",
+      "details": {
+        "variant_id": "variant_01KGBTYBWS6YMA0CQ6A7FCSKGH",
+        "sku": "ZRX-FIR"
+      }
+    },
+    {
+      "severity": "info",
+      "category": "variant",
+      "message": "Variant \"Zurix - Fire\" has no options (may be simple product)",
+      "details": {
+        "variant_id": "variant_01KGBTYBWS6YMA0CQ6A7FCSKGH",
+        "sku": "ZRX-FIR"
+      }
+    },
+    {
+      "severity": "warning",
+      "category": "variant",
+      "message": "Variant \"Veil - Fire\" in \"Veil\" has no canonicalId",
+      "details": {
+        "variant_id": "variant_01KGBTYBWTPSAHTKZ98G00C8M7",
+        "sku": "VEL-FIR"
+      }
+    },
+    {
+      "severity": "info",
+      "category": "variant",
+      "message": "Variant \"Veil - Fire\" has no options (may be simple product)",
+      "details": {
+        "variant_id": "variant_01KGBTYBWTPSAHTKZ98G00C8M7",
+        "sku": "VEL-FIR"
+      }
+    },
+    {
+      "severity": "warning",
+      "category": "variant",
+      "message": "Variant \"Dusk Classic - Fire\" in \"Dusk Classic\" has no canonicalId",
+      "details": {
+        "variant_id": "variant_01KGBTYBWV1T8QGTQQHNNC2ZG2",
+        "sku": "DSK-FIR"
+      }
+    },
+    {
+      "severity": "info",
+      "category": "variant",
+      "message": "Variant \"Dusk Classic - Fire\" has no options (may be simple product)",
+      "details": {
+        "variant_id": "variant_01KGBTYBWV1T8QGTQQHNNC2ZG2",
+        "sku": "DSK-FIR"
+      }
+    },
+    {
+      "severity": "warning",
+      "category": "variant",
+      "message": "Variant \"Infinity - Fire\" in \"Infinity\" has no canonicalId",
+      "details": {
+        "variant_id": "variant_01KGBTYBWV7A5M1PNAXGSZKH1V",
+        "sku": "INF-FIR"
+      }
+    },
+    {
+      "severity": "info",
+      "category": "variant",
+      "message": "Variant \"Infinity - Fire\" has no options (may be simple product)",
+      "details": {
+        "variant_id": "variant_01KGBTYBWV7A5M1PNAXGSZKH1V",
+        "sku": "INF-FIR"
+      }
+    },
+    {
+      "severity": "warning",
+      "category": "variant",
+      "message": "Variant \"Aura - Black, Energy\" in \"Aura\" has no canonicalId",
+      "details": {
+        "variant_id": "variant_01KGBWB1FH66NNQM5JS27S532Y",
+        "sku": "AUR-BLK-ENE"
+      }
+    },
+    {
+      "severity": "info",
+      "category": "variant",
+      "message": "Variant \"Aura - Black, Energy\" has no options (may be simple product)",
+      "details": {
+        "variant_id": "variant_01KGBWB1FH66NNQM5JS27S532Y",
+        "sku": "AUR-BLK-ENE"
+      }
+    },
+    {
+      "severity": "warning",
+      "category": "variant",
+      "message": "Variant \"Aura Audio - Black, Calm\" in \"Aura Audio\" has no canonicalId",
+      "details": {
+        "variant_id": "variant_01KGBWB1FHEMZDWCAS7JFAEEEH",
+        "sku": "AUR-AUD-BLK-CAL"
+      }
+    },
+    {
+      "severity": "info",
+      "category": "variant",
+      "message": "Variant \"Aura Audio - Black, Calm\" has no options (may be simple product)",
+      "details": {
+        "variant_id": "variant_01KGBWB1FHEMZDWCAS7JFAEEEH",
+        "sku": "AUR-AUD-BLK-CAL"
+      }
+    },
+    {
+      "severity": "warning",
+      "category": "variant",
+      "message": "Variant \"Aura Audio - Black, Energy\" in \"Aura Audio\" has no canonicalId",
+      "details": {
+        "variant_id": "variant_01KGBWB1FJ40V0TJ00ADDE50ZV",
+        "sku": "AUR-AUD-BLK-ENE"
+      }
+    },
+    {
+      "severity": "info",
+      "category": "variant",
+      "message": "Variant \"Aura Audio - Black, Energy\" has no options (may be simple product)",
+      "details": {
+        "variant_id": "variant_01KGBWB1FJ40V0TJ00ADDE50ZV",
+        "sku": "AUR-AUD-BLK-ENE"
+      }
+    },
+    {
+      "severity": "warning",
+      "category": "variant",
+      "message": "Variant \"Aura Audio - White, Calm\" in \"Aura Audio\" has no canonicalId",
+      "details": {
+        "variant_id": "variant_01KGBWB1FJN8D31N6Q6PZDY5MH",
+        "sku": "AUR-AUD-WHT-CAL"
+      }
+    },
+    {
+      "severity": "info",
+      "category": "variant",
+      "message": "Variant \"Aura Audio - White, Calm\" has no options (may be simple product)",
+      "details": {
+        "variant_id": "variant_01KGBWB1FJN8D31N6Q6PZDY5MH",
+        "sku": "AUR-AUD-WHT-CAL"
+      }
+    },
+    {
+      "severity": "warning",
+      "category": "variant",
+      "message": "Variant \"Aura Audio - White, Energy\" in \"Aura Audio\" has no canonicalId",
+      "details": {
+        "variant_id": "variant_01KGBWB1FJSJ9BY08ZG513NCQR",
+        "sku": "AUR-AUD-WHT-ENE"
+      }
+    },
+    {
+      "severity": "info",
+      "category": "variant",
+      "message": "Variant \"Aura Audio - White, Energy\" has no options (may be simple product)",
+      "details": {
+        "variant_id": "variant_01KGBWB1FJSJ9BY08ZG513NCQR",
+        "sku": "AUR-AUD-WHT-ENE"
+      }
+    },
+    {
+      "severity": "warning",
+      "category": "variant",
+      "message": "Variant \"Aroza - Default\" in \"Aroza\" has no canonicalId",
+      "details": {
+        "variant_id": "variant_01KGC06J7JQCNP1CJ0EQ3TKPDH",
+        "sku": "ARZ-DEF"
+      }
+    },
+    {
+      "severity": "info",
+      "category": "variant",
+      "message": "Variant \"Aroza - Default\" has no options (may be simple product)",
+      "details": {
+        "variant_id": "variant_01KGC06J7JQCNP1CJ0EQ3TKPDH",
+        "sku": "ARZ-DEF"
+      }
+    },
+    {
+      "severity": "warning",
+      "category": "variant",
+      "message": "Variant \"Dragon - Smoke, Glossy Black/Gold\" in \"Dragon\" has no canonicalId",
+      "details": {
+        "variant_id": "variant_01KGC06J7KQN56ZB0M2JJRY20M",
+        "sku": "DRG-SMK-GBGD"
+      }
+    },
+    {
+      "severity": "info",
+      "category": "variant",
+      "message": "Variant \"Dragon - Smoke, Glossy Black/Gold\" has no options (may be simple product)",
+      "details": {
+        "variant_id": "variant_01KGC06J7KQN56ZB0M2JJRY20M",
+        "sku": "DRG-SMK-GBGD"
+      }
+    },
+    {
+      "severity": "warning",
+      "category": "product",
+      "message": "Duplicate product title \"Dragon\" found in 2 products",
+      "details": {
+        "title": "Dragon",
+        "product_ids": [
+          "prod_01KGBSKFJ0GNRNVKXWZJEHE93H",
+          "prod_01KGC06J68DE3MNGBGG8GJ1PCZ"
+        ]
+      }
+    },
+    {
+      "severity": "error",
+      "category": "pricing",
+      "message": "Variant variant_01KGBSKFM71QR13VMQ89FT2TK9 has no prices",
+      "details": {
+        "variant_id": "variant_01KGBSKFM71QR13VMQ89FT2TK9"
+      }
+    },
+    {
+      "severity": "error",
+      "category": "pricing",
+      "message": "Variant variant_01KGBSKFM6ZHPDTGJWRRH6QXQJ has no prices",
+      "details": {
+        "variant_id": "variant_01KGBSKFM6ZHPDTGJWRRH6QXQJ"
+      }
+    },
+    {
+      "severity": "error",
+      "category": "pricing",
+      "message": "Variant variant_01KGBSKFM71YQWA51965ER9QHC has no prices",
+      "details": {
+        "variant_id": "variant_01KGBSKFM71YQWA51965ER9QHC"
+      }
+    },
+    {
+      "severity": "error",
+      "category": "pricing",
+      "message": "Variant variant_01KGBSKFM5Z2608RTM1EDGES4B has no prices",
+      "details": {
+        "variant_id": "variant_01KGBSKFM5Z2608RTM1EDGES4B"
+      }
+    },
+    {
+      "severity": "error",
+      "category": "pricing",
+      "message": "Variant variant_01KGBSKFM5PBXW5MXRGV6E3TMD has no prices",
+      "details": {
+        "variant_id": "variant_01KGBSKFM5PBXW5MXRGV6E3TMD"
+      }
+    },
+    {
+      "severity": "error",
+      "category": "pricing",
+      "message": "Variant variant_01KGBSKFM6H9E5Y97GJGVTEXWV has no prices",
+      "details": {
+        "variant_id": "variant_01KGBSKFM6H9E5Y97GJGVTEXWV"
+      }
+    },
+    {
+      "severity": "error",
+      "category": "pricing",
+      "message": "Variant variant_01KJJAT6P5AVMFWCG57KC0C4X5 has no prices",
+      "details": {
+        "variant_id": "variant_01KJJAT6P5AVMFWCG57KC0C4X5"
+      }
+    },
+    {
+      "severity": "error",
+      "category": "pricing",
+      "message": "Variant variant_01KJJA88ZZAPRSSCD7HWV7SZRX has no prices",
+      "details": {
+        "variant_id": "variant_01KJJA88ZZAPRSSCD7HWV7SZRX"
+      }
+    },
+    {
+      "severity": "error",
+      "category": "pricing",
+      "message": "Variant variant_01KGBT5X00SP9EWBP2HCD81AZB has no prices",
+      "details": {
+        "variant_id": "variant_01KGBT5X00SP9EWBP2HCD81AZB"
+      }
+    },
+    {
+      "severity": "error",
+      "category": "pricing",
+      "message": "Variant variant_01KJJAWH43C1XRKKHFX20F9RAT has no prices",
+      "details": {
+        "variant_id": "variant_01KJJAWH43C1XRKKHFX20F9RAT"
+      }
+    },
+    {
+      "severity": "error",
+      "category": "pricing",
+      "message": "Variant variant_01KJJAXSDZM5N52D5V7DMPFK4Q has no prices",
+      "details": {
+        "variant_id": "variant_01KJJAXSDZM5N52D5V7DMPFK4Q"
+      }
+    },
+    {
+      "severity": "error",
+      "category": "pricing",
+      "message": "Variant variant_01KGBT5WZYV1YCQHZFF45Y6TS7 has no prices",
+      "details": {
+        "variant_id": "variant_01KGBT5WZYV1YCQHZFF45Y6TS7"
+      }
+    },
+    {
+      "severity": "error",
+      "category": "pricing",
+      "message": "Variant variant_01KGBTYBWW00A60HXAE9P4G6G9 has no prices",
+      "details": {
+        "variant_id": "variant_01KGBTYBWW00A60HXAE9P4G6G9"
+      }
+    },
+    {
+      "severity": "error",
+      "category": "pricing",
+      "message": "Variant variant_01KGBTYBWS6YMA0CQ6A7FCSKGH has no prices",
+      "details": {
+        "variant_id": "variant_01KGBTYBWS6YMA0CQ6A7FCSKGH"
+      }
+    },
+    {
+      "severity": "error",
+      "category": "pricing",
+      "message": "Variant variant_01KGBTYBWTPSAHTKZ98G00C8M7 has no prices",
+      "details": {
+        "variant_id": "variant_01KGBTYBWTPSAHTKZ98G00C8M7"
+      }
+    },
+    {
+      "severity": "error",
+      "category": "pricing",
+      "message": "Variant variant_01KGBTYBWV1T8QGTQQHNNC2ZG2 has no prices",
+      "details": {
+        "variant_id": "variant_01KGBTYBWV1T8QGTQQHNNC2ZG2"
+      }
+    },
+    {
+      "severity": "error",
+      "category": "pricing",
+      "message": "Variant variant_01KGBTYBWV7A5M1PNAXGSZKH1V has no prices",
+      "details": {
+        "variant_id": "variant_01KGBTYBWV7A5M1PNAXGSZKH1V"
+      }
+    },
+    {
+      "severity": "error",
+      "category": "pricing",
+      "message": "Variant variant_01KGBWB1FH66NNQM5JS27S532Y has no prices",
+      "details": {
+        "variant_id": "variant_01KGBWB1FH66NNQM5JS27S532Y"
+      }
+    },
+    {
+      "severity": "error",
+      "category": "pricing",
+      "message": "Variant variant_01KGBWB1FHEMZDWCAS7JFAEEEH has no prices",
+      "details": {
+        "variant_id": "variant_01KGBWB1FHEMZDWCAS7JFAEEEH"
+      }
+    },
+    {
+      "severity": "error",
+      "category": "pricing",
+      "message": "Variant variant_01KGBWB1FJ40V0TJ00ADDE50ZV has no prices",
+      "details": {
+        "variant_id": "variant_01KGBWB1FJ40V0TJ00ADDE50ZV"
+      }
+    },
+    {
+      "severity": "error",
+      "category": "pricing",
+      "message": "Variant variant_01KGBWB1FJN8D31N6Q6PZDY5MH has no prices",
+      "details": {
+        "variant_id": "variant_01KGBWB1FJN8D31N6Q6PZDY5MH"
+      }
+    },
+    {
+      "severity": "error",
+      "category": "pricing",
+      "message": "Variant variant_01KGBWB1FJSJ9BY08ZG513NCQR has no prices",
+      "details": {
+        "variant_id": "variant_01KGBWB1FJSJ9BY08ZG513NCQR"
+      }
+    },
+    {
+      "severity": "error",
+      "category": "pricing",
+      "message": "Variant variant_01KGC06J7JQCNP1CJ0EQ3TKPDH has no prices",
+      "details": {
+        "variant_id": "variant_01KGC06J7JQCNP1CJ0EQ3TKPDH"
+      }
+    },
+    {
+      "severity": "error",
+      "category": "pricing",
+      "message": "Variant variant_01KGC06J7KQN56ZB0M2JJRY20M has no prices",
+      "details": {
+        "variant_id": "variant_01KGC06J7KQN56ZB0M2JJRY20M"
+      }
+    }
+  ],
+  "products": [
+    {
+      "id": "prod_01KGBSKFJ065B5KGPFTXDAD2K0",
+      "title": "Prime",
+      "variants_count": 1,
+      "has_issues": true
+    },
+    {
+      "id": "prod_01KGBSKFJ0GNRNVKXWZJEHE93H",
+      "title": "Dragon",
+      "variants_count": 1,
+      "has_issues": true
+    },
+    {
+      "id": "prod_01KGBSKFJ0H30D24QBEFRA48TJ",
+      "title": "Falcon",
+      "variants_count": 1,
+      "has_issues": true
+    },
+    {
+      "id": "prod_01KGBSKFJ0JWSH8EEYNWYNS5JG",
+      "title": "Euphoria",
+      "variants_count": 2,
+      "has_issues": true
+    },
+    {
+      "id": "prod_01KGBSKFJ0XCZXZYNVAKFSHVRJ",
+      "title": "Duck Classic",
+      "variants_count": 1,
+      "has_issues": true
+    },
+    {
+      "id": "prod_01KGBT5WYC4ZB5Y9YFERHF82XC",
+      "title": "Music Shield",
+      "variants_count": 5,
+      "has_issues": true
+    },
+    {
+      "id": "prod_01KGBT5WYCA60C90ZKMP7386J6",
+      "title": "Shield",
+      "variants_count": 1,
+      "has_issues": true
+    },
+    {
+      "id": "prod_01KGBTYBTX459WWMC2V5GVQZ0H",
+      "title": "MR1 x Chamelo Infinity",
+      "variants_count": 1,
+      "has_issues": true
+    },
+    {
+      "id": "prod_01KGBTYBTX9ACN1CJMTFY984KJ",
+      "title": "Zurix",
+      "variants_count": 1,
+      "has_issues": true
+    },
+    {
+      "id": "prod_01KGBTYBTXEH1TX4CBHV7RA1WP",
+      "title": "Veil",
+      "variants_count": 1,
+      "has_issues": true
+    },
+    {
+      "id": "prod_01KGBTYBTXP8WM4F1A4HDYHB85",
+      "title": "Dusk Classic",
+      "variants_count": 1,
+      "has_issues": true
+    },
+    {
+      "id": "prod_01KGBTYBTXYXWXDKTXWNHB0RXS",
+      "title": "Infinity",
+      "variants_count": 1,
+      "has_issues": true
+    },
+    {
+      "id": "prod_01KGBWB1DZ4TG8MB055MK0SEEN",
+      "title": "Aura",
+      "variants_count": 1,
+      "has_issues": true
+    },
+    {
+      "id": "prod_01KGBWB1DZRTQ0GEJT118E8BAC",
+      "title": "Aura Audio",
+      "variants_count": 4,
+      "has_issues": true
+    },
+    {
+      "id": "prod_01KGC06J67XGN8CBGJKSV03908",
+      "title": "Aroza",
+      "variants_count": 1,
+      "has_issues": true
+    },
+    {
+      "id": "prod_01KGC06J68DE3MNGBGG8GJ1PCZ",
+      "title": "Dragon",
+      "variants_count": 1,
+      "has_issues": true
+    }
+  ]
+}
