@@ -1,0 +1,102 @@
+
+> mytechgear-medusa@0.0.1 dev
+> medusa develop
+
+✅ Stripe payment module enabled
+✅ Brevo notification module enabled
+[32minfo[39m:    redisUrl not found. A fake redis instance will be used.
+[32minfo[39m:    [Watcher] Using standard dev server (restart on file change)
+[32minfo[39m:    [Watcher] Watching filesystem to reload dev server on file change
+[32minfo[39m:    [Watcher] modified medusa.log modified: restarting dev server
+[32minfo[39m:    [Watcher] Reloaded in 4.10ms
+✅ Stripe payment module enabled
+✅ Brevo notification module enabled
+[32minfo[39m:    redisUrl not found. A fake redis instance will be used.
+[32minfo[39m:    [Watcher] modified medusa.log modified: restarting dev server
+[32minfo[39m:    [Watcher] Reloaded in 8.61ms
+✅ Stripe payment module enabled
+✅ Brevo notification module enabled
+[32minfo[39m:    [Watcher] modified medusa.log modified: restarting dev server
+[32minfo[39m:    [Watcher] Reloaded in 4.47ms
+✅ Stripe payment module enabled
+✅ Brevo notification module enabled
+[32minfo[39m:    [Watcher] modified medusa.log modified: restarting dev server
+[32minfo[39m:    [Watcher] Reloaded in 3.28ms
+✅ Stripe payment module enabled
+✅ Brevo notification module enabled
+[32minfo[39m:    [Watcher] modified medusa.log modified: restarting dev server
+[32minfo[39m:    [Watcher] Reloaded in 4.85ms
+✅ Stripe payment module enabled
+✅ Brevo notification module enabled
+[32minfo[39m:    [Watcher] modified medusa.log modified: restarting dev server
+[32minfo[39m:    [Watcher] Reloaded in 5.86ms
+✅ Stripe payment module enabled
+✅ Brevo notification module enabled
+[32minfo[39m:    [Watcher] modified medusa.log modified: restarting dev server
+[32minfo[39m:    [Watcher] Reloaded in 4.38ms
+✅ Stripe payment module enabled
+✅ Brevo notification module enabled
+[32minfo[39m:    [Watcher] modified medusa.log modified: restarting dev server
+[32minfo[39m:    [Watcher] Reloaded in 3.50ms
+✅ Stripe payment module enabled
+✅ Brevo notification module enabled
+[32minfo[39m:    [Watcher] modified medusa.log modified: restarting dev server
+[32minfo[39m:    [Watcher] Reloaded in 3.48ms
+✅ Stripe payment module enabled
+✅ Brevo notification module enabled
+[32minfo[39m:    [Watcher] modified medusa.log modified: restarting dev server
+[32minfo[39m:    [Watcher] Reloaded in 4.25ms
+✅ Stripe payment module enabled
+✅ Brevo notification module enabled
+[32minfo[39m:    [Watcher] modified medusa.log modified: restarting dev server
+[32minfo[39m:    [Watcher] Reloaded in 7.81ms
+✅ Stripe payment module enabled
+[32minfo[39m:    [Watcher] modified medusa.log modified: restarting dev server
+[32minfo[39m:    [Watcher] Reloaded in 3.89ms
+✅ Stripe payment module enabled
+✅ Brevo notification module enabled
+[32minfo[39m:    [Watcher] modified medusa.log modified: restarting dev server
+[32minfo[39m:    [Watcher] Reloaded in 4.79ms
+✅ Stripe payment module enabled
+✅ Brevo notification module enabled
+[32minfo[39m:    [Watcher] modified medusa.log modified: restarting dev server
+[32minfo[39m:    [Watcher] Reloaded in 5.19ms
+✅ Stripe payment module enabled
+✅ Brevo notification module enabled
+[32minfo[39m:    redisUrl not found. A fake redis instance will be used.
+[32minfo[39m:    [Watcher] modified medusa.log modified: restarting dev server
+[32minfo[39m:    [Watcher] Reloaded in 7.80ms
+✅ Stripe payment module enabled
+✅ Brevo notification module enabled
+[32minfo[39m:    [Watcher] modified medusa.log modified: restarting dev server
+[32minfo[39m:    [Watcher] Reloaded in 4.59ms
+✅ Stripe payment module enabled
+✅ Brevo notification module enabled
+[32minfo[39m:    redisUrl not found. A fake redis instance will be used.
+- Creating server
+[32minfo[39m:    redisUrl not found. A fake redis instance will be used.
+[32minfo[39m:    Skipping instrumentation registration. No register function found.
+[32minfo[39m:    redisUrl not found. A fake redis instance will be used.
+[32minfo[39m:    No link to load from /home/gestionmax-aur-lien/CascadeProjects/mytechgear/mytechgear-medusa/node_modules/@medusajs/draft-order/.medusa/server/src/links. skipped.
+[33mwarn[39m:    Local Event Bus installed. This is not recommended for production.
+[32minfo[39m:    Locking module: Using "in-memory" as default.
+[32minfo[39m:    No workflow to load from /home/gestionmax-aur-lien/CascadeProjects/mytechgear/mytechgear-medusa/node_modules/@medusajs/draft-order/.medusa/server/src/workflows. skipped.
+[32minfo[39m:    No subscriber to load from /home/gestionmax-aur-lien/CascadeProjects/mytechgear/mytechgear-medusa/node_modules/@medusajs/draft-order/.medusa/server/src/subscribers. skipped.
+[32minfo[39m:    No job to load from /home/gestionmax-aur-lien/CascadeProjects/mytechgear/mytechgear-medusa/node_modules/@medusajs/medusa/dist/jobs. skipped.
+[32minfo[39m:    No job to load from /home/gestionmax-aur-lien/CascadeProjects/mytechgear/mytechgear-medusa/node_modules/@medusajs/draft-order/.medusa/server/src/jobs. skipped.
+[33mwarn[39m:    No middleware configuration found in /home/gestionmax-aur-lien/CascadeProjects/mytechgear/mytechgear-medusa/src/api/middlewares.ts. Skipping middleware configuration.
+Error: listen EADDRINUSE: address already in use :::9000
+    at Server.setupListenHandle [as _listen2] (node:net:1908:16)
+    at listenInCluster (node:net:1965:12)
+    at Server.listen (node:net:2067:7)
+    at internalStart (/home/gestionmax-aur-lien/CascadeProjects/mytechgear/mytechgear-medusa/node_modules/@medusajs/medusa/src/commands/start.ts:320:15)
+    at async start (/home/gestionmax-aur-lien/CascadeProjects/mytechgear/mytechgear-medusa/node_modules/@medusajs/medusa/src/commands/start.ts:419:12) {
+  code: 'EADDRINUSE',
+  errno: -98,
+  syscall: 'listen',
+  address: '::',
+  port: 9000
+}
+Connection Error: Connection ended unexpectedly
+Connection Error: Connection ended unexpectedly
+[32minfo[39m:    Gracefully shutting down server

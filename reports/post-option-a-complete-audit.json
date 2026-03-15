@@ -1,0 +1,1246 @@
+{
+  "timestamp": "2026-03-08T17:19:17.305Z",
+  "taxonomy": {
+    "collections": {
+      "count": 16,
+      "items": [
+        {
+          "id": "pcol_bestsellers",
+          "title": "Best-sellers",
+          "handle": "best-sellers",
+          "products_count": 0
+        },
+        {
+          "id": "pcol_01KGBSKFHEVTNXE9ZG2HBC4QZ8",
+          "title": "Collection Lifestyle",
+          "handle": "collection-lifestyle",
+          "products_count": 2
+        },
+        {
+          "id": "pcol_01KGBSKFHDDDKWYFQTJQ0HNK34",
+          "title": "Collection Prismatic",
+          "handle": "collection-prismatic",
+          "products_count": 1
+        },
+        {
+          "id": "pcol_01KGBSKFHEFEZEE61CW8SESSSE",
+          "title": "Collection Sport & Performance",
+          "handle": "collection-sport",
+          "products_count": 0
+        },
+        {
+          "id": "pcol_cycling",
+          "title": "Cyclisme & Vélo",
+          "handle": "cycling",
+          "products_count": 1
+        },
+        {
+          "id": "pcol_01KJJDH3KDTHZJ12QRPWJ34178",
+          "title": "Lifestyle",
+          "handle": "lifestyle",
+          "products_count": 0
+        },
+        {
+          "id": "pcol_audio_sunglasses",
+          "title": "Lunettes Audio",
+          "handle": "audio-sunglasses",
+          "products_count": 0
+        },
+        {
+          "id": "pcol_nouveautes",
+          "title": "Nouveautés 2026",
+          "handle": "nouveautes-2026",
+          "products_count": 0
+        },
+        {
+          "id": "pcol_01KJJDH3NGHEJVFXBWVH3WQ2JX",
+          "title": "Prismatic",
+          "handle": "prismatic",
+          "products_count": 0
+        },
+        {
+          "id": "pcol_running",
+          "title": "Running & Course à Pied",
+          "handle": "running",
+          "products_count": 3
+        },
+        {
+          "id": "pcol_ski_snow",
+          "title": "Ski & Sports de Neige",
+          "handle": "ski-snow",
+          "products_count": 0
+        },
+        {
+          "id": "pcol_soldes",
+          "title": "Soldes & Promotions",
+          "handle": "soldes-promotions",
+          "products_count": 0
+        },
+        {
+          "id": "pcol_01KJJDH3GTP7WXPBB1BQ3SSJYK",
+          "title": "Sport",
+          "handle": "sport",
+          "products_count": 0
+        },
+        {
+          "id": "pcol_water_sports",
+          "title": "Sports Nautiques",
+          "handle": "water-sports",
+          "products_count": 0
+        },
+        {
+          "id": "pcol_trail_outdoor",
+          "title": "Trail & Outdoor",
+          "handle": "trail-outdoor",
+          "products_count": 1
+        },
+        {
+          "id": "pcol_urban_lifestyle",
+          "title": "Urbain & Quotidien",
+          "handle": "urban-lifestyle",
+          "products_count": 8
+        }
+      ]
+    },
+    "categories": {
+      "count": 3,
+      "items": [
+        {
+          "id": "pcat_root",
+          "name": "Lunettes Connectées",
+          "handle": "lunettes-connectees",
+          "parent_id": null,
+          "products_count": 0
+        },
+        {
+          "id": "pcat_classic",
+          "name": "Classic Eyewear",
+          "handle": "classic-eyewear",
+          "parent_id": "pcat_root",
+          "products_count": 6
+        },
+        {
+          "id": "pcat_smart_tech",
+          "name": "Smart Tech",
+          "handle": "smart-tech",
+          "parent_id": "pcat_root",
+          "products_count": 10
+        }
+      ]
+    }
+  },
+  "catalog": {
+    "products": {
+      "count": 16,
+      "items": [
+        {
+          "id": "prod_01KGBSKFJ065B5KGPFTXDAD2K0",
+          "title": "Prime",
+          "handle": "prime",
+          "collection_id": "pcol_trail_outdoor",
+          "collection_title": "Trail & Outdoor",
+          "category_ids": [
+            "pcat_classic"
+          ],
+          "category_names": [
+            "Classic Eyewear"
+          ],
+          "variants_count": 1,
+          "metadata": {
+            "brand": "Generic",
+            "unisex": true,
+            "hasAudio": false,
+            "use_case": "Daily wear, casual",
+            "has_audio": false,
+            "enriched_at": "2026-02-01T07:03:32.542Z",
+            "frame_style": "Classic",
+            "seo_keywords": "lunettes classiques,prime,casual,protection UV",
+            "uv_protection": "100%",
+            "frame_material": "Plastic/Metal",
+            "product_family": "classic",
+            "warranty_years": 1,
+            "lens_technology": "Standard tinted"
+          }
+        },
+        {
+          "id": "prod_01KGBSKFJ0GNRNVKXWZJEHE93H",
+          "title": "Dragon",
+          "handle": "dragon",
+          "collection_id": "pcol_01KGBSKFHEVTNXE9ZG2HBC4QZ8",
+          "collection_title": "Collection Lifestyle",
+          "category_ids": [
+            "pcat_classic"
+          ],
+          "category_names": [
+            "Classic Eyewear"
+          ],
+          "variants_count": 1,
+          "metadata": {
+            "brand": "Generic",
+            "notes": "⚠️ Different from Chamelo Dragon (bestseller). This is a Payload import.",
+            "unisex": true,
+            "use_case": "Daily wear, casual",
+            "has_audio": false,
+            "enriched_at": "2026-02-01T07:03:32.583Z",
+            "frame_style": "Classic",
+            "seo_keywords": "lunettes dragon,classique,protection UV",
+            "uv_protection": "100%",
+            "frame_material": "Plastic/Metal",
+            "product_family": "classic",
+            "warranty_years": 1,
+            "lens_technology": "Standard tinted"
+          }
+        },
+        {
+          "id": "prod_01KGBSKFJ0H30D24QBEFRA48TJ",
+          "title": "Falcon",
+          "handle": "falcon",
+          "collection_id": "pcol_running",
+          "collection_title": "Running & Course à Pied",
+          "category_ids": [
+            "pcat_classic"
+          ],
+          "category_names": [
+            "Classic Eyewear"
+          ],
+          "variants_count": 1,
+          "metadata": {
+            "brand": "Generic",
+            "family": "custom",
+            "unisex": true,
+            "hasAudio": false,
+            "platform": {
+              "eclipse": true,
+              "category": "sport-smart-glasses",
+              "sharedFeatures": [
+                "eclipse-tint",
+                "impact-resistant",
+                "sweatproof",
+                "ultra-light",
+                "uv-protection"
+              ]
+            },
+            "use_case": "Sport, outdoor activities",
+            "has_audio": false,
+            "sweatproof": true,
+            "enriched_at": "2026-02-01T07:03:32.606Z",
+            "frame_style": "Sport wrap",
+            "polarization": "Partial",
+            "seo_keywords": "lunettes sport,falcon,outdoor,running,protection UV",
+            "uv_protection": "100%",
+            "frame_material": "Lightweight plastic",
+            "product_family": "sport",
+            "warranty_years": 1,
+            "lens_technology": "Sport tinted",
+            "impact_resistant": true
+          }
+        },
+        {
+          "id": "prod_01KGBSKFJ0JWSH8EEYNWYNS5JG",
+          "title": "Euphoria",
+          "handle": "euphoria",
+          "collection_id": "pcol_01KGBSKFHDDDKWYFQTJQ0HNK34",
+          "collection_title": "Collection Prismatic",
+          "category_ids": [
+            "pcat_classic"
+          ],
+          "category_names": [
+            "Classic Eyewear"
+          ],
+          "variants_count": 2,
+          "metadata": {
+            "brand": "Generic",
+            "unisex": true,
+            "use_case": "Lifestyle, fashion, daily wear",
+            "has_audio": false,
+            "enriched_at": "2026-02-01T07:03:32.627Z",
+            "frame_style": "Fashion forward",
+            "seo_keywords": "lunettes mode,euphoria,lifestyle,tendance,protection UV",
+            "uv_protection": "100%",
+            "frame_material": "Plastic",
+            "product_family": "lifestyle",
+            "warranty_years": 1,
+            "lens_technology": "Fashion tinted"
+          }
+        },
+        {
+          "id": "prod_01KGBSKFJ0XCZXZYNVAKFSHVRJ",
+          "title": "Duck Classic",
+          "handle": "duck-classic",
+          "collection_id": "pcol_01KGBSKFHEVTNXE9ZG2HBC4QZ8",
+          "collection_title": "Collection Lifestyle",
+          "category_ids": [
+            "pcat_classic"
+          ],
+          "category_names": [
+            "Classic Eyewear"
+          ],
+          "variants_count": 1,
+          "metadata": {
+            "brand": "Generic",
+            "unisex": true,
+            "use_case": "Daily wear, casual, classic style",
+            "has_audio": false,
+            "enriched_at": "2026-02-01T07:03:32.647Z",
+            "frame_style": "Classic timeless",
+            "seo_keywords": "lunettes classiques,duck,intemporel,protection UV,casual",
+            "uv_protection": "100%",
+            "frame_material": "Acetate",
+            "product_family": "classic",
+            "warranty_years": 1,
+            "lens_technology": "Classic tinted"
+          }
+        },
+        {
+          "id": "prod_01KGBT5WYC4ZB5Y9YFERHF82XC",
+          "title": "Music Shield",
+          "handle": "music-shield",
+          "collection_id": "pcol_running",
+          "collection_title": "Running & Course à Pied",
+          "category_ids": [
+            "pcat_smart_tech"
+          ],
+          "category_names": [
+            "Smart Tech"
+          ],
+          "variants_count": 5,
+          "metadata": {
+            "brand": "Chamelo",
+            "specs": {
+              "audio": {
+                "items": [
+                  {
+                    "name": "Type",
+                    "type": "text",
+                    "unit": null,
+                    "value": "Open-ear speakers"
+                  },
+                  {
+                    "name": "Connectivity",
+                    "type": "text",
+                    "unit": null,
+                    "value": "Bluetooth 5.0"
+                  },
+                  {
+                    "name": "Microphone",
+                    "type": "boolean",
+                    "unit": null,
+                    "value": true
+                  }
+                ],
+                "label": "Audio",
+                "priority": 5
+              },
+              "optics": {
+                "items": [
+                  {
+                    "name": "VLT (transmission lumière)",
+                    "type": "range",
+                    "unit": "%",
+                    "value": "63%-17%",
+                    "conditional": null
+                  },
+                  {
+                    "name": "Vitesse de teinte",
+                    "type": "duration",
+                    "unit": "s",
+                    "value": 0.1,
+                    "conditional": null
+                  },
+                  {
+                    "name": "Protection UV",
+                    "type": "percentage",
+                    "unit": "%",
+                    "value": 100,
+                    "conditional": null
+                  },
+                  {
+                    "name": "Type de verre",
+                    "type": "text",
+                    "unit": null,
+                    "value": "Non-polarisé",
+                    "conditional": null
+                  }
+                ],
+                "label": "Optique",
+                "priority": 2
+              },
+              "battery": {
+                "items": [
+                  {
+                    "name": "Tint-adjustment",
+                    "type": "duration",
+                    "unit": "h",
+                    "value": 100,
+                    "conditional": null
+                  },
+                  {
+                    "name": "Built-in audio",
+                    "note": "Music Shield exclusive",
+                    "type": "duration",
+                    "unit": "h",
+                    "value": 6.5,
+                    "conditional": null
+                  },
+                  {
+                    "name": "Charge rapide (80%)",
+                    "type": "duration",
+                    "unit": "min",
+                    "value": 30,
+                    "conditional": null
+                  },
+                  {
+                    "name": "Capacité",
+                    "type": "capacity",
+                    "unit": "mAh",
+                    "value": 180,
+                    "conditional": null
+                  }
+                ],
+                "label": "Batterie",
+                "priority": 1
+              },
+              "dimensions": {
+                "items": [
+                  {
+                    "name": "Longueur branche",
+                    "type": "length",
+                    "unit": "mm",
+                    "value": 166,
+                    "conditional": null
+                  },
+                  {
+                    "name": "Largeur tempe",
+                    "type": "length",
+                    "unit": "mm",
+                    "value": 160,
+                    "conditional": null
+                  },
+                  {
+                    "name": "Hauteur monture",
+                    "type": "length",
+                    "unit": "mm",
+                    "value": 61,
+                    "conditional": null
+                  },
+                  {
+                    "name": "Poids",
+                    "note": "With audio module",
+                    "type": "weight",
+                    "unit": "g",
+                    "value": 49
+                  }
+                ],
+                "label": "Dimensions",
+                "priority": 3
+              },
+              "durability": {
+                "items": [
+                  {
+                    "name": "Indice de protection",
+                    "type": "rating",
+                    "unit": null,
+                    "value": "IPX4",
+                    "conditional": null
+                  },
+                  {
+                    "name": "Résistance impacts",
+                    "type": "boolean",
+                    "unit": null,
+                    "value": true,
+                    "conditional": null
+                  },
+                  {
+                    "name": "Anti-transpiration",
+                    "type": "boolean",
+                    "unit": null,
+                    "value": true,
+                    "conditional": null
+                  },
+                  {
+                    "name": "Matériau monture",
+                    "type": "text",
+                    "unit": null,
+                    "value": "TR-90 Nylon",
+                    "conditional": null
+                  },
+                  {
+                    "name": "Matériau verres",
+                    "type": "text",
+                    "unit": null,
+                    "value": "Polycarbonate",
+                    "conditional": null
+                  }
+                ],
+                "label": "Résistance",
+                "priority": 4
+              }
+            },
+            "family": "shield-platform",
+            "related": {
+              "variant": "audio",
+              "withoutAudio": "shield"
+            },
+            "features": [
+              {
+                "id": "eclipse-tint",
+                "icon": "sun-dim",
+                "title": "Eclipse™ Tint-Adjustable",
+                "category": "optical",
+                "priority": 1,
+                "conditional": null,
+                "description": "Patented electrochromic lenses adjust from 63% to 17% VLT in 0.1 seconds via slider controls"
+              },
+              {
+                "id": "hidden-audio",
+                "icon": "volume-2",
+                "note": "Music Shield exclusive feature",
+                "title": "Hidden Audio Speakers",
+                "category": "audio",
+                "priority": 2,
+                "conditional": null,
+                "description": "Open-ear audio speakers for music and calls via Bluetooth connectivity"
+              },
+              {
+                "id": "impact-resistant",
+                "icon": "shield-check",
+                "title": "Impact Resistant",
+                "category": "durability",
+                "priority": 3,
+                "conditional": null,
+                "description": "Durable polycarbonate construction designed for intense sports and workouts"
+              },
+              {
+                "id": "sweatproof",
+                "icon": "droplet",
+                "title": "IPX4 Sweatproof",
+                "category": "durability",
+                "priority": 4,
+                "conditional": null,
+                "description": "Water and sweat resistant coating for all-weather performance"
+              },
+              {
+                "id": "ultra-light",
+                "icon": "feather",
+                "title": "Ultra Lightweight",
+                "category": "comfort",
+                "priority": 5,
+                "conditional": null,
+                "description": "Only 49g total weight for all-day comfort during extended wear"
+              },
+              {
+                "id": "uv-protection",
+                "icon": "sun",
+                "title": "100% UV Protection",
+                "category": "optical",
+                "priority": 6,
+                "conditional": null,
+                "description": "Complete UVA and UVB protection for eye safety in bright conditions"
+              }
+            ],
+            "hasAudio": true,
+            "platform": {
+              "eclipse": true,
+              "category": "sport-smart-glasses",
+              "sharedFeatures": [
+                "eclipse-tint",
+                "impact-resistant",
+                "sweatproof",
+                "ultra-light",
+                "uv-protection"
+              ]
+            },
+            "bluetooth": true,
+            "has_audio": true,
+            "audio_type": "Open-ear speakers",
+            "sweatproof": true,
+            "battery_mah": 180,
+            "ce_certified": true,
+            "polarization": "Partial",
+            "seo_keywords": "lunettes audio,Bluetooth,sport,verres électrochromiques,Eclipse,open-ear,IPX4",
+            "weight_grams": 49,
+            "arm_length_mm": 166,
+            "enhanced_grip": true,
+            "uv_protection": "100%",
+            "lensTechnology": {
+              "type": "eclipse",
+              "vltRange": "63-17%",
+              "description": "Ajustement en 0.1 seconde — 1,800x plus rapide que les verres photochromiques traditionnels.\n\n",
+              "adjustmentTime": "0.1s",
+              "eclipseVariant": "hvl"
+            },
+            "product_family": "shield",
+            "warranty_years": 2,
+            "weee_compliant": true,
+            "bridge_width_mm": 160,
+            "frame_height_mm": 61,
+            "lens_technology": "Eclipse™ Tint-Adjustable",
+            "impact_resistant": true,
+            "water_resistance": "IPX4",
+            "battery_tint_hours": 100,
+            "battery_audio_hours": 6.5,
+            "charge_time_minutes": 60,
+            "manual_tint_control": true,
+            "audio_bluetooth_version": "5.0",
+            "light_transmission_range": "63-17%",
+            "related_product_no_audio": "shield",
+            "charge_80_percent_minutes": 30,
+            "tint_adjustment_speed_seconds": 0.1
+          }
+        },
+        {
+          "id": "prod_01KGBT5WYCA60C90ZKMP7386J6",
+          "title": "Shield",
+          "handle": "shield",
+          "collection_id": "pcol_running",
+          "collection_title": "Running & Course à Pied",
+          "category_ids": [
+            "pcat_smart_tech"
+          ],
+          "category_names": [
+            "Smart Tech"
+          ],
+          "variants_count": 3,
+          "metadata": {
+            "brand": "Chamelo",
+            "specs": {
+              "optics": {
+                "items": [
+                  {
+                    "name": "VLT (transmission lumière)",
+                    "type": "range",
+                    "unit": "%",
+                    "value": "63%-17%",
+                    "conditional": null
+                  },
+                  {
+                    "name": "Vitesse de teinte",
+                    "type": "duration",
+                    "unit": "s",
+                    "value": 0.1,
+                    "conditional": null
+                  },
+                  {
+                    "name": "Protection UV",
+                    "type": "percentage",
+                    "unit": "%",
+                    "value": 100,
+                    "conditional": null
+                  },
+                  {
+                    "name": "Type de verre",
+                    "type": "text",
+                    "unit": null,
+                    "value": "Non-polarisé",
+                    "conditional": null
+                  }
+                ],
+                "label": "Optique",
+                "priority": 2
+              },
+              "battery": {
+                "items": [
+                  {
+                    "name": "Tint-adjustment",
+                    "type": "duration",
+                    "unit": "h",
+                    "value": 100,
+                    "conditional": null
+                  },
+                  {
+                    "name": "Charge rapide (80%)",
+                    "type": "duration",
+                    "unit": "min",
+                    "value": 30,
+                    "conditional": null
+                  },
+                  {
+                    "name": "Capacité",
+                    "type": "capacity",
+                    "unit": "mAh",
+                    "value": 180,
+                    "conditional": null
+                  }
+                ],
+                "label": "Batterie",
+                "priority": 1
+              },
+              "dimensions": {
+                "items": [
+                  {
+                    "name": "Longueur branche",
+                    "type": "length",
+                    "unit": "mm",
+                    "value": 166,
+                    "conditional": null
+                  },
+                  {
+                    "name": "Largeur tempe",
+                    "type": "length",
+                    "unit": "mm",
+                    "value": 160,
+                    "conditional": null
+                  },
+                  {
+                    "name": "Hauteur monture",
+                    "type": "length",
+                    "unit": "mm",
+                    "value": 61,
+                    "conditional": null
+                  },
+                  {
+                    "name": "Poids",
+                    "note": "Without audio module - 5g lighter than Music Shield",
+                    "type": "weight",
+                    "unit": "g",
+                    "value": 44
+                  }
+                ],
+                "label": "Dimensions",
+                "priority": 3
+              },
+              "durability": {
+                "items": [
+                  {
+                    "name": "Indice de protection",
+                    "type": "rating",
+                    "unit": null,
+                    "value": "IPX4",
+                    "conditional": null
+                  },
+                  {
+                    "name": "Résistance impacts",
+                    "type": "boolean",
+                    "unit": null,
+                    "value": true,
+                    "conditional": null
+                  },
+                  {
+                    "name": "Anti-transpiration",
+                    "type": "boolean",
+                    "unit": null,
+                    "value": true,
+                    "conditional": null
+                  },
+                  {
+                    "name": "Matériau monture",
+                    "type": "text",
+                    "unit": null,
+                    "value": "TR-90 Nylon",
+                    "conditional": null
+                  },
+                  {
+                    "name": "Matériau verres",
+                    "type": "text",
+                    "unit": null,
+                    "value": "Polycarbonate",
+                    "conditional": null
+                  }
+                ],
+                "label": "Résistance",
+                "priority": 4
+              }
+            },
+            "family": "shield-platform",
+            "related": {
+              "variant": "no-audio",
+              "withAudio": "music-shield"
+            },
+            "features": [
+              {
+                "id": "eclipse-tint",
+                "icon": "sun-dim",
+                "title": "Eclipse™ Tint-Adjustable",
+                "category": "optical",
+                "priority": 1,
+                "conditional": null,
+                "description": "Patented electrochromic lenses adjust from 63% to 17% VLT in 0.1 seconds via slider controls"
+              },
+              {
+                "id": "impact-resistant",
+                "icon": "shield-check",
+                "title": "Impact Resistant",
+                "category": "durability",
+                "priority": 2,
+                "conditional": null,
+                "description": "Durable polycarbonate construction designed for intense sports and workouts"
+              },
+              {
+                "id": "sweatproof",
+                "icon": "droplet",
+                "title": "IPX4 Sweatproof",
+                "category": "durability",
+                "priority": 3,
+                "conditional": null,
+                "description": "Water and sweat resistant coating for all-weather performance"
+              },
+              {
+                "id": "ultra-light",
+                "icon": "feather",
+                "title": "Ultra Lightweight",
+                "category": "comfort",
+                "priority": 4,
+                "conditional": null,
+                "description": "Only 44g total weight for all-day comfort during extended wear"
+              },
+              {
+                "id": "uv-protection",
+                "icon": "sun",
+                "title": "100% UV Protection",
+                "category": "optical",
+                "priority": 5,
+                "conditional": null,
+                "description": "Complete UVA and UVB protection for eye safety in bright conditions"
+              }
+            ],
+            "hasAudio": false,
+            "platform": {
+              "eclipse": true,
+              "category": "sport-smart-glasses",
+              "sharedFeatures": [
+                "eclipse-tint",
+                "impact-resistant",
+                "sweatproof",
+                "ultra-light",
+                "uv-protection"
+              ]
+            },
+            "has_audio": false,
+            "sweatproof": true,
+            "battery_mah": 25,
+            "ce_certified": true,
+            "polarization": "Partial",
+            "seo_keywords": "lunettes sport,verres électrochromiques,teinte ajustable,Eclipse,IPX4,légères",
+            "weight_grams": 37,
+            "arm_length_mm": 140,
+            "uv_protection": "100%",
+            "autopilot_mode": true,
+            "product_family": "shield",
+            "warranty_years": 2,
+            "bridge_width_mm": 160,
+            "frame_height_mm": 61,
+            "lens_technology": "Eclipse™ Tint-Adjustable",
+            "impact_resistant": true,
+            "water_resistance": "IPX4",
+            "battery_tint_hours": 52,
+            "charge_time_minutes": 60,
+            "manual_tint_control": true,
+            "ambient_light_sensor": true,
+            "related_product_audio": "music-shield",
+            "light_transmission_range": "54-17%",
+            "charge_80_percent_minutes": 30,
+            "tint_adjustment_speed_seconds": 0.1
+          }
+        },
+        {
+          "id": "prod_01KGBTYBTX459WWMC2V5GVQZ0H",
+          "title": "MR1 x Chamelo Infinity",
+          "handle": "mr1-infinity",
+          "collection_id": "pcol_urban_lifestyle",
+          "collection_title": "Urbain & Quotidien",
+          "category_ids": [
+            "pcat_smart_tech"
+          ],
+          "category_names": [
+            "Smart Tech"
+          ],
+          "variants_count": 1,
+          "metadata": {
+            "brand": "Chamelo x MR1",
+            "hasAudio": false,
+            "bluetooth": true,
+            "has_audio": true,
+            "audio_type": "Dual speakers and microphones",
+            "frame_style": "Rectangular urban",
+            "tint_levels": 4,
+            "control_type": "Touch slider + App",
+            "edition_type": "Limited Edition",
+            "frame_finish": "Glossy black with gold MR1 details",
+            "seo_keywords": "MR1,Mohamed Ramadan,édition limitée,lunettes audio,Bluetooth,design urbain,gold details",
+            "collaboration": "Mohamed Ramadan",
+            "frame_material": "TR90",
+            "product_family": "lifestyle",
+            "warranty_years": 1,
+            "weee_compliant": true,
+            "lens_technology": "HVL™ Tint-Adjustable",
+            "limited_edition": true,
+            "water_resistance": "IPX4",
+            "audio_description": "Open-ear premium audio",
+            "charge_time_hours": 1.5,
+            "battery_tint_hours": 11,
+            "battery_audio_hours": 5,
+            "light_transmission_range": "48-8%",
+            "tint_adjustment_speed_seconds": 0.1
+          }
+        },
+        {
+          "id": "prod_01KGBTYBTX9ACN1CJMTFY984KJ",
+          "title": "Zurix",
+          "handle": "zurix",
+          "collection_id": "pcol_urban_lifestyle",
+          "collection_title": "Urbain & Quotidien",
+          "category_ids": [
+            "pcat_smart_tech"
+          ],
+          "category_names": [
+            "Smart Tech"
+          ],
+          "variants_count": 3,
+          "metadata": {
+            "brand": "Chamelo",
+            "hasAudio": false,
+            "has_audio": false,
+            "tint_levels": 4,
+            "control_type": "Tap (tactile)",
+            "design_style": "Ultra-slim minimalist",
+            "seo_keywords": "lunettes lifestyle,tap control,teinte ajustable,design slim,autonomie longue",
+            "uv_protection": "100%",
+            "product_family": "lifestyle",
+            "warranty_years": 1,
+            "lens_technology": "LC (Liquid Crystal)",
+            "frame_integration": "Components in frame",
+            "battery_tint_hours": 60,
+            "light_transmission_range": "50-10%",
+            "tint_adjustment_speed_seconds": 0.1
+          }
+        },
+        {
+          "id": "prod_01KGBTYBTXEH1TX4CBHV7RA1WP",
+          "title": "Veil",
+          "handle": "veil",
+          "collection_id": "pcol_urban_lifestyle",
+          "collection_title": "Urbain & Quotidien",
+          "category_ids": [
+            "pcat_smart_tech"
+          ],
+          "category_names": [
+            "Smart Tech"
+          ],
+          "variants_count": 3,
+          "metadata": {
+            "brand": "Chamelo",
+            "hasAudio": false,
+            "has_audio": false,
+            "frame_style": "Cat-eye",
+            "polarization": "Full",
+            "seo_keywords": "lunettes cat-eye,teinte ajustable,polarisé,IPX4,design intemporel",
+            "charging_port": "USB-C",
+            "uv_protection": "UV400",
+            "product_family": "lifestyle",
+            "warranty_years": 1,
+            "adjustable_arms": true,
+            "lens_technology": "Electrochromic",
+            "water_resistance": "IPX4",
+            "adjustable_nose_pads": true,
+            "light_transmission_range": "37-8%",
+            "tint_adjustment_speed_seconds": 0.1
+          }
+        },
+        {
+          "id": "prod_01KGBTYBTXP8WM4F1A4HDYHB85",
+          "title": "Dusk Classic",
+          "handle": "dusk-classic",
+          "collection_id": "pcol_urban_lifestyle",
+          "collection_title": "Urbain & Quotidien",
+          "category_ids": [
+            "pcat_classic"
+          ],
+          "category_names": [
+            "Classic Eyewear"
+          ],
+          "variants_count": 1,
+          "metadata": {
+            "brand": "Chamelo",
+            "bluetooth": true,
+            "has_audio": true,
+            "audio_type": "Hidden speakers and microphones",
+            "frame_style": "Wayfarer classic",
+            "control_type": "Button + App",
+            "polarization": "Full",
+            "seo_keywords": "lunettes audio,wayfarer,Bluetooth,teinte ajustable,ultra-légères,26g",
+            "weight_grams": 26,
+            "audio_features": "Music and calls",
+            "product_family": "lifestyle",
+            "warranty_years": 1,
+            "weee_compliant": true,
+            "lens_technology": "Dusk™ Alpha",
+            "water_resistance": "IPX-4",
+            "light_transmission_range": "38-4%",
+            "tint_adjustment_speed_seconds": 0.1
+          }
+        },
+        {
+          "id": "prod_01KGBTYBTXYXWXDKTXWNHB0RXS",
+          "title": "Infinity",
+          "handle": "infinity",
+          "collection_id": "pcol_urban_lifestyle",
+          "collection_title": "Urbain & Quotidien",
+          "category_ids": [
+            "pcat_smart_tech"
+          ],
+          "category_names": [
+            "Smart Tech"
+          ],
+          "variants_count": 3,
+          "metadata": {
+            "brand": "Chamelo",
+            "bluetooth": true,
+            "has_audio": true,
+            "audio_type": "Dual speakers and microphones",
+            "frame_style": "Rectangular urban",
+            "tint_levels": 4,
+            "control_type": "Touch slider + App",
+            "frame_finish": "Glossy black",
+            "seo_keywords": "lunettes audio,Bluetooth,design urbain,TR90,open-ear,teinte HVL",
+            "frame_material": "TR90",
+            "product_family": "lifestyle",
+            "warranty_years": 1,
+            "weee_compliant": true,
+            "lens_technology": "HVL™ Tint-Adjustable",
+            "water_resistance": "IPX4",
+            "audio_description": "Open-ear premium audio",
+            "charge_time_hours": 1.5,
+            "battery_tint_hours": 11,
+            "battery_audio_hours": 5.2,
+            "light_transmission_range": "48-8%",
+            "tint_adjustment_speed_seconds": 0.1
+          }
+        },
+        {
+          "id": "prod_01KGBWB1DZ4TG8MB055MK0SEEN",
+          "title": "Aura",
+          "handle": "aura",
+          "collection_id": "pcol_urban_lifestyle",
+          "collection_title": "Urbain & Quotidien",
+          "category_ids": [
+            "pcat_smart_tech"
+          ],
+          "category_names": [
+            "Smart Tech"
+          ],
+          "variants_count": 1,
+          "metadata": {
+            "brand": "Chamelo",
+            "has_audio": false,
+            "battery_mah": 220,
+            "calm_colors": "blue, purple, ruby, clear",
+            "color_count": 4,
+            "frame_style": "Rimless square",
+            "control_type": "Tap to change color",
+            "polarization": "No",
+            "seo_keywords": "lunettes prismatic,changement couleur,rimless,tap control,ultra-légères,35g",
+            "weight_grams": 35,
+            "arm_length_mm": 156.5,
+            "energy_colors": "red, orange, yellow, clear",
+            "uv_protection": "100%",
+            "frame_material": "Stainless steel, TR-90, Titanium",
+            "product_family": "aura",
+            "warranty_years": 1,
+            "frame_height_mm": 35,
+            "lens_technology": "Prismatic™ Color-changing",
+            "temple_width_mm": 143,
+            "water_resistance": "IPX4",
+            "battery_color_hours": 47,
+            "charge_time_minutes": 30,
+            "related_product_audio": "aura-audio",
+            "light_transmission_range": "40-70%",
+            "color_change_speed_seconds": 0.1
+          }
+        },
+        {
+          "id": "prod_01KGBWB1DZRTQ0GEJT118E8BAC",
+          "title": "Aura Audio",
+          "handle": "aura-audio",
+          "collection_id": "pcol_urban_lifestyle",
+          "collection_title": "Urbain & Quotidien",
+          "category_ids": [
+            "pcat_smart_tech"
+          ],
+          "category_names": [
+            "Smart Tech"
+          ],
+          "variants_count": 4,
+          "metadata": {
+            "brand": "Chamelo",
+            "bluetooth": true,
+            "has_audio": true,
+            "audio_type": "Dual speakers and microphones",
+            "calm_colors": "crystal, ruby, indigo, violet",
+            "color_count": 4,
+            "frame_style": "Rimless square",
+            "control_type": "Dual touch (Right: color, Left: audio)",
+            "seo_keywords": "lunettes prismatic,audio Bluetooth,changement couleur,rimless,dual speakers,35g",
+            "weight_grams": 35,
+            "arm_length_mm": 156.5,
+            "energy_colors": "red, orange, yellow, clear",
+            "uv_protection": "UV400",
+            "audio_features": "Music and calls",
+            "frame_material": "Stainless steel, TR-90, Titanium",
+            "product_family": "aura",
+            "warranty_years": 1,
+            "weee_compliant": true,
+            "frame_height_mm": 35,
+            "lens_technology": "Prismatic™ Color-changing",
+            "temple_width_mm": 143,
+            "water_resistance": "IPX4",
+            "audio_description": "Open-ear premium audio",
+            "battery_audio_hours": 5,
+            "battery_color_hours": 11,
+            "light_transmission_range": "20-65%",
+            "related_product_no_audio": "aura",
+            "color_change_speed_seconds": 0.1
+          }
+        },
+        {
+          "id": "prod_01KGC06J67XGN8CBGJKSV03908",
+          "title": "Aroza",
+          "handle": "aroza",
+          "collection_id": "pcol_cycling",
+          "collection_title": "Cyclisme & Vélo",
+          "category_ids": [
+            "pcat_smart_tech"
+          ],
+          "category_names": [
+            "Smart Tech"
+          ],
+          "variants_count": 1,
+          "metadata": {
+            "brand": "Chamelo",
+            "hasAudio": false,
+            "use_case": "Extreme sports, skiing, snowboarding, mountain biking",
+            "has_audio": false,
+            "bestseller": true,
+            "frame_style": "Sport goggles",
+            "ce_certified": true,
+            "design_notes": "First-of-its-kind goggle design with electronic tint",
+            "product_type": "Goggles",
+            "seo_keywords": "lunettes masque,goggles électroniques,ski,snowboard,VTT,teinte ajustable,sport extrême",
+            "uv_protection": "100%",
+            "product_family": "aroza",
+            "warranty_years": 2,
+            "bestseller_rank": 5,
+            "lens_technology": "Electrochromic Tint-Adjustable",
+            "tint_adjustment_speed_seconds": 0.1
+          }
+        },
+        {
+          "id": "prod_01KGC06J68DE3MNGBGG8GJ1PCZ",
+          "title": "Dragon",
+          "handle": "dragon-chamelo",
+          "collection_id": "pcol_urban_lifestyle",
+          "collection_title": "Urbain & Quotidien",
+          "category_ids": [
+            "pcat_smart_tech"
+          ],
+          "category_names": [
+            "Smart Tech"
+          ],
+          "variants_count": 1,
+          "metadata": {
+            "brand": "Chamelo",
+            "use_case": "Lifestyle, urban fashion, daily wear",
+            "has_audio": false,
+            "bestseller": true,
+            "frame_style": "Premium metal sunglasses",
+            "frame_finish": "Glossy Black/Gold",
+            "product_type": "Premium Designer Sunglasses",
+            "seo_keywords": "lunettes métal,designer,premium,teinte électronique,urbain,mode,Dragon",
+            "uv_protection": "100%",
+            "design_quality": "Designer collection",
+            "frame_material": "Premium metal",
+            "product_family": "dragon",
+            "warranty_years": 2,
+            "bestseller_rank": 7,
+            "lens_technology": "Electrochromic Tint-Adjustable",
+            "tint_adjustment_speed_seconds": 0.1
+          }
+        }
+      ]
+    },
+    "variants": {
+      "count": 32,
+      "with_pricing": 32,
+      "without_pricing": 0
+    }
+  },
+  "sportData": {
+    "found_in_metadata": true,
+    "found_in_exports": false,
+    "current_implementation": "COLLECTIONS",
+    "sport_references": [
+      {
+        "source": "collections",
+        "data": [
+          {
+            "id": "pcol_cycling",
+            "title": "Cyclisme & Vélo",
+            "handle": "cycling",
+            "products_count": 1
+          },
+          {
+            "id": "pcol_running",
+            "title": "Running & Course à Pied",
+            "handle": "running",
+            "products_count": 3
+          },
+          {
+            "id": "pcol_trail_outdoor",
+            "title": "Trail & Outdoor",
+            "handle": "trail-outdoor",
+            "products_count": 1
+          }
+        ]
+      },
+      {
+        "source": "script:import-chamelo-bestsellers-missing.ts",
+        "data": {
+          "mentions": 10,
+          "sample_lines": [
+            "  const SPORT_COLLECTION_ID = \"pcol_01KGBSKFHEFEZEE61CW8SESSSE\"",
+            "  const SPORT_CATEGORY_ID = \"pcat_01KGBS24KG6YME924C8WKMV3X0\"",
+            "      // AROZA (Sport Goggles) - 349 USD"
+          ]
+        }
+      },
+      {
+        "source": "script:import-chamelo-shield.ts",
+        "data": {
+          "mentions": 13,
+          "sample_lines": [
+            "  const SPORT_COLLECTION_ID = \"pcol_01KGBSKFHEFEZEE61CW8SESSSE\"",
+            "  const SPORT_CATEGORY_ID = \"pcat_01KGBS24KG6YME924C8WKMV3X0\"",
+            "      subtitle: \"Lunettes sport Eclipse™ à teinte ajustable\","
+          ]
+        }
+      },
+      {
+        "source": "script:import-from-payload.ts",
+        "data": {
+          "mentions": 1,
+          "sample_lines": [
+            "  productCategoryMapping.set(\"SPORT\", \"pcat_01KGBS24KG6YME924C8WKMV3X0\")"
+          ]
+        }
+      },
+      {
+        "source": "script:test-safe-import.ts",
+        "data": {
+          "mentions": 1,
+          "sample_lines": [
+            " * Tests the safe merge logic on a single product before running full re-import."
+          ]
+        }
+      }
+    ]
+  },
+  "recommendations": {
+    "sport_architecture": "SPORT DÉJÀ IMPLÉMENTÉ VIA COLLECTIONS",
+    "reasoning": "3 collections sport existent déjà et sont utilisées (Cyclisme & Vélo, Running & Course à Pied, Trail & Outdoor). Architecture actuelle: Collections pour les usages sportifs. Pas besoin de créer des catégories sport supplémentaires.",
+    "implementation_steps": [
+      "✅ Architecture actuelle validée: Collections pour usages sportifs",
+      "Vérifier que tous les produits sont bien assignés à la bonne collection sport",
+      "Configurer filtres storefront par collection (déjà disponible)",
+      "Optionnel: Ajouter metadata discipline pour filtrage plus granulaire"
+    ]
+  }
+}

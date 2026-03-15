@@ -31,6 +31,7 @@ export async function GET(
       {
         skip: offset,
         take: limit,
+        select: ['id', 'name', 'handle', 'description', 'is_active', 'rank', 'parent_category_id', 'mpath', 'created_at', 'updated_at'],
       }
     );
 

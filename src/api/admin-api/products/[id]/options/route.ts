@@ -24,7 +24,7 @@ export async function GET(
     const { id } = req.params;
 
     const product = await productService.retrieveProduct(id, {
-      relations: ['options'],
+      relations: ['options', 'options.values'],
     });
 
     if (!product) {
@@ -32,6 +32,15 @@ export async function GET(
         error: 'Product not found',
       });
     }
+
+    console.log('[Product Options API] Retrieved options:', {
+      productId: id,
+      optionsCount: product.options?.length || 0,
+      options: product.options?.map((o: any) => ({
+        title: o.title,
+        valuesCount: o.values?.length || 0
+      }))
+    });
 
     return res.status(200).json({
       options: product.options || [],
