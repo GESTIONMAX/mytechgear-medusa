@@ -30,18 +30,42 @@ export async function GET(
 
     // Parse fields parameter to determine relations
     const fieldsParam = req.query?.fields as string | undefined;
+    // Note: sales_channels is NOT a direct relation in Product Module (Medusa v2 uses links)
     let relations: string[] = ['variants', 'options', 'options.values', 'images', 'categories', 'collection'];
 
     if (fieldsParam) {
-      // Parse fields like "*options,*options.values,*variants,*variants.options"
+      // Parse fields like "*options,*options.values" or "+options,+options.values"
+      // Support both * and + prefixes for compatibility
       const fields = fieldsParam.split(',');
       const customRelations: string[] = [];
 
+      // Valid Product Module relations (Medusa v2)
+      const validRelations = [
+        'variants',
+        'options',
+        'options.values',
+        'images',
+        'categories',
+        'collection',
+        'tags',
+        'type'
+      ];
+
       for (const field of fields) {
-        if (field.startsWith('*')) {
-          // *options.values -> "options.values"
-          const relationPath = field.substring(1);
-          customRelations.push(relationPath);
+        if (field.startsWith('*') || field.startsWith('+')) {
+          // *options.values or +options.values -> "options.values"
+          let relationPath = field.substring(1);
+
+          // Remove wildcard suffix if present (collection.* -> collection)
+          if (relationPath.endsWith('.*')) {
+            relationPath = relationPath.substring(0, relationPath.length - 2);
+          }
+
+          // Only include valid Product Module relations
+          // Skip sales_channels (Link Module), variants.prices (Pricing Module), variants.options (complex join)
+          if (validRelations.includes(relationPath)) {
+            customRelations.push(relationPath);
+          }
         }
       }
 
@@ -61,8 +85,38 @@ export async function GET(
       });
     }
 
+    // If sales_channels were requested, fetch them via Remote Query
+    const shouldIncludeSalesChannels = fieldsParam?.includes('sales_channels');
+
+    // Cast to any to allow adding sales_channels dynamically
+    const productWithSalesChannels: any = product;
+
+    if (shouldIncludeSalesChannels) {
+      try {
+        const query = req.scope.resolve("query");
+
+        // Use Remote Query to fetch product-sales_channel links
+        const { data: salesChannelLinks } = await query.graph({
+          entity: "product_sales_channel",
+          fields: ["sales_channel_id", "sales_channel.*"],
+          filters: { product_id: id },
+        });
+
+        // Extract sales channels from links
+        if (salesChannelLinks && salesChannelLinks.length > 0) {
+          productWithSalesChannels.sales_channels = salesChannelLinks.map((link: any) => link.sales_channel);
+        } else {
+          productWithSalesChannels.sales_channels = [];
+        }
+      } catch (queryError: any) {
+        console.warn('[Product GET] Could not fetch sales channels via Remote Query:', queryError.message);
+        // Don't fail the whole request, just omit sales_channels
+        productWithSalesChannels.sales_channels = [];
+      }
+    }
+
     return res.status(200).json({
-      product,
+      product: productWithSalesChannels,
     });
 
   } catch (error: any) {
