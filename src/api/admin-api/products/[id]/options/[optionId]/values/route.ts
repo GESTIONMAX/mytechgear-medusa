@@ -36,12 +36,31 @@ export async function POST(
       metadata,
     });
 
-    // Create the option value
-    const optionValue = await productService.createProductOptionValues({
-      option_id: optionId,
-      value: value.trim(),
-      metadata: metadata || {},
+    // Get current option with values
+    const option = await productService.retrieveProductOption(optionId, {
+      relations: ['values'],
     });
+
+    // Add new value to existing values
+    const newValues = [
+      ...(option.values || []).map((v: any) => ({
+        id: v.id,
+        value: v.value,
+        metadata: v.metadata || {},
+      })),
+      {
+        value: value.trim(),
+        metadata: metadata || {},
+      },
+    ];
+
+    // Update the option with all values
+    const updatedOption = await productService.updateProductOptions(optionId, {
+      values: newValues as any,
+    });
+
+    // Get the newly created value (last in array)
+    const optionValue = updatedOption.values?.[updatedOption.values.length - 1];
 
     console.log(`[Product Option Values API] Value created successfully:`, optionValue);
 

@@ -355,20 +355,3 @@ export function getProductSpecificFeatures(
     !product.metadata.platform!.sharedFeatures.includes(feature.id)
   )
 }
-
-// ─── Export All ──────────────────────────────────────────────────────────────
-
-export type {
-  OptionValueMetadata,
-  ProductFeature,
-  FeatureCategory,
-  SpecItem,
-  SpecCategory,
-  SpecType,
-  ProductSpecs,
-  SizingInfo,
-  WarrantyInfo,
-  TechnologyInfo,
-  ProductMetadata,
-  VariantMetadata,
-}

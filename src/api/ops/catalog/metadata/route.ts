@@ -10,7 +10,7 @@
  * Body: { productId, metadata }
  */
 
-import type { MedusaRequest, MedusaResponse } from "@medusajs/medusa"
+import type { MedusaRequest, MedusaResponse } from "@medusajs/framework/http"
 
 const OPS_KEY = process.env.OPS_SECRET_KEY || ""
 const OPS_ENABLED = process.env.OPS_ENDPOINTS_ENABLED === "true"

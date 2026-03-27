@@ -45,19 +45,17 @@ export async function POST(
 
     console.log('   Existing links:', existingLinks);
 
-    // Step 2: Delete existing links using remoteLink.delete()
+    // Step 2: Delete existing links using remoteLink.dismiss()
     if (existingLinks && existingLinks.length > 0) {
-      const linksToDelete = existingLinks.map((link: any) => ({
-        [Modules.PRODUCT]: { product_id: link.product_id },
-        [Modules.SALES_CHANNEL]: { sales_channel_id: link.sales_channel_id }
-      }));
-
-      console.log('   Deleting links:', linksToDelete);
-
-      try {
-        await remoteLink.delete(linksToDelete);
-      } catch (deleteError: any) {
-        console.warn('   Could not delete via remoteLink, trying dismiss:', deleteError.message);
+      for (const link of existingLinks) {
+        try {
+          await remoteLink.dismiss({
+            [Modules.PRODUCT]: { product_id: link.product_id },
+            [Modules.SALES_CHANNEL]: { sales_channel_id: link.sales_channel_id }
+          });
+        } catch (deleteError: any) {
+          console.warn('   Could not dismiss link:', deleteError.message);
+        }
       }
     }
 

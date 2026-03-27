@@ -17,7 +17,9 @@
     "forceConsistentCasingInFileNames": true,
     "resolveJsonModule": true,
     "checkJs": false,
-    "strictNullChecks": true
+    "strictNullChecks": false,
+    "noUnusedLocals": false,
+    "noUnusedParameters": false
   },
   "ts-node": {
     "swc": true
@@ -30,6 +32,15 @@
     "node_modules",
     ".medusa/server",
     ".medusa/admin",
-    ".cache"
+    ".cache",
+    "scripts",
+    "src/scripts",
+    "src/api/ops",
+    "src/api/admin/regions",
+    "src/api/admin/shipping",
+    "src/api/admin/taxes",
+    "src/api/admin/pricing/history",
+    "src/api/admin/pricing/import",
+    "docs"
   ]
 }

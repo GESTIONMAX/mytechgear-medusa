@@ -2,10 +2,13 @@
  * Catalog Health Audit Script
  *
  * Validates catalog integrity and pricing layer
+ *
+ * Usage:
+ *   npx medusa exec ./scripts/audit-catalog.ts
  */
 
+import { ExecArgs } from "@medusajs/framework/types";
 import { Modules } from "@medusajs/framework/utils";
-import { MedusaAppLoader } from "@medusajs/framework";
 
 interface AuditIssue {
   severity: 'error' | 'warning' | 'info';
@@ -40,7 +43,7 @@ interface CatalogHealthReport {
   }>;
 }
 
-async function main() {
+export default async function auditCatalog({ container }: ExecArgs) {
   console.log('🔍 Starting Catalog Health Audit...\n');
 
   const issues: AuditIssue[] = [];
@@ -71,10 +74,6 @@ async function main() {
   };
 
   try {
-    // Load Medusa app
-    const { container } = await MedusaAppLoader({
-      directory: process.cwd(),
-    });
 
     const productService = container.resolve(Modules.PRODUCT);
     const pricingService = container.resolve(Modules.PRICING);
@@ -327,12 +326,12 @@ async function main() {
 
     console.log('\n═══════════════════════════════════════\n');
 
-    process.exit(criticalIssues.length > 0 ? 1 : 0);
+    if (criticalIssues.length > 0) {
+      throw new Error(`Audit found ${criticalIssues.length} critical issue(s)`);
+    }
   } catch (error: any) {
     console.error('❌ Audit failed:', error.message);
     console.error(error.stack);
-    process.exit(1);
+    throw error;
   }
 }
-
-main();
