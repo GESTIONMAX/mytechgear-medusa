@@ -51,11 +51,9 @@ RUN apk add --no-cache dumb-init curl wget
 # Copy package files
 COPY package*.json ./
 
-# Copy node_modules from builder instead of npm ci (22min → 30s)
+# Copy node_modules from builder (includes all dependencies)
+# Note: Includes devDependencies for ~100-150MB larger image, but 20min faster builds
 COPY --from=builder /app/node_modules ./node_modules
-
-# Remove devDependencies (much faster than full npm ci)
-RUN npm prune --omit=dev && npm cache clean --force
 
 # Copy built application from builder stage
 COPY --from=builder /app/.medusa /app/.medusa
