@@ -35,6 +35,12 @@ export async function GET(
 
     return res.status(200).json({
       variants: product.variants || [],
+      product: {
+        id: product.id,
+        title: product.title,
+        handle: product.handle,
+        thumbnail: product.thumbnail,
+      },
     });
 
   } catch (error: any) {
